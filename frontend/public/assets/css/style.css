@@ -3056,7 +3056,7 @@ hero-btn {
   content: "";
   width: 54px;
   height: 2px;
-  background: #eb566c;
+  background: #ffc107;
   top: 0;
   left: 0px;
   top: 50%;
@@ -3087,16 +3087,16 @@ hero-btn {
 
 /* line 979, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle2 span {
-  color: #ff5e00;
+  color: #ffc107;
 }
 .section-tittle3 span {
-  color: #ff5e00;
+  color: #ffc107;
   font-size: medium;
 }
 
 /* line 981, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle2 span::before {
-  background: #ff5e00;
+  background: #ffc107;
   
 }
 
@@ -4551,7 +4551,7 @@ hero-btn {
 
 /* line 51, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 .brand-area .single-brand.slick-slide {
-  opacity: .7;
+  opacity: 1;
 }
 
 /* line 59, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
@@ -4583,7 +4583,10 @@ hero-btn {
 .about-details .about-details-cap p {
   color: #FFFFFF;
   font-size: 15px;
+  text-justify: inter-word;
 }
+
+
 
 /* line 1, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_testimonial.scss */
 .testimonial-area {
@@ -4820,7 +4823,7 @@ hero-btn {
 
 /* line 29, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 .footer-area .footer-top .single-footer-caption .footer-number h4 {
-  color: #ff0000;
+  color: #641b55;
   font-size: 30px;
   font-weight: 500;
   text-transform: capitalize;
@@ -4833,7 +4836,7 @@ hero-btn {
 
 /* line 38, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 .footer-area .footer-top .single-footer-caption .footer-number p {
-  color: #bdbdbd;
+  color: #000000;
 }
 
 /* line 43, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
@@ -6935,11 +6938,11 @@ hero-btn {
 }
 
 /* line 67, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_bradcam.scss */
-.popup_box .nice-select {
+/* .popup_box .nice-select {
   -webkit-tap-highlight-color: transparent;
-  background-color: #fff;
+  background-color: #fff; */
   /* border-radius: 5px; */
-  border: solid 1px #E2E2E2;
+  /* border: solid 1px #E2E2E2;
   box-sizing: border-box;
   clear: both;
   cursor: pointer;
@@ -6947,9 +6950,9 @@ hero-btn {
   float: left;
   font-family: "Poppins", sans-serif;
   font-weight: normal;
-  width: 100% !important;
+  width: 100% !important; */
   /* height: 42px; */
-  line-height: 50px;
+  /* line-height: 50px;
   outline: none;
   padding-left: 18px;
   padding-right: 30px;
@@ -6969,10 +6972,10 @@ hero-btn {
   font-size: 16px;
   font-weight: 400;
   color: #919191;
-}
+} */
 
 /* line 101, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_bradcam.scss */
-.popup_box .nice-select::after {
+/* .popup_box .nice-select::after {
   content: "\f0d7";
   display: block;
   height: 5px;
@@ -6986,10 +6989,10 @@ hero-btn {
   font-family: fontawesome;
   color: #919191;
   font-size: 15px;
-}
+} */
 
 /* line 116, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_bradcam.scss */
-.popup_box .nice-select.open .list {
+/* .popup_box .nice-select.open .list {
   opacity: 1;
   pointer-events: auto;
   -webkit-transform: scale(1) translateY(0);
@@ -6997,13 +7000,13 @@ hero-btn {
   transform: scale(1) translateY(0);
   height: 200px;
   overflow-y: scroll;
-}
+} */
 
 /* line 125, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_bradcam.scss */
-.popup_box .nice-select.list {
+/* .popup_box .nice-select.list {
   height: 200px;
   overflow-y: scroll;
-}
+} */
 
 /* line 131, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_bradcam.scss */
 #test-form {
@@ -8254,27 +8257,27 @@ del {
 }
 
 /* line 969, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select {
+/* .default-select .nice-select {
   border: none;
   border-radius: 0px;
   height: 40px;
   background: #f9f9ff;
   padding-left: 20px;
   padding-right: 40px;
-}
+} */
 
 /* line 976, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select .list {
+/* .default-select .nice-select .list {
   margin-top: 0;
   border: none;
   border-radius: 0px;
   box-shadow: none;
   width: 100%;
   padding: 10px 0 10px 0px;
-}
+} */
 
 /* line 983, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select .list .option {
+/* .default-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -8284,39 +8287,39 @@ del {
   min-height: 28px;
   font-size: 12px;
   padding-left: 20px;
-}
+} */
 
 /* line 990, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select .list .option.selected {
+/* .default-select .nice-select .list .option.selected {
   color: #1f2b7b;
   background: transparent;
-}
+} */
 
 /* line 994, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select .list .option:hover {
+/* .default-select .nice-select .list .option:hover {
   color: #1f2b7b;
   background: transparent;
-}
+} */
 
 /* line 1001, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .current {
+/* .default-select .current {
   margin-right: 50px;
   font-weight: 300;
-}
+} */
 
 /* line 1005, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.default-select .nice-select::after {
+/* .default-select .nice-select::after {
   right: 20px;
-}
+} */
 
 /* line 1010, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select {
+/* .form-select {
   height: 40px;
   width: 100%;
-}
+} */
 
 /* line 1013, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select {
+/* .form-select .nice-select {
   border: none;
   border-radius: 0px;
   height: 40px;
@@ -8324,20 +8327,20 @@ del {
   padding-left: 45px;
   padding-right: 40px;
   width: 100%;
-}
+} */
 
 /* line 1021, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select .list {
+/* .form-select .nice-select .list {
   margin-top: 0;
   border: none;
   border-radius: 0px;
   box-shadow: none;
   width: 100%;
   padding: 10px 0 10px 0px;
-}
+} */
 
 /* line 1028, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select .list .option {
+/* .form-select .nice-select .list .option {
   font-weight: 300;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
@@ -8347,19 +8350,19 @@ del {
   min-height: 28px;
   font-size: 12px;
   padding-left: 45px;
-}
+} */
 
 /* line 1035, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select .list .option.selected {
+/* .form-select .nice-select .list .option.selected {
   color: #1f2b7b;
   background: transparent;
-}
+} */
 
 /* line 1039, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select .list .option:hover {
+/* .form-select .nice-select .list .option:hover {
   color: #1f2b7b;
   background: transparent;
-}
+} */
 
 /* line 1046, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
 .form-select .current {
@@ -8368,9 +8371,9 @@ del {
 }
 
 /* line 1050, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
-.form-select .nice-select::after {
+/* .form-select .nice-select::after {
   right: 20px;
-}
+} */
 
 /* line 1054, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_elements.scss */
 .mt-10 {

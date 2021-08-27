@@ -39,6 +39,11 @@ const Header = () => {
                               </div>
                             </li>
                             <li>
+                              <div>
+                              <a href="/actualite">Actualite</a>
+                              </div>
+                            </li>
+                            <li>
                               <a href="/apropos">A propos</a>
                               <ul className="submenu">
                                 <li>

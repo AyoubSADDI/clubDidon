@@ -4,9 +4,10 @@ exports.createActualite = (req, res, next) => {
   console.log(req.body);
   const actualite = new Actualite({
     userName: req.body.userName,
-    ptitre: req.body.ptitre,
-    dtitre: req.body.dtitre,
-    contenu: req.body.contenu
+    titre: req.body.titre,
+    Date: req.body.Date,
+    contenu: req.body.contenu,
+    categorie: req.body.categorie
   });
   actualite.save().then(
     () => {
@@ -43,9 +44,10 @@ exports.modifyActualite = (req, res, next) => {
     const actualite = new Actualite({
         _id: req.params.id,
         userName: req.body.userName,
-        ptitre: req.body.ptitre,
-        dtitre: req.body.dtitre,
-        contenu: req.body.contenu
+        titre: req.body.titre,
+        Date: req.body.Date,
+        contenu: req.body.contenu,
+        categorie: req.body.categorie
       });
       Actualite.updateOne({_id: req.params.id}, actualite).then(
     () => {

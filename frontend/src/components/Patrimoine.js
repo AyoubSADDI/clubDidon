@@ -52,7 +52,7 @@ const Patrimoine = () => {
               <div className="row align-items-center">
                 <div className="col-xl-6 col-lg-6">
                   <div className="support-location-img">
-                    <img src="assets/img/patrimoine/carth.jpg" alt="" />
+                    <img src="assets/img/patrimoine/app1.png" alt="" />
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6">
@@ -101,7 +101,7 @@ const Patrimoine = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/patrimoine/zagh.jpg" alt="" />
+                  <img src="assets/img/patrimoine/APP2.png" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -145,7 +145,7 @@ const Patrimoine = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/patrimoine/zagh.jpg" alt="" />
+                  <img src="assets/img/patrimoine/application 3.png" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -186,7 +186,7 @@ const Patrimoine = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/patrimoine/zagh.jpg" alt="" />
+                  <img src="assets/img/patrimoine/application_4.png" style={{height:"550px", width :"400px"}} alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -227,8 +227,9 @@ const Patrimoine = () => {
           <div className="container">
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/patrimoine/zagh.jpg" alt="" />
+                <div className="support-location-img ">
+                  <img src="assets/img/patrimoine/application_5-1.png" alt="" />
+       
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -269,7 +270,8 @@ const Patrimoine = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/patrimoine/zagh.jpg" alt="" />
+                  <img src="assets/img/patrimoine/application_6-1.png" alt="" />
+                  <img src="assets/img/patrimoine/application_6-2.png" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">

@@ -1,9 +1,95 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchPlannings,
+} from "../componentsDash/redux/planning/planningActions";
+import {
+  fetchConferences,
+} from "../componentsDash/redux/conference/conferenceActions";
+import {
+  fetchSorties,
+} from "../componentsDash/redux/sortie/sortieActions";
+
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
+import ReadMoreReact from 'read-more-react';
 
 const Programme = () => {
+
+  const planningData = useSelector((state) => state.planning);
+  const conferenceData = useSelector((state) => state.conference);
+  const sortieData = useSelector((state) => state.sortie);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchPlannings());
+    dispatch(fetchConferences());
+    dispatch(fetchSorties());
+  }, []);
+
+  const planning_container = planningData.plannings.map((planning) => (
+
+  <tr>
+    <td>{planning.Date}</td>
+    <td>{planning.titre}</td>
+    <td>{planning.description}</td>
+  </tr>
+    ));
+
+    const conference_container = conferenceData.conferences.map((conference) => (
+
+      <div className="col-xl-4 col-lg-4 col-md-4">
+      <div className="home-blog-single mb-30">
+        <div className="blog-img-cap">
+          <div className="blog-img">
+          <img src={conference.imageUrl}
+                     alt="" />
+            <ul>
+              <li>By Admin-{conference.Date}</li>
+            </ul>
+          </div>
+          <div className="blog-cap">
+            <h3><a href="blog_details.html">{conference.titre}</a></h3>
+            <ReadMoreReact text={conference.description}
+            min="60"
+            ideal="70"
+            max="80"
+            readMoreText="-read more"/>             
+           <a href="/blogDetails" className="more-btn">Details</a><br></br>       
+          </div>
+        </div>
+      </div>
+    </div>
+        ));
+
+        const sortie_container = sortieData.sorties.map((sortie) => (
+
+          <div className="col-xl-4 col-lg-4 col-md-4">
+          <div className="home-blog-single mb-30">
+            <div className="blog-img-cap">
+              <div className="blog-img">
+              <img src={sortie.imageUrl}
+                         alt="" />
+                <ul>
+                  <li>By Admin-{sortie.Date}</li>
+                </ul>
+              </div>
+              <div className="blog-cap">
+                <h3><a href="blog_details.html">{sortie.titre}</a></h3>
+                <ReadMoreReact text={sortie.description}
+                min="60"
+                ideal="70"
+                max="80"
+                readMoreText="-read more"/>             
+               <a href="/blogDetails" className="more-btn">Details</a><br></br>       
+              </div>
+            </div>
+          </div>
+        </div>
+            ));
+
+
   return (
     <div>
       <div id="preloader-active">
@@ -56,26 +142,12 @@ const Programme = () => {
             <thead>
               <tr>
                 <th scope="col">Date</th>
-                <th scope="col">Titre</th>
+                <th scope="col">Evénement</th>
                 <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+            {planning_container}
             </tbody>
           </table>
         </div>{" "}
@@ -94,88 +166,8 @@ const Programme = () => {
         </div>
         <div className="home-blog-area bodyBg">
           <div className="">
-            <div className="row">
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/confirance/conf1.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/confirance/conf2.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/confirance/conf1.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="row">        
+             { conference_container}
             </div>
           </div>
         </div>
@@ -186,7 +178,7 @@ const Programme = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap">
-                  <h4>Conférences Passés</h4>
+                  <h4>Conférences Passées</h4>
                 </div>
               </div>
             </div>
@@ -295,88 +287,8 @@ const Programme = () => {
         </div>
         <div className="home-blog-area">
           <div className="">
-            <div className="row">
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/Sorties/s1.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/Sorties/s1.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-4 col-md-4">
-                <div className="home-blog-single mb-30">
-                  <div className="blog-img-cap">
-                    <div className="blog-img">
-                      <img src="assets/img/Sorties/s3.jpg" alt="" />
-                      <ul>
-                        <li>By Admin - October 27, 2020</li>
-                      </ul>
-                    </div>
-                    <div className="blog-cap">
-                      <h3>
-                        <a href="blog_details.html">
-                          16 Easy Ideas to Use in Everyday
-                        </a>
-                      </h3>
-                      <p>
-                        Amet, consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magnua Quis ipsum
-                        suspendisse ultrices gra.
-                      </p>
-                      <a href="blog_details.html" className="more-btn">
-                        Read More
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="row">            
+             {sortie_container}
             </div>
           </div>
         </div>
@@ -388,7 +300,7 @@ const Programme = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap ">
-                  <h4>Sorties Passés</h4>
+                  <h4>Sorties Passées</h4>
                 </div>
               </div>
             </div>

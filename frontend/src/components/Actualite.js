@@ -1,45 +1,11 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchPartenaires,
-} from "../componentsDash/redux/partenaire/partenaireActions";
+import React from "react";
 import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
 
 const About = () => {
 
-  const partenaireData = useSelector((state) => state.partenaire);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchPartenaires());
-  }, []);
-
-  const partenaire_container = partenaireData.partenaires.map((partenaire) => (
-       <div className="single-brand" key={partenaire._id}>
-            <img src={partenaire.imageUrl}
-                 alt="" />
-        </div>
-  ));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
     return (
         <div>
@@ -66,7 +32,7 @@ const About = () => {
                 loop={Infinity}
                 wrapper="b"
                 steps={[
-                  '_Propos',1000,'_About',1000,
+                  '_Actualité',1000,'_actuality',1000,
                 ]}
                 />
                 </h2>
@@ -81,7 +47,8 @@ const About = () => {
         <div className="row">
           <div className="offset-xl-1 col-lg-8">
             <div className="about-details-cap mb-50">
-              <h4>Notre Vision</h4>
+           
+              <h4>Conférence</h4>
               <p >L’association Didon de Carthage vise à mettre au point une stratégie d’avenir afin de mieux impulser l’action associative en tant que facteur de promotion du patrimoine, du tourisme et de la culture en Tunisie. 
 
 Il s’agit d’une jeune association qui a pour principal objectif de jouer, avec ses partenaires, le rôle de médiateur culturel qui consiste à favoriser les liens entre l’objet culturel et les visiteurs en utilisant les nouvelles technologies.
@@ -94,7 +61,7 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
 </p>
             </div >
             <div className="about-details-cap mb-50 pt-5">
-              <h4 >Notre Mission</h4>
+              <h4 >Evénement</h4>
               <p>Dans ses statuts, l’association Didon de Carthage a pour objectifs de : 
 
               </p>
@@ -122,7 +89,7 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
               </p>
             </div> 
             <div className="about-details-cap mb-50 pt-5">
-              <h4 >Notre Statut juridique</h4>
+              <h4 >Sortie</h4>
               <p>
 	L’association Didon de Carthage est une organisation non gouvernementale fondée en 2014 par deux jeunes femmes tunisiennes passionnées de l’histoire de Carthage Mme Eryj Ben Sassi et Mlle Inès Hassoumi.
 
@@ -131,88 +98,6 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
             </div> 
           </div>
         </div>
-      </div>
-    </div>
-    <div  className="about-details pt-5 bodyBg">
-      <div className="container">
-        <div className="row">
-          <div className="offset-xl-1 col-lg-8">
-            <div className="about-details-cap">
-              <h4 >Nos Activités</h4>          
-            </div>  
-          </div>
-        </div>
-      </div>
-    </div>
-   
-    {/*? Categories Area Start */}
-    <div className="categories-area ">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            {/* Section Tittle */}
-           
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-4 col-md-6 col-sm-6">
-            <div className="single-cat text-center mb-50">
-              <div className="cat-icon">
-                <span className="flaticon-development" />
-              </div>
-              <div className="cat-cap">
-                <h5><a href="services.html">Conférences </a></h5>
-                <p>Organiser des manifestations nationales et internationales des séminaires, des conférences, des tables rondes et des ateliers sur la civilisation Carthaginoise punique ainsi que les autres civilisations .</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6">
-            <div className="single-cat text-center mb-50">
-              <div className="cat-icon">
-                <span className="flaticon-result" />
-              </div>
-              <div className="cat-cap">
-                <h5><a href="services.html">Excursions</a></h5>
-                <p>Faire connaître au grand public les richesses et les particularités des sites archéologiques dans toute la Tunisie 
-
-.</p>
-<br></br><br></br>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-6">
-            <div className="single-cat text-center mb-50">
-              <div className="cat-icon">
-                <span className="flaticon-team" />
-              </div>
-              <div className="cat-cap">
-                <h5><a href="services.html">Evénements</a></h5>
-                <p id="charte" >Organiser des manifestations culturelles et artistiques sur le site de Carthage-Sidi Bou Saîd et toute la banlieue nord 
-.</p><br></br><br></br>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="about-details bodyBg">
-      <div className="container">
-        <div className="row">
-          <div className="offset-xl-1 col-lg-8">
-            <div className="about-details-cap pt-5">
-              <h4 >Nos Partenaires</h4>  
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="brand-area pt-90 pb-140">
-      <div className="row">
-    
-  
-        {partenaire_container}
-      
-  
       </div>
     </div>
   </main>

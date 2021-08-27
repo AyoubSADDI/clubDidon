@@ -19,8 +19,8 @@ const partenaireRoutes = require('./routes/partenaire');
 mongoose.connect(process.env.MONGO_URL,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
-  .then(() => console.log('Connexion à MongoDB réussie !'))
-  .catch(() => console.log('Connexion à MongoDB échouée !'));
+  .then(() => console.log('Connexion a MongoDB reussie !'))
+  .catch(() => console.log('Connexion a MongoDB echouee !'));
 
   
 mongoose.set('useNewUrlParser', true);

@@ -101,7 +101,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/IMG andre.jpg" alt="" />
+                  <img src="assets/img/gallery/andré1.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -117,7 +117,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/IMGazedine.jpg" alt="" />
+                  <img src="assets/img/gallery/f1.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -134,7 +134,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/IMG jaloL.jpg" alt="" />
+                  <img src="assets/img/gallery/Jalloul_Ayed1.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -157,17 +157,16 @@ const Organisation = () => {
               <div className="about-details-cap mb-50">
                 <h4>Commissions</h4>
                 <p>
-                  Consectetur adipiscing elit, sued do eiusmod tempor ididunt
-                  udfgt labore et dolore magna aliqua. Quis ipsum suspendisces
-                  gravida. Risus commodo viverra sebfd dho eiusmod tempor
-                  maecenas accumsan lacus. Risus commodo viverra sebfd dho
-                  eiusmod tempor maecenas accumsan lacus.
-                </p>
+                Le bureau exécutif s’est réuni pour approbation du programme d’activités pour la saison 2020/2021 et la création des nouvelles commissions qui peuvent aider l’association a réaliser ses objectifs et appuyer le travail des membres fondateurs il a été décidé de créer les commissions sous citées : </p> 
+
+                      
+               
                 <p>
                   {" "}
-                  Risus commodo viverra sebfd dho eiusmod tempor maecenas
-                  accumsan lacus. Risus commodo viverra sebfd dho eiusmod tempor
-                  maecenas accumsan.
+                      1-  La commission des relations publiques<br></br>
+                      2-	La commission de la communication et de l’information <br></br>
+                      3-	La commission scientifique <br></br>
+                      4-	La commission artistique
                 </p>
               </div>
             </div>
@@ -192,7 +191,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/présidente1.jpg" alt="" />
+                  <img src="assets/img/gallery/IMG arij.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -207,7 +206,7 @@ const Organisation = () => {
                       Urbaniste à l'Institut Supérieur des Technologies de
                       l'Environnement de l'Urbanisme et du Bâtiment
                     </p>
-                    <p className="mb-65">*****************************</p>
+                    <p className="mb-65"></p>
                   </div>
                 </div>
               </div>
@@ -222,7 +221,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/vice_presidente1.jpg" alt="" />
+                  <img src="assets/img/gallery/IMG ines.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -237,7 +236,7 @@ const Organisation = () => {
                       Docteur en informatique à l'Institut Supérieur de Gestion
                       de Tunis et à l'université de Paris VI{" "}
                     </p>
-                    <p className="mb-65">**************************.</p>
+                    <p className="mb-65"></p>
                   </div>
                 </div>
               </div>
@@ -252,7 +251,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/secertaire generale.jpg" alt="" />
+                  <img src="assets/img/gallery/IMG nahawanid.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -267,7 +266,63 @@ const Organisation = () => {
                       Architecte à l'Ecole Nationale d'Architecture et
                       d'Urbanisme de Tunis{" "}
                     </p>
-                    <p className="mb-65">**************************.</p>
+                    <p className="mb-65"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="support-company-area pt-100 pb-100 section-bg fix">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-xl-6 col-lg-6">
+                <div className="support-location-img">
+                  <img src="assets/img/gallery/IMG sheriff.jpg" alt="" />
+                </div>
+              </div>
+              <div className="col-xl-6 col-lg-6">
+                <div className="right-caption">
+                  {/* Section Tittle */}
+                  <div className="section-tittle section-tittle3 mb-50">
+                    <h2>Sherif Aref </h2>
+                    <span>Responsable artistique</span>
+                  </div>
+                  <div className="support-caption1">
+                    <p className="pera-top">
+                    Bijouterie et styliste modéliste
+Sherif
+Artiste plasticien spécialisé dans la sculpture
+Sherif
+Chercher en mode punique{" "}
+                    </p>
+                    <p className="mb-65"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="support-company-area pt-100 pb-100 section-bg fix">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-xl-6 col-lg-6">
+                <div className="support-location-img">
+                  <img src="assets/img/gallery/IMG rayenn.jpg" alt="" />
+                </div>
+              </div>
+              <div className="col-xl-6 col-lg-6">
+                <div className="right-caption">
+                  {/* Section Tittle */}
+                  <div className="section-tittle section-tittle3 mb-50">
+                    <h2>Rayen Manai </h2>
+                    <span>Responsable de l’identité visuelle</span>
+                  </div>
+                  <div className="support-caption1">
+                    <p className="pera-top">
+                    Artiste plasticien spécialisé dans l'art graphique{" "}
+                    </p>
+                    <p className="mb-65"></p>
                   </div>
                 </div>
               </div>

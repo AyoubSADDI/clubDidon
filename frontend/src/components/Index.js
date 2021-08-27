@@ -1,8 +1,103 @@
-import React from 'react'
+import React, { useEffect,useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchActualites,
+  DeleteActualite,
+  AddActualite,
+  UpdateActualite,
+} from "../componentsDash/redux/actualite/actualiteActions";
 import Header from './Header'
 import video from './video/video.mp4'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import { useHistory } from "react-router-dom";
+
+toast.configure()
 const Index = () => {
+  const loginFromStorage = JSON.parse(localStorage.getItem("login"));
+  const userName = loginFromStorage.userId;
+
+  const history = useHistory();
+  const onLogout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("login");
+    history.push("/login");
+  };
+
+  const initialActualiteState = {
+    _id: "",
+    userName: "",
+    ptitre: "",
+    dtitre: "",
+    contenu: "",
+  };
+
+  const notifyAdd = () => {
+    toast.success('Ajouter avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
+    
+  const notifyDelete = () => {
+    toast.success('Supprimer avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
+    
+  const notifyUpdate = () => {
+    toast.success('Mise à jour avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
+
+  const [actualite, setActualite] = useState(initialActualiteState);
+
+
+  const actualiteData = useSelector((state) => state.actualite);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchActualites());
+    console.log(actualiteData);
+  }, []);
+
+  const onAdd = (e) => {
+    e.preventDefault();
+    console.log("submitting : ", e);
+    const loginFromStorage = JSON.parse(localStorage.getItem("login"));
+    const userId = loginFromStorage.userId;
+    console.log(userId);
+    actualite.userName = userId;
+    dispatch(AddActualite(actualite));
+  };
+
+  const onUpdate = (e) => {
+    e.preventDefault();
+    console.log("actualite : ", actualite);
+    console.log("submitting : ", e);
+    dispatch(UpdateActualite(actualite));
+  };
+
+  const actualite_container = actualiteData.actualites.map((actualite) => (
+    <div className="single-slider slider-height d-flex align-items-center">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-8 col-lg-7 col-md-8">
+                <div className="hero__caption">
+                  <span data-animation="fadeInLeft" data-delay=".1s">{actualite.ptitre}</span>
+                  <h1 data-animation="fadeInLeft" data-delay=".5s">{actualite.dtitre}</h1>
+                  <p data-animation="fadeInLeft" data-delay=".9s">{actualite.contenu}<br /> velit esscillumlore eu quife nrulla parihatur.</p>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+  ));
+
   return (
+  
     <div>
       <div id="preloader-active">
         <div className="preloader d-flex align-items-center justify-content-center">
@@ -37,6 +132,7 @@ const Index = () => {
 
       <div className="slider-active">
         {/* Single Slider */}
+      
         <div className="single-slider slider-height d-flex align-items-center">
           <div className="container">
             <div className="row">
@@ -67,8 +163,13 @@ const Index = () => {
       </div>
     </div>
     {/* slider Area End*/}
+   
     </main>
+
+  
 </div>
+
+
 
       )
 }

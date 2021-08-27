@@ -16,6 +16,7 @@ import Patrimoine from './components/Patrimoine'
 import Organisation from './components/Organisation'
 import Programme from './components/Programme'
 import Contact from './components/Contact'
+import Actualite from './components/Actualite'
 import Maps from './components/Maps'
 import Adhesion from './components/Adhesion'
 import AdhesionDash from './componentsDash/Adhesion'
@@ -62,7 +63,7 @@ ReactDOM.render(
         <Route path='/sortieDash' render={(props) => <SortieDash {...props} />} />
         <Route path='/actualiteDash' render={(props) => <ActualiteDash {...props} />} />
         <Route path='/partenaireDash' render={(props) => <PartenaireDash {...props} />} />
-
+        <Route path='/actualite' render={(props) => <Actualite {...props} />} />
       </Switch>
     </Switch>
   </BrowserRouter>

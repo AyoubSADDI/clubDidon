@@ -8,10 +8,10 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import SideBar from "./SideBar";
 import { useHistory } from "react-router-dom";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-toast.configure()
+toast.configure();
 
 const Actualite = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem("login"));
@@ -27,34 +27,37 @@ const Actualite = () => {
   const initialActualiteState = {
     _id: "",
     userName: "",
-    ptitre: "",
-    dtitre: "",
+    titre: "",
+    Date: "",
     contenu: "",
+    categorie: "",
   };
 
   const notifyAdd = () => {
-    toast.success('Ajouter avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-    
+    toast.success("Ajouter avec succès !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 6000,
+    });
+  };
+
   const notifyDelete = () => {
-    toast.success('Supprimer avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-    
+    toast.success("Supprimer avec succès !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 6000,
+    });
+  };
+
   const notifyUpdate = () => {
-    toast.success('Mise à jour avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
+    toast.success("Mise à jour avec succès !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 6000,
+    });
+  };
 
   const [actualite, setActualite] = useState(initialActualiteState);
+  const [categorieState, setCategorieState] = useState(false);
 
+  console.log("***********************" + categorieState);
 
   const actualiteData = useSelector((state) => state.actualite);
   const dispatch = useDispatch();
@@ -72,6 +75,9 @@ const Actualite = () => {
     actualite.userName = userId;
     dispatch(AddActualite(actualite));
   };
+  // const handleCheckbox = event =>{
+  //   console.log(event.target.value)
+  // }
 
   const onUpdate = (e) => {
     e.preventDefault();
@@ -82,9 +88,10 @@ const Actualite = () => {
 
   const actualite_container = actualiteData.actualites.map((actualite) => (
     <tr key={actualite._id}>
-      <td>{actualite.ptitre}</td>
-      <td>{actualite.dtitre}</td>
+      <td>{actualite.titre}</td>
+      <td>{actualite.Date}</td>
       <td>{actualite.userName}</td>
+      <td>{actualite.categorie}</td>
       <td>
         <p>{actualite.contenu}</p>
       </td>
@@ -92,8 +99,8 @@ const Actualite = () => {
         <a
           href="#"
           className="btn btn-danger btn-sm btn-block mt-2"
-          onClick={() => dispatch(DeleteActualite(actualite._id),notifyDelete())
-          
+          onClick={() =>
+            dispatch(DeleteActualite(actualite._id), notifyDelete())
           }
         >
           <i className="fas fa-trash" />{" "}
@@ -241,16 +248,16 @@ const Actualite = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>PTitre</label>
+                                        <label>Titre</label>
                                         <input
                                           className="form-control"
-                                          name="ptitre"
+                                          name="titre"
                                           type="text"
-                                          value={actualite.ptitre}
+                                          value={actualite.titre}
                                           onChange={(e) => {
                                             const newActualiteObj = {
                                               ...actualite,
-                                              ptitre: e.target.value,
+                                              titre: e.target.value,
                                             };
                                             setActualite(newActualiteObj);
                                           }}
@@ -258,19 +265,20 @@ const Actualite = () => {
                                       </div>
                                     </div>
                                   </div>
+
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Dtitre</label>
+                                        <label>Date</label>
                                         <input
                                           className="form-control"
-                                          name="dtitre"
-                                          type="text"
-                                          value={actualite.dtitre}
+                                          name="Date"
+                                          type="date"
+                                          value={actualite.Date}
                                           onChange={(e) => {
                                             const newActualiteObj = {
                                               ...actualite,
-                                              dtitre: e.target.value,
+                                              Date: e.target.value,
                                             };
                                             setActualite(newActualiteObj);
                                           }}
@@ -278,6 +286,82 @@ const Actualite = () => {
                                       </div>
                                     </div>
                                   </div>
+
+                                  <label>Categorie</label>
+                                  <br></br>
+                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
+                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
+                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
+                                                    */}
+                                  <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="conference"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "conference"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Conférence
+                                    </label>
+                                  </div>
+
+                                  <div className="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="evenement"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "evenement"
+                                      }
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="flexRadioDefault2"
+                                    >
+                                      Evénement
+                                    </label>
+                                  </div>
+                                  <div className="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="sortie"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={actualite.categorie === "sortie"}
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="flexRadioDefault2"
+                                    >
+                                      Sortie
+                                    </label>
+                                  </div>
+
                                   <div className="row">
                                     <div class="col-lg-12"></div>
                                     <div className="row"></div>
@@ -300,6 +384,7 @@ const Actualite = () => {
                                     </div>
                                   </div>
                                 </div>
+
                                 <div className="modal-footer">
                                   <button
                                     type="submit"
@@ -324,7 +409,7 @@ const Actualite = () => {
                         >
                           <div className="modal-dialog">
                             <div className="modal-content">
-                            <form
+                              <form
                                 encType="multipart/form-data"
                                 className="form"
                                 onSubmit={(e) => {
@@ -349,16 +434,16 @@ const Actualite = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Ptitre</label>
+                                        <label>Titre</label>
                                         <input
                                           className="form-control"
-                                          name="ptitre"
+                                          name="titre"
                                           type="text"
-                                          value={actualite.ptitre}
+                                          value={actualite.titre}
                                           onChange={(e) => {
                                             const newActualiteObj = {
                                               ...actualite,
-                                              ptitre: e.target.value,
+                                              titre: e.target.value,
                                             };
                                             setActualite(newActualiteObj);
                                           }}
@@ -369,22 +454,92 @@ const Actualite = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Dtitre</label>
+                                        <label>Date</label>
                                         <input
                                           className="form-control"
-                                          name="dtitre"
-                                          type="text"
-                                          value={actualite.dtitre}
+                                          name="Date"
+                                          type="date"
+                                          value={actualite.Date}
                                           onChange={(e) => {
                                             const newActualiteObj = {
                                               ...actualite,
-                                              dtitre: e.target.value,
+                                              Date: e.target.value,
                                             };
                                             setActualite(newActualiteObj);
                                           }}
                                         />
                                       </div>
                                     </div>
+                                  </div>
+                               
+                                        <label>Categorie</label>
+                                        <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="conference"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "conference"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Conférence
+                                    </label>
+                                  </div>
+
+                                  <div className="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="evenement"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "evenement"
+                                      }
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="flexRadioDefault2"
+                                    >
+                                      Evénement
+                                    </label>
+                                  </div>
+                                  <div className="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="sortie"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={actualite.categorie === "sortie"}
+                                    />
+                                    <label
+                                      class="form-check-label"
+                                      for="flexRadioDefault2"
+                                    >
+                                      Sortie
+                                    </label>
                                   </div>
                                   <div className="row">
                                     <div class="col-lg-12"></div>
@@ -431,9 +586,10 @@ const Actualite = () => {
                           <table className="table table-bordered">
                             <thead>
                               <tr>
-                                <th style={{ minWidth: 50 }}>Ptitre</th>
-                                <th style={{ minWidth: 50 }}>Dtitre</th>
+                                <th style={{ minWidth: 50 }}>Titre</th>
+                                <th style={{ minWidth: 50 }}>Date</th>
                                 <th style={{ minWidth: 50 }}>Utilisateur</th>
+                                <th style={{ minwidth: 50 }}>Catégorie</th>
                                 <th style={{ minwidth: 300 }}>Contenu</th>
                                 <th style={{ width: 50 }}>Actions</th>
                               </tr>
