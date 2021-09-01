@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchMedias,
+  DeleteMedia,
+  AddMedia,
+  UpdateMedia,
+} from "./redux/media/mediaActions";
 import SideBar from './SideBar'
 import {useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 
 const Media = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem('login'))
@@ -13,6 +23,122 @@ const Media = () => {
       localStorage.removeItem('login')
       history.push('/login')
   }
+  const initialMediaState = {
+    _id: "",
+    userName: "",
+    titre: "",
+    Date: "",
+    imageUrl: "",
+    contenu: "",
+    urlMagazin: "",   
+  };
+  const [media, setMedia] = useState(initialMediaState);
+  const [fileInputState, setFileInputState] = useState("");
+  const [selectedFile, setSelectedFile] = useState("");
+  const [previewSource, setPreviewSource] = useState("");
+
+  const notifyAdd = () => {
+    toast.success('Ajouter avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
+
+    const notifyDelete = () => {
+      toast.success('Supprimer avec succès !',{
+        position: toast.POSITION.TOP_RIGHT , 
+        autoClose:6000
+      })
+      }
+      
+    const notifyUpdate = () => {
+      toast.success('Mise à jour avec succès !',{
+        position: toast.POSITION.TOP_RIGHT , 
+        autoClose:6000
+      })
+      }
+
+      const onFileChange = (event) => {
+        // Update the state
+        const file = event.target.files[0];
+        console.log(event.target.files[0]);
+        previewFile(file);
+      };
+      const previewFile = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+          setPreviewSource(reader.result);
+        };
+      };
+      const uploadImage = async (base64EncodedImage) => {
+        console.log(base64EncodedImage);
+        media.imageUrl = base64EncodedImage;
+      };
+
+      const onAdd = (e) => {
+        e.preventDefault();
+        console.log("submitting : ", e);
+        if (!previewSource) return;
+        uploadImage(previewSource);
+        const loginFromStorage = JSON.parse(localStorage.getItem("login"));
+        const userId = loginFromStorage.userId;
+        console.log(userId);
+        media.userName = userId;
+        dispatch(AddMedia(media));
+      };
+      const onUpdate = (e) => {
+        e.preventDefault();
+        console.log("media : ", media);
+        console.log("submitting : ", e);
+        if (previewSource) uploadImage(previewSource);
+        dispatch(UpdateMedia(media));
+      };
+      const mediaData = useSelector((state) => state.media);
+      const dispatch = useDispatch();
+      useEffect(() => {
+        dispatch(fetchMedias());
+      }, []);
+      const media_container = mediaData.medias.map((media) => (
+        <tr key={media._id}>
+          <td>
+            <h4>{media.titre}</h4>
+            <p>{media.Date} </p>
+            <p>{media.contenu}</p>
+          </td>
+          <td> {media.urlMagazin}</td>
+          <td> {media.userName}</td>
+          <td>
+            <img
+              src={media.imageUrl}
+              width="100"
+              height="100"
+              name="media-Image"
+              alt="media"
+            />{" "}
+          </td>
+          <td>
+            <a
+              href="#"
+              className="btn btn-danger btn-sm btn-block mt-2"
+              onClick={() => dispatch(DeleteMedia(media._id),notifyDelete())}
+            >
+              <i className="fas fa-trash" />{" "}
+            </a>
+            <a
+              href="#"
+              className="btn btn-primary btn-sm btn-block"
+              data-toggle="modal"
+              data-target="#modal_add_user02"
+              onClick={() => setMedia(media)}
+            >
+              <i className="far fa-edit" />{" "}
+            </a>
+          </td>
+        </tr>
+      ));
+    
+    
     return (
       <div className="body0">
   <div className="adminbody">
@@ -68,14 +194,22 @@ const Media = () => {
                   <div className="card-header">
                     <span className="pull-right">
                       <button className="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_user">
-                        <i className="fas fa-user-plus" aria-hidden="true" /> Add new user</button>
+                        <i className="fas fa-photo-video" aria-hidden="true" /> Ajouter Nouveau Media</button>
                     </span>
                     <div className="modal fade custom-modal" tabIndex={-1} role="dialog" aria-labelledby="modal_add_user" aria-hidden="true" id="modal_add_user">
                       <div className="modal-dialog">
                         <div className="modal-content">
-                          <form action="#" method="post" encType="multipart/form-data">
+                        <form
+                                action="#"
+                                method="post"
+                                encType="multipart/form-data"
+                                onSubmit={(e) => {
+                                  onAdd(e);
+                                  notifyAdd();
+                                }}
+                              >
                             <div className="modal-header">
-                              <h5 className="modal-title">Add new user</h5>
+                              <h5 className="modal-title">Ajouter Nouveau Media</h5>
                               <button type="button" className="close" data-dismiss="modal">
                                 <span aria-hidden="true">×</span>
                                 <span className="sr-only">Close</span>
@@ -85,82 +219,242 @@ const Media = () => {
                               <div className="row">
                                 <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>Full name (required)</label>
-                                    <input className="form-control" name="name" type="text" required />
-                                  </div>
+                                    <label>Titre</label>
+                                    <input
+                                          className="form-control"
+                                          name="titre"
+                                          type="text"
+                                          value={media.titre}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              titre: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />                                  </div>
                                 </div>
                               </div>
                               <div className="row">
-                                <div className="col-lg-6">
+                                <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>Valid Email (required)</label>
-                                    <input className="form-control" name="email" type="email" required />
-                                  </div>
+                                    <label>Date</label>
+                                    <input
+                                          className="form-control"
+                                          name="Date"
+                                          type="date"
+                                          value={media.Date}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              Date: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />                                  </div>
                                 </div>
-                                <div className="col-lg-6">
-                                  <div className="form-group">
-                                    <label>Password (required)</label>
-                                    <input className="form-control" name="password" type="text" required />
-                                  </div>
-                                </div>
+                               
                               </div>
+                              <div className="row">
+                                <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>url Magazin</label>
+                                    <input
+                                          className="form-control"
+                                          name="urlMagazin"
+                                          type="text"
+                                          value={media.urlMagazin}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              urlMagazin: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />    
+                                  </div>
+                                </div>
+                               
+                              </div>
+                              <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>Contenu</label>
+                                    <textarea
+                                        id="story"
+                                        name="story"
+                                        rows="10"
+                                        cols="56"
+                                        value={media.contenu}
+                                        onChange={(e) => {
+                                          const newMediaObj = {
+                                            ...media,
+                                            contenu: e.target.value,
+                                          };
+                                          setMedia(newMediaObj);
+                                        }}
+                                      ></textarea>                                  </div>
+                                </div>
+                            
                               <div className="row">
                                 <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Role</label>
-                                    <select name="role_id" className="form-control" required>
-                                      <option value>- select -</option>
-                                      <optgroup label="Staff member">
-                                        <option value={1}>Administrator</option>
-                                        <option value={2}>Manager</option>
-                                        <option value={3}>Author</option>
-                                      </optgroup>
-                                      <optgroup label="Registered member">
-                                        <option value={4}>User</option>
-                                      </optgroup>
-                                    </select>
+                                    <label>Image</label>
+                                    <input
+                                      type="file"
+                                      name="imageUrl"
+                                      className="from-input"
+                                      value={fileInputState}
+                                      onChange={onFileChange}
+                                    />
                                   </div>
-                                </div>
-                                <div className="col-lg-6">
-                                  <div className="form-group">
-                                    <label>Skype (optional)</label>
-                                    <input className="form-control" name="skype" type="text" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-lg-6">
-                                  <div className="form-group">
-                                    <label>Email verified</label>
-                                    <select name="email_verified" className="form-control">
-                                      <option value={1}>YES</option>
-                                      <option value={0}>NO</option>
-                                    </select>
-                                  </div>
-                                </div>
-                                <div className="col-lg-6">
-                                  <div className="form-group">
-                                    <label>Active</label>
-                                    <select name="active" className="form-control">
-                                      <option value={1}>YES</option>
-                                      <option value={0}>NO</option>
-                                    </select>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="form-group">
-                                <label>Avatar image (optional):</label>
-                                <br />
-                                <input type="file" name="image" />
-                              </div>
+                                  {previewSource && (
+                                    <img
+                                      src={previewSource}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                             </div>           
+                          </div>
                             </div>
                             <div className="modal-footer">
-                              <button type="button" className="btn btn-primary">Add user</button>
+                              <button type="submit" className="btn btn-primary">Ajouter</button>
                             </div>
                           </form>
                         </div>
                       </div>
                     </div>
+                    {/* 2éme popUp */}
+                    <div className="modal fade custom-modal" tabIndex={-1} role="dialog" aria-labelledby="modal_add_user02" aria-hidden="true" id="modal_add_user02">
+                      <div className="modal-dialog">
+                        <div className="modal-content">
+                        <form
+                                encType="multipart/form-data"
+                                className="form"
+                                onSubmit={(e) => {
+                                  onUpdate(e);
+                                  notifyUpdate();
+                                }}
+                              >
+                            <div className="modal-header">
+                              <h5 className="modal-title">    Mettre à jour le Media{" "}</h5>
+                              <button type="button" className="close" data-dismiss="modal">
+                                <span aria-hidden="true">×</span>
+                                <span className="sr-only">Close</span>
+                              </button>
+                            </div>
+                            <div className="modal-body">
+                              <div className="row">
+                                <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>Titre</label>
+                                    <input
+                                          className="form-control"
+                                          name="titre"
+                                          type="text"
+                                          value={media.titre}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              titre: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />                                  </div>
+                                </div>
+                              </div>
+                              <div className="row">
+                                <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>Date</label>
+                                    <input
+                                          className="form-control"
+                                          name="Date"
+                                          type="date"
+                                          value={media.Date}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              Date: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />                                  </div>
+                                </div>
+                               
+                              </div>
+                              <div className="row">
+                                <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>url Magazin</label>
+                                    <input
+                                          className="form-control"
+                                          name="urlMagazin"
+                                          type="text"
+                                          value={media.urlMagazin}
+                                          onChange={(e) => {
+                                            const newMediaObj = {
+                                              ...media,
+                                              urlMagazin: e.target.value,
+                                            };
+                                            setMedia(newMediaObj);
+                                          }}
+                                        />    
+                                  </div>
+                                </div>
+                               
+                              </div>
+                              <div className="col-lg-12">
+                                  <div className="form-group">
+                                    <label>Contenu</label>
+                                    <textarea
+                                        id="story"
+                                        name="story"
+                                        rows="10"
+                                        cols="56"
+                                        value={media.contenu}
+                                        onChange={(e) => {
+                                          const newMediaObj = {
+                                            ...media,
+                                            contenu: e.target.value,
+                                          };
+                                          setMedia(newMediaObj);
+                                        }}
+                                      ></textarea>                                  </div>
+                                </div>
+                            
+                              <div className="row">
+                                <div className="col-lg-6">
+                                  <div className="form-group">
+                                    <label>Image</label>
+                                    <input
+                                      type="file"
+                                      name="imageUrl"
+                                      className="from-input"
+                                      value={fileInputState}
+                                      onChange={onFileChange}
+                                    />
+                                  </div>
+                                  {previewSource && (
+                                    <img
+                                      src={previewSource}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                             </div>           
+                          </div>
+                            </div>
+                            <div className="modal-footer">
+                              <button type="submit" className="btn btn-primary">Mettre à jour</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+
+
                     <h3>
                       <i  className="fas fa-photo-video" /> Toutes les Médias</h3>
                   </div>
@@ -170,79 +464,15 @@ const Media = () => {
                       <table className="table table-bordered">
                         <thead>
                           <tr>
-                            <th style={{minWidth: 300}}>User details</th>
-                            <th style={{width: 120}}>Role</th>
-                            <th style={{minWidth: 110}}>Actions</th>
+                            <th style={{minWidth: 300}}>Media details</th>
+                            <th style={{width: 120}}>url Magazin</th>
+                            <th style={{width: 120}}>Utilisateur</th>
+                            <th style={{width: 120}}>Image</th>
+                            <th style={{minWidth: 10}}>Actions</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <td>
-                              <div className="user_avatar_list d-none d-none d-lg-block"><img alt="image" src="assetss/images/avatars/avatar_small.png" /></div>
-                              <h4>Demo Administrator</h4>
-                              <p>webmaster@website.com</p>
-                              <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
-                            </td>
-                            <td>Administrator</td>
-                            <td>
-                              <a href="#" className="btn btn-primary btn-sm btn-block"><i className="far fa-edit" /> Edit</a>
-                              <a href="#" className="btn btn-danger btn-sm btn-block mt-2"><i className="fas fa-trash" /> Delete</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="user_avatar_list d-none d-none d-lg-block"><img alt="image" src="assetss/images/avatars/avatar_small.png" /></div>
-                              <h4>Gabriel John</h4>
-                              <p>webmaster@website.com</p>
-                              <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
-                            </td>
-                            <td>Author</td>
-                            <td>
-                              <a href="#" className="btn btn-primary btn-sm btn-block"><i className="far fa-edit" /> Edit</a>
-                              <a href="#" className="btn btn-danger btn-sm btn-block mt-2"><i className="fas fa-trash" /> Delete</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="user_avatar_list d-none d-none d-lg-block"><img alt="image" src="assetss/images/avatars/avatar_small.png" /></div>
-                              <h4>Test Author</h4>
-                              <p>user@website.com</p>
-                              <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
-                            </td>
-                            <td>Author</td>
-                            <td>
-                              <a href="#" className="btn btn-primary btn-sm btn-block"><i className="far fa-edit" /> Edit</a>
-                              <a href="#" className="btn btn-danger btn-sm btn-block mt-2"><i className="fas fa-trash" /> Delete</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <span className="user_avatar_list d-none d-none d-lg-block">
-                                <img alt="image" src="assetss/images/avatars/avatar_small.png" />
-                              </span>
-                              <h4>Test Manager</h4>
-                              <p>manager@website.com</p>
-                              <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
-                            </td>
-                            <td>Manager</td>
-                            <td>
-                              <a href="#" className="btn btn-primary btn-sm btn-block"><i className="far fa-edit" /> Edit</a>
-                              <a href="#" className="btn btn-danger btn-sm btn-block mt-2"><i className="fas fa-trash" /> Delete</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div className="user_avatar_list d-none d-none d-lg-block"><img alt="image" src="assetss/images/avatars/avatar_small.png" /></div>
-                              <h4>Admin 2</h4>
-                              <p>admin2@website.com</p>
-                              <p>Bio: Nulla cursus maximus lacus at efficitur. In lobortis ante vitae nulla semper, in volutpat libero aliquet. Morbi sit amet nibh vitae metus interdum finibus sed nec nisl nec sidios.</p>
-                            </td>
-                            <td>Administrator</td>
-                            <td>
-                              <a href="#" className="btn btn-primary btn-sm btn-block"><i className="far fa-edit" /> Edit</a>
-                              <a href="#" className="btn btn-danger btn-sm btn-block mt-2"><i className="fas fa-trash" /> Delete</a>
-                            </td>
-                          </tr>
+                        {media_container}
                         </tbody>
                       </table>
                     </div>

@@ -192,7 +192,7 @@ const Planning = () => {
                   <div className="card-header">
                     <span className="pull-right">
                       <button className="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_user">
-                        <i className="fas fa-user-plus" aria-hidden="true" /> Ajouter nouveau Planning</button>
+                        <i className=" fas fa-ruler-combined" aria-hidden="true" /> Ajouter nouveau Planning</button>
                     </span>
                     <div className="modal fade custom-modal" tabIndex={-1} role="dialog" aria-labelledby="modal_add_user" aria-hidden="true" id="modal_add_user">
                       <div className="modal-dialog">

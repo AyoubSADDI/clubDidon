@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.config();
-//const path = require('path');
 const app = express();
 const mongoose = require('mongoose');
 const stuffRoutes = require('./routes/stuff');
@@ -15,6 +14,7 @@ const planningRoutes = require('./routes/planning');
 const sortieRoutes = require('./routes/sortie');
 const actualiteRoutes = require('./routes/actualite');
 const partenaireRoutes = require('./routes/partenaire');
+
 
 mongoose.connect(process.env.MONGO_URL,
   { useNewUrlParser: true,
@@ -54,6 +54,7 @@ app.use('/api/planning'   ,planningRoutes);
 app.use('/api/sortie'     ,sortieRoutes);
 app.use('/api/actualite'  ,actualiteRoutes);
 app.use('/api/partenaire' ,partenaireRoutes);
+app.use('/api/media'      ,mediaRoutes);
 
 
 

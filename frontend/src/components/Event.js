@@ -20,8 +20,11 @@ const Event = () => {
     dispatch(fetchEvents());
   }, []);
 
-  const event_container = eventData.events.map((event) => (
-<div>
+  console.log("*******"+new Date().toString())
+  //let accessAllowed = (age > 18) ? true : false;
+  const eventAvenir_container = eventData.events.map((event) => (
+    
+  (new Date(event.Date).valueOf() > new Date().valueOf() ) ?
   <div className="col-xl-4 col-lg-4 col-md-4" >
   <div className="home-blog-single mb-30">
     <div className="blog-img-cap">
@@ -45,12 +48,49 @@ const Event = () => {
        <a href="https://www.facebook.com/groups/clubdidon/" className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
    
       </div>
-    </div>
+     
+    </div> 
+    
   </div>
 </div>
-</div>
+
+:""
 ));
 
+const eventPasses_container = eventData.events.map((event) => (
+    
+  (new Date(event.Date).valueOf() < new Date().valueOf() ) ?
+  <div className="col-xl-4 col-lg-4 col-md-4" >
+  <div className="home-blog-single mb-30">
+    <div className="blog-img-cap">
+      <div className="blog-img">
+      <img src={event.imageUrl}
+                 alt="" />
+        <ul>
+          <li>By Admin-{event.Date}</li>
+        </ul>
+      </div>
+      <div className="blog-cap">
+        <h3><a href="blog_details.html">{event.titre}</a></h3>
+        <ReadMoreReact text={event.description}
+        min="60"
+        ideal="70"
+        max="80"
+        readMoreText="-read more"/>             
+       <a href="/blogDetails" className="more-btn">Details</a><br></br>
+
+     
+       <a href="https://www.facebook.com/groups/clubdidon/" className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
+   
+      </div>
+     
+    </div> 
+    
+  </div>
+</div>
+
+:""
+));
 
 
 
@@ -144,7 +184,7 @@ const Event = () => {
       <div className="">
         {/* Section Tittle */}     
         <div className="row">
-         {event_container}
+         {eventAvenir_container}
         </div>
       </div>
     </div>
@@ -166,174 +206,7 @@ const Event = () => {
   <div className="home-blog-area">
       <div className="">
         <div className="row">
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER1.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>               
-                <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER2.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                
-               <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER3.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER4.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER5.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER6.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER7.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4 col-md-4">
-            <div className="home-blog-single mb-30">
-              <div className="blog-img-cap">
-                <div className="blog-img">
-                <img src="assets/img/event/POSTER8.jpg" alt="" />
-                  <ul>
-                    <li>By Admin   -   October 27, 2020</li>
-                  </ul>
-                </div>
-                <div className="blog-cap">
-                  <h3><a href="blog_details.html">16 Easy Ideas to Use in  Everyday</a></h3>
-                  <ReadMoreReact text="Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnua Quis ipsum suspendisse ultrices gra."
-            min="60"
-            ideal="70"
-            max="80"
-          readMoreText="-read more"/>                    
-           <a href="/blogDetails" className="more-btn">Details</a>
-                </div>
-              </div>
-            </div>
-          </div>
+         {eventPasses_container}
         </div>
       </div>
     </div></div>

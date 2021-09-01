@@ -6,6 +6,7 @@ import planningReducer from './planning/planningReducer'
 import actualiteReducer from './actualite/actualiteReducer'
 import adhesionReducer from './adhesion/adhesionReducer'
 import partenaireReducer from './partenaire/partenaireReducer'
+import mediaReducer from './media/mediaReducer'
 
 
 
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     actualite  : actualiteReducer,
     adhesion   : adhesionReducer,
     partenaire : partenaireReducer,
+    media      : mediaReducer,
 })
 
 export default rootReducer

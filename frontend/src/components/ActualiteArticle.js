@@ -1,0 +1,133 @@
+import React, { useEffect,useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchActualites,
+} from "../componentsDash/redux/actualite/actualiteActions";
+import Header from './Header'
+import Footer from './Footer'
+import Typical from 'react-typical'
+import didon_birsa from "./assetsLog/login/img/didon_birsa.png"
+import hannabalmap from "./assetsLog/login/img/hannabalmap.jpg"
+import Hannball from "./assetsLog/login/img/Hannball.png"
+import ID1 from "./assetsLog/login/img/ID1.png"
+import l12x from "./assetsLog/login/img/l12x.png"
+import p11 from "./assetsLog/login/img/p11.png"
+
+
+
+
+const ActualiteArticle = () => {
+  const initialActualiteState = {
+    _id: "",
+    userName: "",
+    titre: "",
+    Date: "",
+    contenu: "",
+    categorie:"",
+  };
+  const [actualite, setActualite] = useState(initialActualiteState);
+  const actualiteData = useSelector((state) => state.actualite);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchActualites());
+    console.log(actualiteData);
+  }, []);
+  
+  const actualiteA_container = actualiteData.actualites.map((actualite) => (
+    (actualite.categorie === "article" ) ?
+    <div>
+    <div id="Web_1366__0">
+    <img id="l12x" src={l12x} alt=""/>
+    <img id="ID1" src={ID1} alt="" />
+    <img id="didon_birsa" src={didon_birsa} alt="" />
+    <section>	
+      <div className="DESCRIPTION">
+        <article className="article">
+        <p  style={{color:"white"}}>
+          {actualite.description}
+        </p><br></br>
+        <p  style={{color:"white"}}>
+          {actualite.descriptionDetail} 
+        </p>
+        <div > <a href={actualite.fbUrl} className="lien">Lien Facebook...</a>
+          </div>
+        </article>
+      </div>	
+      <div id="ID2_aout_2021">
+      <span>{actualite.Date}</span>
+      </div>
+      <div className="Description">
+        <h2>Description</h2>
+      </div>
+      <div id="La_fte_de_carthage">
+      <span>{actualite.titre}<br /></span>
+      </div>
+      <img id="__________Facebook_et_1_page_s" src={hannabalmap} alt=""/>
+      <img id="Hannball" src={Hannball} alt="" />
+      <img id="p11" src={p11} alt=""/>
+    </section>
+    </div>
+    <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+  </div>
+
+  :""
+  ));
+    return (
+        <div>
+  <div id="preloader-active">
+    <div className="preloader d-flex align-items-center justify-content-center">
+      <div className="preloader-inner position-relative">
+        <div className="preloader-circle" />
+        <div className="preloader-img pere-text">
+        <img src="assets/img/logo/11icon.png" alt="looding" />
+        </div>
+      </div>
+    </div>
+  </div>
+ <Header/>
+  <main>
+    <div className="slider-area19">
+      <div className="slider-height2 hero-overly2 d-flex align-items-center">
+        <div className="">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="hero-cap hero-cap2 text-right">    
+                <h2>Bienvenue à
+                <Typical
+                loop={Infinity}
+                wrapper="b"
+                steps={[
+                  ' Actualités article',1000,'  Club didon de Carthage',1000,
+                ]}
+                />
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+{actualiteA_container}
+
+  
+  </main>
+  <div id="back-top">
+    <a title="Go to Top" href="#"><i className="fas fa-level-up-alt" /></a>
+  </div>
+</div>
+
+    )
+}
+
+export default ActualiteArticle

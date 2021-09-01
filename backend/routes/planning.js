@@ -5,7 +5,7 @@ const auth = require('../middleware/auth');
 
 const planningCtrl = require('../controllers/planning');
 
-router.get('/', auth, planningCtrl.getAllPlanning);
+router.get('/', planningCtrl.getAllPlanning);
 router.post('/', auth, planningCtrl.createPlanning);
 router.get('/:id', auth, planningCtrl.getOnePlanning);
 router.put('/:id', auth, planningCtrl.modifyPlanning);

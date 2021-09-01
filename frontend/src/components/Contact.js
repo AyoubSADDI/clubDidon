@@ -63,7 +63,10 @@ const Contact = () => {
                         <Typical
                           loop={Infinity}
                           wrapper="b"
-                          steps={["_Contact", 1000, "_Contact", 1000]}
+                          steps={[
+                            ' Contact',1000,'  Club didon de Carthage',1000,
+                      
+                          ]}
                         />
                       </h2>
                     </div>

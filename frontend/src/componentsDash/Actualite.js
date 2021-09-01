@@ -29,8 +29,12 @@ const Actualite = () => {
     userName: "",
     titre: "",
     Date: "",
-    contenu: "",
     categorie: "",
+    lieux:"",
+    imageUrl:"",
+    fbUrl:"",
+    description:"",
+    descriptionDetail:"",
   };
 
   const notifyAdd = () => {
@@ -56,14 +60,35 @@ const Actualite = () => {
 
   const [actualite, setActualite] = useState(initialActualiteState);
   const [categorieState, setCategorieState] = useState(false);
+  const [fileInputState, setFileInputState] = useState("");
+  const [selectedFile, setSelectedFile] = useState("");
+  const [previewSource, setPreviewSource] = useState("");
+  const [actualiteeventDetails, setActualiteDetails] = useState(initialActualiteState);
+  
+  const onFileChange = (event) => {
+    // Update the state
+    const file = event.target.files[0];
+    console.log(event.target.files[0]);
+    previewFile(file);
+  };
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPreviewSource(reader.result);
+    };
+  };
+  const uploadImage = async (base64EncodedImage) => {
+    console.log(base64EncodedImage);
+    actualite.imageUrl = base64EncodedImage;
+  };
 
-  console.log("***********************" + categorieState);
+
 
   const actualiteData = useSelector((state) => state.actualite);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
-    console.log(actualiteData);
   }, []);
 
   const onAdd = (e) => {
@@ -71,37 +96,46 @@ const Actualite = () => {
     console.log("submitting : ", e);
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
-    console.log(userId);
     actualite.userName = userId;
+    if (!previewSource) return  dispatch(AddActualite(actualite));
+    uploadImage(previewSource);
     dispatch(AddActualite(actualite));
   };
-  // const handleCheckbox = event =>{
-  //   console.log(event.target.value)
-  // }
-
+ 
   const onUpdate = (e) => {
     e.preventDefault();
     console.log("actualite : ", actualite);
     console.log("submitting : ", e);
+    if (previewSource) uploadImage(previewSource);
     dispatch(UpdateActualite(actualite));
   };
 
   const actualite_container = actualiteData.actualites.map((actualite) => (
     <tr key={actualite._id}>
-      <td>{actualite.titre}</td>
+      <td>
+        <h4>Titre: {actualite.titre}</h4>
+        <p>Lieux: {actualite.lieux} </p>
+        <p>DescriptionDetail: {actualite.descriptionDetail}</p>
+      </td>
+      <td>{actualite.description}</td>
       <td>{actualite.Date}</td>
+      <td>
+        <img
+          src={actualite.imageUrl}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+      </td>
       <td>{actualite.userName}</td>
       <td>{actualite.categorie}</td>
-      <td>
-        <p>{actualite.contenu}</p>
-      </td>
+      <td>{actualite.fbUrl}</td>
       <td>
         <a
           href="#"
           className="btn btn-danger btn-sm btn-block mt-2"
-          onClick={() =>
-            dispatch(DeleteActualite(actualite._id), notifyDelete())
-          }
+          onClick={() => dispatch(DeleteActualite(actualite._id),notifyDelete())}
         >
           <i className="fas fa-trash" />{" "}
         </a>
@@ -109,7 +143,7 @@ const Actualite = () => {
           href="#"
           className="btn btn-primary btn-sm btn-block"
           data-toggle="modal"
-          data-target="#modal_add_user1"
+          data-target="#modal_add_Sortie"
           onClick={() => setActualite(actualite)}
         >
           <i className="far fa-edit" />{" "}
@@ -201,16 +235,17 @@ const Actualite = () => {
                     <div className="card mb-3">
                       <div className="card-header">
                         <span className="pull-right">
+                       
                           <button
                             className="btn btn-primary btn-sm"
                             data-toggle="modal"
                             data-target="#modal_add_user"
                           >
                             <i
-                              className="fas fa-user-plus"
+                              className="fas fa-newspaper"
                               aria-hidden="true"
                             />{" "}
-                            Ajouter nouveau Actualite
+                            Ajouter Nouveau Actualités
                           </button>
                         </span>
                         <div
@@ -263,6 +298,7 @@ const Actualite = () => {
                                           }}
                                         />{" "}
                                       </div>
+                                      
                                     </div>
                                   </div>
 
@@ -361,7 +397,100 @@ const Actualite = () => {
                                       Sortie
                                     </label>
                                   </div>
-
+                                  <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="projet"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "projet"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Projet Numérique
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="article"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "article"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Article
+                                    </label>
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Lieux</label>
+                                      <input
+                                        className="form-control"
+                                        name="lieux"
+                                        type="text"
+                                        value={actualite.lieux}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            lieux: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
+                                    <div class="form-group">
+                                      <label>FacebookUrl</label>
+                                      <input
+                                        className="form-control"
+                                        name="fbUrl"
+                                        type="text"
+                                        value={actualite.fbUrl}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            fbUrl: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Description</label>
+                                      <input
+                                        className="form-control"
+                                        name="description"
+                                        type="text"
+                                        value={actualite.description}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            description: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
                                   <div className="row">
                                     <div class="col-lg-12"></div>
                                     <div className="row"></div>
@@ -372,17 +501,35 @@ const Actualite = () => {
                                         name="story"
                                         rows="10"
                                         cols="58"
-                                        value={actualite.contenu}
+                                        value={actualite.descriptionDetail}
                                         onChange={(e) => {
                                           const newActualiteObj = {
                                             ...actualite,
-                                            contenu: e.target.value,
+                                            descriptionDetail: e.target.value,
                                           };
                                           setActualite(newActualiteObj);
                                         }}
                                       ></textarea>
                                     </div>
                                   </div>
+                                  <div className="form-group">
+                                    <label>Image</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl"
+                                      className="from-input"
+                                      value={fileInputState}
+                                      onChange={onFileChange}
+                                    />
+                                  </div>
+                                  {previewSource && (
+                                    <img
+                                      src={previewSource}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
                                 </div>
 
                                 <div className="modal-footer">
@@ -398,14 +545,13 @@ const Actualite = () => {
                           </div>
                         </div>
                         {/*2éme popUp*/}
-
                         <div
                           className="modal fade custom-modal"
                           tabIndex={-1}
                           role="dialog"
-                          aria-labelledby="modal_add_user1"
+                          aria-labelledby="modal_add_Sortie"
                           aria-hidden="true"
-                          id="modal_add_user1"
+                          id="modal_add_Sortie"
                         >
                           <div className="modal-dialog">
                             <div className="modal-content">
@@ -419,7 +565,7 @@ const Actualite = () => {
                               >
                                 <div className="modal-header">
                                   <h5 className="modal-title">
-                                    Mettre à jour le Actualite{" "}
+                                  Mettre à jour l'actualités{" "}
                                   </h5>
                                   <button
                                     type="button"
@@ -447,10 +593,12 @@ const Actualite = () => {
                                             };
                                             setActualite(newActualiteObj);
                                           }}
-                                        />
+                                        />{" "}
                                       </div>
+                                      
                                     </div>
                                   </div>
+
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
@@ -467,13 +615,18 @@ const Actualite = () => {
                                             };
                                             setActualite(newActualiteObj);
                                           }}
-                                        />
+                                        />{" "}
                                       </div>
                                     </div>
                                   </div>
-                               
-                                        <label>Categorie</label>
-                                        <div class="form-check">
+
+                                  <label>Categorie</label>
+                                  <br></br>
+                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
+                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
+                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
+                                                    */}
+                                  <div class="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -541,6 +694,100 @@ const Actualite = () => {
                                       Sortie
                                     </label>
                                   </div>
+                                  <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="projet"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "projet"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Projet Numérique
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input
+                                      className="form-check-input"
+                                      type="radio"
+                                      value="article"
+                                      onChange={(e) => {
+                                        const newActualiteObj = {
+                                          ...actualite,
+                                          categorie: e.target.value,
+                                        };
+                                        setActualite(newActualiteObj);
+                                      }}
+                                      checked={
+                                        actualite.categorie === "article"
+                                      }
+                                    />
+                                    <label
+                                      className="form-check-label"
+                                      for="flexRadioDefault1"
+                                    >
+                                      Article
+                                    </label>
+                                  </div>
+                                  <div class="form-group">
+                                      <label>Lieux</label>
+                                      <input
+                                        className="form-control"
+                                        name="lieux"
+                                        type="text"
+                                        value={actualite.lieux}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            lieux: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
+                                    <div class="form-group">
+                                      <label>FacebookUrl</label>
+                                      <input
+                                        className="form-control"
+                                        name="fbUrl"
+                                        type="text"
+                                        value={actualite.fbUrl}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            fbUrl: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Description</label>
+                                      <input
+                                        className="form-control"
+                                        name="description"
+                                        type="text"
+                                        value={actualite.description}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            description: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
                                   <div className="row">
                                     <div class="col-lg-12"></div>
                                     <div className="row"></div>
@@ -551,24 +798,43 @@ const Actualite = () => {
                                         name="story"
                                         rows="10"
                                         cols="58"
-                                        value={actualite.contenu}
+                                        value={actualite.descriptionDetail}
                                         onChange={(e) => {
                                           const newActualiteObj = {
                                             ...actualite,
-                                            contenu: e.target.value,
+                                            descriptionDetail: e.target.value,
                                           };
                                           setActualite(newActualiteObj);
                                         }}
                                       ></textarea>
                                     </div>
                                   </div>
+                                  <div className="form-group">
+                                    <label>Image</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl"
+                                      className="from-input"
+                                      value={fileInputState}
+                                      onChange={onFileChange}
+                                    />
+                                  </div>
+                                  {previewSource && (
+                                    <img
+                                      src={previewSource}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
                                 </div>
+
                                 <div className="modal-footer">
                                   <button
                                     type="submit"
                                     className="btn btn-primary"
                                   >
-                                    Mettre à jour
+                                     Mettre à jour
                                   </button>
                                 </div>
                               </form>
@@ -586,12 +852,16 @@ const Actualite = () => {
                           <table className="table table-bordered">
                             <thead>
                               <tr>
-                                <th style={{ minWidth: 50 }}>Titre</th>
-                                <th style={{ minWidth: 50 }}>Date</th>
+                              <th style={{ minWidth: 200 }}>
+                                  Actualite Details
+                                </th>
+                                <th style={{ minWidth: 100 }}>Description</th>
+                                <th style={{ width: 100 }}>Date</th>
+                                <th style={{ minWidth: 100 }}>Image</th>
                                 <th style={{ minWidth: 50 }}>Utilisateur</th>
-                                <th style={{ minwidth: 50 }}>Catégorie</th>
-                                <th style={{ minwidth: 300 }}>Contenu</th>
-                                <th style={{ width: 50 }}>Actions</th>
+                                <th style={{ minWidth: 50 }}>Catégorie</th>
+                                <th style={{ minWidth: 50 }}>FbUrl</th>
+                                <th style={{ minWidth: 50 }}>Actions</th>
                               </tr>
                             </thead>
                             <tbody>{actualite_container}</tbody>

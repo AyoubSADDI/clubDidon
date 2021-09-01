@@ -66,7 +66,7 @@ const About = () => {
                 loop={Infinity}
                 wrapper="b"
                 steps={[
-                  '_Propos',1000,'_About',1000,
+                  ' propos',1000,'  Club didon de Carthage',1000,
                 ]}
                 />
                 </h2>

@@ -1,9 +1,69 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
-
+import {
+  fetchActualites,
+} from "../componentsDash/redux/actualite/actualiteActions";
 const Patrimoine = () => {
+    const initialActualiteState = {
+      _id: "",
+      userName: "",
+      titre: "",
+      Date: "",
+      contenu: "",
+      categorie:"",
+    };
+
+    const [actualite, setActualite] = useState(initialActualiteState);
+    const actualiteData = useSelector((state) => state.actualite);
+
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(fetchActualites());
+      console.log(actualiteData);
+    }, []);
+    const actualiteP_container = actualiteData.actualites.map((actualite) => (
+      (actualite.categorie === "projet" && new Date(actualite.Date).valueOf() < new Date().valueOf()) ?
+
+      <main id="zagh" className="bodyBg">
+      {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      <div className="support-company-area pt-100 pb-100 section-bg fix">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-xl-6 col-lg-6">
+              <div className="support-location-img">
+                <img src={actualite.imageUrl} alt="" />
+              </div>
+            </div>
+            <div className="col-xl-6 col-lg-6">
+              <div className="right-caption">
+                {/* Section Tittle */}
+                <div className="section-tittle section-tittle2 mb-50">
+                  <span>{actualite.Date}</span>
+                  <h2>{actualite.titre}</h2>
+                </div>
+                <div className="support-caption">
+                  <p className="pera-top">
+                  {actualite.description}
+                  </p>
+                  <p className="mb-65">
+                    {actualite.descriptionDetail}{" "}
+                  </p>
+                  <a href={actualite.fbUrl}>
+                    Visiter Notre Site
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main> 
+:""
+      ));
+
   return (
     <div>
       <div id="preloader-active">
@@ -30,9 +90,9 @@ const Patrimoine = () => {
                         loop={Infinity}
                         wrapper="b"
                         steps={[
-                          "_Patrimoine Digital",
+                          " Patrimoine Digital",
                           1000,
-                          "_Digital Heritage",
+                          "  Club didon de Carthage",
                           1000,
                         ]}
                       />
@@ -44,9 +104,10 @@ const Patrimoine = () => {
           </div>
         </div>
       </main>
-      <div className="bodyBg">
-        <main id="zagh">
+      {actualiteP_container}
           {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+        {/* <main id="zagh" className="bodyBg">
+      
           <div className="support-company-area pt-100 pb-100 section-bg fix">
             <div className="container">
               <div className="row align-items-center">
@@ -57,7 +118,7 @@ const Patrimoine = () => {
                 </div>
                 <div className="col-xl-6 col-lg-6">
                   <div className="right-caption">
-                    {/* Section Tittle */}
+        
                     <div className="section-tittle section-tittle2 mb-50">
                       <span>Premier Projet digital</span>
                       <h2>Projet DourBia</h2>
@@ -92,10 +153,10 @@ const Patrimoine = () => {
               </div>
             </div>
           </div>
-        </main>
-      </div>
-      <main id="carthage" className="bodyBg">
-        {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+        </main> */}
+      {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      {/* <main id="carthage" className="bodyBg">
+       
         <div className="support-company-area pt-100 pb-100 section-bg fix">
           <div className="container">
             <div className="row align-items-center">
@@ -106,7 +167,6 @@ const Patrimoine = () => {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
-                  {/* Section Tittle */}
                   <div className="section-tittle section-tittle2 mb-50">
                     <span>Deuxième Projet Digital</span>
                     <h2>Projet HawisBia </h2>
@@ -137,9 +197,10 @@ const Patrimoine = () => {
             </div>
           </div>
         </div>
-      </main>
-      <main id="carthage" className="bodyBg">
-        {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      </main> */}
+              {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+
+      {/* <main id="carthage" className="bodyBg">
         <div className="support-company-area pt-100 pb-100 section-bg fix">
           <div className="container">
             <div className="row align-items-center">
@@ -150,7 +211,6 @@ const Patrimoine = () => {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
-                  {/* Section Tittle */}
                   <div className="section-tittle section-tittle2 mb-50">
                     <span>Troisième Projet Digital</span>
                     <h2>Amphithéâtre de Carthage en 3D</h2>
@@ -178,9 +238,8 @@ const Patrimoine = () => {
             </div>
           </div>
         </div>
-      </main>
-      <main id="carthage" className="bodyBg">
-        {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      </main> */}
+      {/* <main id="carthage" className="bodyBg">
         <div className="support-company-area pt-100 pb-100 section-bg fix">
           <div className="container">
             <div className="row align-items-center">
@@ -191,7 +250,6 @@ const Patrimoine = () => {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
-                  {/* Section Tittle */}
                   <div className="section-tittle section-tittle2 mb-50">
                     <span>Quatrième Projet Digital</span>
                     <h2>Projet CarthaGo </h2>
@@ -220,9 +278,8 @@ const Patrimoine = () => {
             </div>
           </div>
         </div>
-      </main>
-      <main id="carthage" className="bodyBg">
-        {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      </main> */}
+      {/* <main id="carthage" className="bodyBg">
         <div className="support-company-area pt-100 pb-100 section-bg fix">
           <div className="container">
             <div className="row align-items-center">
@@ -234,7 +291,6 @@ const Patrimoine = () => {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
-                  {/* Section Tittle */}
                   <div className="section-tittle section-tittle2 mb-50">
                     <span>cinquième Projet Digital</span>
                     <h2>Statues de Carthage en 3D</h2>
@@ -262,9 +318,8 @@ const Patrimoine = () => {
             </div>
           </div>
         </div>
-      </main>
-      <main id="carthage" className="bodyBg">
-        {/* data-background="assets/img/gallery/section_bg02.jpg" */}
+      </main> */}
+      {/* <main id="carthage" className="bodyBg">
         <div className="support-company-area pt-100 pb-100 section-bg fix">
           <div className="container">
             <div className="row align-items-center">
@@ -276,7 +331,6 @@ const Patrimoine = () => {
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
-                  {/* Section Tittle */}
                   <div className="section-tittle section-tittle2 mb-50">
                     <span>sixième Projet Digital</span>
                     <h2>Application des Thermes d'Antonin</h2>
@@ -310,7 +364,7 @@ const Patrimoine = () => {
             </div>
           </div>
         </div>
-      </main>
+      </main> */}
       <Footer />
     </div>
   );

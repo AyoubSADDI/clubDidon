@@ -77,7 +77,10 @@ const Adhesion = () => {
                       <Typical
                         loop={Infinity}
                         wrapper="b"
-                        steps={["_Adhésion", 1000, "_Membership", 1000]}
+                        steps={[
+                          ' Adhésion',1000,'  Club didon de Carthage',1000,
+                         
+                        ]}
                       />
                     </h2>
                   </div>

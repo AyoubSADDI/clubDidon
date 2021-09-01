@@ -35,7 +35,7 @@ const SideBar = () => {
                 </ul>
               </li>
 
-              <li className="submenu">
+              {/* <li className="submenu">
                 <a id="tables" href='/conferenceDash'>
                   <i className="fas fa-american-sign-language-interpreting" />
                   <span> Conference </span>
@@ -49,9 +49,9 @@ const SideBar = () => {
                     <a href="tables-datatable.html">Data Tables</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
 
-              <li className="submenu">
+              {/* <li className="submenu">
                 <a id="tables" href='/eventDash'>
                   <i className="fas fa-table" />
                   <span> Evénement </span>
@@ -65,7 +65,7 @@ const SideBar = () => {
                     <a href="tables-datatable.html">Data Tables</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
 
               <li className="submenu">
                 <a id="tables" href='/mediaDash'>
@@ -99,7 +99,7 @@ const SideBar = () => {
                 </ul>
               </li>
 
-              <li className="submenu">
+              {/* <li className="submenu">
                 <a id="tables" href='/sortieDash'>
                   <i className="fas fa-plane-departure" />
                   <span> Sortie </span>
@@ -113,7 +113,7 @@ const SideBar = () => {
                     <a href="tables-datatable.html">Data Tables</a>
                   </li>
                 </ul>
-              </li>
+              </li> */}
               <li className="submenu">
                 <a id="tables" href='/actualiteDash'>
                   <i className="fas fa-newspaper" />

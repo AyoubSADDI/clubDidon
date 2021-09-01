@@ -29,7 +29,7 @@ const Organisation = () => {
                       <Typical
                         loop={Infinity}
                         wrapper="b"
-                        steps={["_Organisation", 1000, "_Organization", 1000]}
+                        steps={[" Organisation", 1000, "  Club didon de Carthage", 1000]}
                       />
                     </h2>
                   </div>
@@ -101,9 +101,9 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/andré1.jpg" alt="" />
+                  <img src="assets/img/gallery/1.jpg" alt="" />
                 </div>
-                <div className="team-caption">
+                <div className="team-caption" >
                   <h3>
                     <a href="#">Pr. André Abitbol</a>
                   </h3>
@@ -117,7 +117,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/f1.jpg" alt="" />
+                  <img src="assets/img/gallery/3.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -134,7 +134,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                  <img src="assets/img/gallery/Jalloul_Ayed1.jpg" alt="" />
+                  <img src="assets/img/gallery/5.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -191,7 +191,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/IMG arij.jpg" alt="" />
+                  <img src="assets/img/gallery/2.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -221,7 +221,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/IMG ines.jpg" alt="" />
+                  <img src="assets/img/gallery/6.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -251,7 +251,7 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/IMG nahawanid.jpg" alt="" />
+                  <img src="assets/img/gallery/4.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -278,23 +278,21 @@ const Organisation = () => {
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/IMG sheriff.jpg" alt="" />
+                  <img src="assets/img/gallery/7.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
                 <div className="right-caption">
                   {/* Section Tittle */}
                   <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Sherif Aref </h2>
+                    <h2>Shérif arfaoui</h2>
                     <span>Responsable artistique</span>
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                    Bijouterie et styliste modéliste
-Sherif
-Artiste plasticien spécialisé dans la sculpture
-Sherif
-Chercher en mode punique{" "}
+                    -Artiste plasticien spécialisé dans la sculpture.{" "} <br></br>
+                    -Bijoutier et styliste modéliste.<br></br>
+                    -Chercher en mode punique.
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -308,7 +306,7 @@ Chercher en mode punique{" "}
             <div className="row align-items-center">
               <div className="col-xl-6 col-lg-6">
                 <div className="support-location-img">
-                  <img src="assets/img/gallery/IMG rayenn.jpg" alt="" />
+                  <img src="assets/img/gallery/8.jpg" alt="" />
                 </div>
               </div>
               <div className="col-xl-6 col-lg-6">
@@ -320,7 +318,9 @@ Chercher en mode punique{" "}
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                    Artiste plasticien spécialisé dans l'art graphique{" "}
+                    -Artiste plasticien spécialisé dans l'art graphique.{" "}<br></br>
+                    -Dessinateur de bande dessinée.<br></br>
+                    -Développer de l'art punique.<br></br>
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -355,24 +355,21 @@ Chercher en mode punique{" "}
                         />
                       </svg>
                       <p>
-                        Consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Quis ipsum
-                        suspendisse ultrices gravida. Risus commodo viverra
-                        maecenas accumsan lacus vel facilisis por incididunt ut
-                        labore et dolore mas.{" "}
+                      Il faut être fier d'avoir hérité de tout ce que le passé avait de meilleur et de plus noble. Il ne faut pas souiller son patrimoine en multipliant les erreurs passées.
+{" "}
                       </p>
                     </div>
                     {/* founder */}
                     <div className="testimonial-founder d-flex align-items-center justify-content-center">
                       <div className="founder-img">
                         <img
-                          src="assets/img/gallery/Homepage_testi.png"
+                          src="assets/img/gallery/ghandi blanc.png"
                           alt=""
                         />
                       </div>
                       <div className="founder-text">
-                        <span>Jessya Inn</span>
-                        <p>Chif Photographer</p>
+                        <span>Gandhi</span>
+                        <p>Homme politique, Philosophe, Révolutionnaire</p>
                       </div>
                     </div>
                   </div>
@@ -395,29 +392,140 @@ Chercher en mode punique{" "}
                         />
                       </svg>
                       <p>
-                        Consectetur adipiscing elit, sed do eiusmod tempor
-                        incididunt ut labore et dolore magna aliqua. Quis ipsum
-                        suspendisse ultrices gravida. Risus commodo viverra
-                        maecenas accumsan lacus vel facilisis por incididunt ut
-                        labore et dolore mas.{" "}
+                      On aime ce qui nous a émerveillé, et on protège ce que l'on aime{" "}
                       </p>
                     </div>
                     {/* founder */}
                     <div className="testimonial-founder d-flex align-items-center justify-content-center">
                       <div className="founder-img">
                         <img
-                          src="assets/img/gallery/Homepage_testi.png"
+                          src="assets/img/gallery/PR.png"
                           alt=""
                         />
                       </div>
                       <div className="founder-text">
-                        <span>Jessya Inn</span>
-                        <p>Chif Photographer</p>
+                        <span>Jacques-Yves Cousteau</span>
+                        <p>officier de la Marine nationale et explorateur océanographique</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {/* Single Testimonial */}
+                <div className="single-testimonial text-center">
+                  {/* Testimonial Content */}
+                  <div className="testimonial-caption ">
+                    <div className="testimonial-top-cap">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="67px"
+                        height="49px"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          fill="rgb(240, 78, 60)"
+                          d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
+                        />
+                      </svg>
+                      <p>
+                      L'histoire est un grand présent, et pas seulement un passé.
+{" "}
+                      </p>
+                    </div>
+                    {/* founder */}
+                    <div className="testimonial-founder d-flex align-items-center justify-content-center">
+                      <div className="founder-img">
+                        <img
+                          src="assets/img/gallery/dsssssss.png"
+                          alt=""
+                        />
+                      </div>
+                      <div className="founder-text">
+                        <span>Émile-Auguste Chartier
+</span>
+                        <p>philosophe, journaliste, essayiste et professeur de philosophie français
+</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 {/* Single Testimonial */}
+                 <div className="single-testimonial text-center">
+                  {/* Testimonial Content */}
+                  <div className="testimonial-caption ">
+                    <div className="testimonial-top-cap">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="67px"
+                        height="49px"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          fill="rgb(240, 78, 60)"
+                          d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
+                        />
+                      </svg>
+                      <p>
+                      Celui qui entrerait dans Carthage tous les jours de sa vie et s’occuperait seulement à y regarder, trouverait chaque jour une nouvelle merveille qu’il n’aurait pas remarquée auparavant. 
+
+</p>
+                    </div>
+                    {/* founder */}
+                    <div className="testimonial-founder d-flex align-items-center justify-content-center">
+                      <div className="founder-img">
+                        <img
+                          src="assets/img/gallery/sa.png"
+                          alt=""
+                        />
+                      </div>
+                      <div className="founder-text">
+                        <span>Al-Bakri </span>
+                        <p>Géographe et historien arabe de l’Andalousie
+</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 {/* Single Testimonial */}
+                 <div className="single-testimonial text-center">
+                  {/* Testimonial Content */}
+                  <div className="testimonial-caption ">
+                    <div className="testimonial-top-cap">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="67px"
+                        height="49px"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          fill="rgb(240, 78, 60)"
+                          d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
+                        />
+                      </svg>
+                      <p>
+                      “Il y a deux choses dans un monument historique : son usage et sa beauté. Son usage appartient au propriétaire, sa beauté à tout le monde. C'est donc dépasser son droit que de le détruire.”
+
+</p>
+                    </div>
+                    {/* founder */}
+                    <div className="testimonial-founder d-flex align-items-center justify-content-center">
+                      <div className="founder-img">
+                        <img
+                          src="assets/img/gallery/dsssssss.png"
+                          alt=""
+                        />
+                      </div>
+                      <div className="founder-text">
+                        <span>Victor Hugo</span>
+                        <p>écrivain Français</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
@@ -428,26 +536,26 @@ Chercher en mode punique{" "}
           <div className="row justify-content-between">
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter text-center">
-                <span className="counter">8705</span>
-                <p>Projects Completed</p>
+                <span className="counter">7</span>
+                <p>Projets terminés</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter active text-center">
                 <span className="counter">480</span>
-                <p> Active Clients</p>
+                <p>Clients actifs</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter text-center">
-                <span className="counter">626</span>
-                <p>Cups of Coffee</p>
+                <span className="counter">248</span>
+                <p>Tasses de café</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter text-center">
                 <span className="counter">9774</span>
-                <p id="partener">Happy Clients</p>
+                <p id="partener">Clients heureux</p>
               </div>
             </div>
           </div>

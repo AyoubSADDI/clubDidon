@@ -232,7 +232,7 @@ const Partenaire = () => {
                             data-target="#modal_add_user"
                           >
                             <i
-                              className="fas fa-user-plus"
+                              className="fas fa-handshake"
                               aria-hidden="true"
                             />{" "}
                             Ajouter nouveau Partenaire

@@ -38,11 +38,7 @@ const Header = () => {
                                 </a>
                               </div>
                             </li>
-                            <li>
-                              <div>
-                              <a href="/actualite">Actualite</a>
-                              </div>
-                            </li>
+                          
                             <li>
                               <a href="/apropos">A propos</a>
                               <ul className="submenu">
@@ -86,74 +82,60 @@ const Header = () => {
                                   <a href="#commissions">Commissions</a>
                                 </li>
                               </ul>
-                            </li>
-                            <li>
-                              <a href="/event">Evènements</a>
-                              <ul className="submenu">
-                                <li>
-                                  <a href="/event">Evènements</a>
-                                </li>
-                                <li>
-                                  <a href="#Venir">Evènements à venir </a>
-                                </li>
-                                <li>
-                                  <a href="#Passés">Evènements passés </a>
-                                </li>
-                              </ul>
-                            </li>
+                            </li>                      
                             <li>
                               <a href="/programme">Programme </a>
                               <ul className="submenu">
                                 <li>
                                   <a href="/programme">Programme </a>
                                 </li>
+                              
                                 <li>
-                                  <a href="#planning">Planning annuel</a>
+                                  <a href="#conf">Evénement passés </a>
+                                </li>
+                              
+                                <li>
+                                  <a href="#conf">Conférences passées</a>
+                                </li>
+                               
+                                <li>
+                                  <a href="#sorties">Sorties passées</a>
+                                </li>
+                              </ul>
+                            </li>
+                           
+                            <li>
+                              <a href="/actualiteArticle">Actualités </a>
+                              <ul className="submenu">
+                                <li>
+                                  <a href="/actualiteArticle">Article </a>
                                 </li>
                                 <li>
-                                  <a href="#conf">Conférences à venir </a>
+                                  <a href="/actualiteConference">Conference</a>
                                 </li>
                                 <li>
-                                  <a href="#conf">Conférences passés</a>
+                                  <a href="/actualiteEvent">Événement</a>
                                 </li>
                                 <li>
-                                  <a href="#sorties">Sorties à venir</a>
+                                  <a href="/blog/detId/">blog</a>
                                 </li>
                                 <li>
-                                  <a href="#sorties">Sorties passés</a>
+                                  <a href="/actualiteSortie">
+                                    Sortie
+                                  </a>
+                                </li>
+                                <li>
+                                  <a href="/actualiteProjet">Projet Numérique</a>
                                 </li>
                               </ul>
                             </li>
                             <li>
                               <a href="/patrimoine">Patrimoine digital </a>
-                              <ul className="submenu">
-                                <li>
-                                  <a href="/patrimoine">Patrimoine digital </a>
-                                </li>
-                                <li>
-                                  <a href="#zagh">Projet DourBia </a>
-                                </li>
-                                <li>
-                                  <a href="#carthage">Projet HawisBia </a>
-                                </li>
-                                <li>
-                                  <a href="#zagh">
-                                    Amphithéâtre de Carthage en 3D
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#zagh">Projet CarthaGo</a>
-                                </li>
-                                <li>
-                                  <a href="#zagh">Statues de Carthage en 3D </a>
-                                </li>
-                                <li>
-                                  <a href="#zagh">
-                                    Application des Thermes d'Antonin
-                                  </a>
-                                </li>
-                              </ul>
                             </li>
+                            <li>
+                              <a href="/planification">Planification</a>
+                            </li>
+                          
                             <li>
                               <a href="/media">Medias</a>
                             </li>

@@ -1,95 +1,86 @@
 const Actualite = require('../models/Actualite');
+const cloudinary = require('cloudinary');
 
-exports.createActualite = (req, res, next) => {
-  console.log(req.body);
-  const actualite = new Actualite({
-    userName: req.body.userName,
-    titre: req.body.titre,
-    Date: req.body.Date,
-    contenu: req.body.contenu,
-    categorie: req.body.categorie
-  });
-  actualite.save().then(
-    () => {
-      res.status(201).json({
-        message: 'Post saved successfully!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
+//createActualite
+exports.createActualite = async (req, res, next) => {
+  // handling the image 
+  var imageUrl ="http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
+  try {
+      const fileStr = req.body.imageUrl
+       await cloudinary.uploader.upload(fileStr,{
+          upload_preset : 'photos'
+      }).then((res)=>{
+          imageUrl = res.url
+          console.log("imageUrl : ", imageUrl)
+      })
+  } catch (error) {
+      console.log(error)
+  }
+  ////////////////
+ const actualite = new Actualite({
+       userName: req.body.userName,
+       titre: req.body.titre,
+       Date: req.body.Date,
+       categorie: req.body.categorie,
+       lieux: req.body.lieux,
+       imageUrl,
+       fbUrl: req.body.fbUrl,
+       description: req.body.description,
+       descriptionDetail: req.body.descriptionDetail,     
+ });
+
+ actualite.save().then(result =>{
+   console.log(result);
+ }).catch(err => console.log(err));
+ res.status(201).json({
+   message : "post image work",
+   createdActualite: actualite
+ });
 };
 
-exports.getOneActualite = (req, res, next) => {
-    Actualite.findOne({
-    _id: req.params.id
-  }).then(
-    (actualite) => {
-      res.status(200).json(actualite);
-    }
-  ).catch(
-    (error) => {
-      res.status(404).json({
-        error: error
-      });
-    }
-  );
-};
-
-exports.modifyActualite = (req, res, next) => {
-    const actualite = new Actualite({
-        _id: req.params.id,
-        userName: req.body.userName,
-        titre: req.body.titre,
-        Date: req.body.Date,
-        contenu: req.body.contenu,
-        categorie: req.body.categorie
-      });
-      Actualite.updateOne({_id: req.params.id}, actualite).then(
-    () => {
-      res.status(201).json({
-        message: 'Actualite updated successfully!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
-};
-
-exports.deleteActualite = (req, res, next) => {
-    Actualite.deleteOne({_id: req.params.id}).then(
-    () => {
-      res.status(200).json({
-        message: 'Deleted!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
-};
-
+// getAllActualite
 exports.getAllActualite = (req, res, next) => {
-    Actualite.find().then(
-    (actualite) => {
-      res.status(200).json(actualite);
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
-};
+  Actualite.find()
+      .then((ev) => res.status(200).json(ev))
+      .catch(err => res.status(400).json({ error: err }))
+}
+
+//getOneActualite
+exports.getOneActualite = (req, res, next) => {
+  Actualite.findById(req.params.id) // or Actualite.findOne({_id : req.params.id})
+      .then((ev) => res.status(200).json(ev))
+      .catch(err => res.status(400).json({ error: err }))
+}
+
+//deleteActualite
+exports.deleteActualite = (req, res, next) => {
+  Actualite.deleteOne({ _id: req.params.id })
+      .then(() => res.status(200).json({ msg: `Actualite with id : ${req.params.id} has been removed` }))
+      .catch(err => res.status(400).json({ error: err }))
+}
+
+//modifyActualite
+exports.modifyActualite = async (req, res, next) => {
+  // handling the image 
+  if(req.body.imageUrl.startsWith("http")){
+      imageUrl = req.body.imageUrl
+  }else{
+  var imageUrl = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+  
+  try {
+      const fileStr = req.body.imageUrl
+      const uploadedResponse = await cloudinary.uploader.upload(fileStr,{
+          upload_preset : 'photos'
+      })
+      imageUrl = uploadedResponse.url
+  } catch (error) {
+      console.log(error)
+  }
+
+  }
+  ////////////////
+
+  Actualite.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id,imageUrl:imageUrl })
+      .then(() => res.status(200).json({ msg: 'Actualite modified' }))
+      .catch(err => res.status(400).json({ error: err }))
+}
