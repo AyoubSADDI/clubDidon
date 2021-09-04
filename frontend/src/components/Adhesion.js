@@ -31,6 +31,7 @@ const Adhesion = () => {
     telephone: "",
     email: "",
     adresse: "",
+    createdAt:"",
   };
 
   const [adhesion, setAdhesion] = useState(initialAdhesionState);
@@ -92,7 +93,7 @@ const Adhesion = () => {
         {/* Hero End */}
         {/* ================ contact section start ================= */}
         <section className="contact-section">
-          <div className="container">
+          <div className="container ">
             <div className="row">
               <div className="col-12">
                 <h2 className="contact-title">Remplir votre Adhésion</h2>

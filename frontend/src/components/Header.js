@@ -41,69 +41,13 @@ const Header = () => {
                           
                             <li>
                               <a href="/apropos">A propos</a>
-                              <ul className="submenu">
-                                <li>
-                                  <a href="/apropos">A propos</a>
-                                </li>
-                                <li>
-                                  <a href="#vision">Notre vision</a>
-                                </li>
-                                <li>
-                                  <a href="#mission">Notre mission</a>
-                                </li>
-                                <li>
-                                  <a href="#activité">Nos activités</a>
-                                </li>
-
-                                <li>
-                                  <a href="#charte">Charte éthique</a>
-                                </li>
-                                <li>
-                                  <a href="#partener">Nos partenaires </a>
-                                </li>
-                              </ul>
+                             
                             </li>
                             <li>
                               <a href="/organisation">Organisation</a>
-                              <ul className="submenu">
-                                <li>
-                                  <a href="/organisation">Organisation</a>
-                                </li>
-                                <li>
-                                  <a href="#fondatrices">Fondatrices</a>
-                                </li>
-                                <li>
-                                  <a href="#presidents">Présidents d’honneur</a>
-                                </li>
-                                <li>
-                                  <a href="#bureau">Bureau exécutif </a>
-                                </li>
-                                <li>
-                                  <a href="#commissions">Commissions</a>
-                                </li>
-                              </ul>
+                            
                             </li>                      
-                            <li>
-                              <a href="/programme">Programme </a>
-                              <ul className="submenu">
-                                <li>
-                                  <a href="/programme">Programme </a>
-                                </li>
-                              
-                                <li>
-                                  <a href="#conf">Evénement passés </a>
-                                </li>
-                              
-                                <li>
-                                  <a href="#conf">Conférences passées</a>
-                                </li>
-                               
-                                <li>
-                                  <a href="#sorties">Sorties passées</a>
-                                </li>
-                              </ul>
-                            </li>
-                           
+                          
                             <li>
                               <a href="/actualiteArticle">Actualités </a>
                               <ul className="submenu">
@@ -117,9 +61,6 @@ const Header = () => {
                                   <a href="/actualiteEvent">Événement</a>
                                 </li>
                                 <li>
-                                  <a href="/blog/detId/">blog</a>
-                                </li>
-                                <li>
                                   <a href="/actualiteSortie">
                                     Sortie
                                   </a>
@@ -127,13 +68,20 @@ const Header = () => {
                                 <li>
                                   <a href="/actualiteProjet">Projet Numérique</a>
                                 </li>
+                               
+                             
+                           
+                              
                               </ul>
                             </li>
                             <li>
-                              <a href="/patrimoine">Patrimoine digital </a>
+                              <a href="/programme">Activités </a>
                             </li>
                             <li>
-                              <a href="/planification">Planification</a>
+                              <a href="/patrimoine">Patrimoine Numérique </a>
+                            </li>
+                            <li>
+                              <a href="/planification">Programme</a>
                             </li>
                           
                             <li>

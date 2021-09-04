@@ -21,7 +21,8 @@ const Footer = () => {
                   </div>
                 </div>
                 <div className="footer-number">
-                  <h4><span>+216 </span>53087334</h4>
+                  <h4><span>+216 </span>53087334</h4><br></br>
+                  <h4><span>+216 </span>24525690</h4>
                   <p>clubdidon@gmail.com</p>
                 </div>
               </div>

@@ -2,36 +2,40 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
-import emailjs from 'emailjs-com';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-toast.configure()
+toast.configure();
 
 const Contact = () => {
-
   const notify = () => {
-    toast.success('Envoyer avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-
+    toast.success("Envoyer avec succès !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 6000,
+    });
+  };
 
   function sendEmail(e) {
-
     e.preventDefault();
 
-    emailjs.sendForm(`${process.env.REACT_APP_SERVICE_ID}`, `${process.env.REACT_APP_TEMPLATE_ID}`, e.target,`${process.env.REACT_APP_USER_ID}`)
-      .then((result) => {
+    emailjs
+      .sendForm(
+        `${process.env.REACT_APP_SERVICE_ID}`,
+        `${process.env.REACT_APP_TEMPLATE_ID}`,
+        e.target,
+        `${process.env.REACT_APP_USER_ID}`
+      )
+      .then(
+        (result) => {
           console.log(result.text);
-      }, (error) => {
+        },
+        (error) => {
           console.log(error.text);
-      });
-       e.target.reset()
+        }
+      );
+    e.target.reset();
   }
-
-
 
   return (
     <div className="bodyBg">
@@ -64,8 +68,10 @@ const Contact = () => {
                           loop={Infinity}
                           wrapper="b"
                           steps={[
-                            ' Contact',1000,'  Club didon de Carthage',1000,
-                      
+                            " Contact",
+                            1000,
+                            "  Club didon de Carthage",
+                            1000,
                           ]}
                         />
                       </h2>
@@ -85,18 +91,18 @@ const Contact = () => {
                 </div>
                 <div className="col-lg-8">
                   <form
-                  //  onSubmit={sendEmail}
-                  onSubmit={(e) => {
-                    sendEmail(e);
-                    notify();
-                  }}
-                   
+                    //  onSubmit={sendEmail}
+                    onSubmit={(e) => {
+                      sendEmail(e);
+                      notify();
+                    }}
                   >
-                      <div className="row">
+                    <div className="row">
                       <div className="col-sm-6">
                         <div className="form-group">
                           <input
                             className="form-control "
+                            style={{ background: "black" }}
                             name="name"
                             id="name"
                             type="text"
@@ -109,6 +115,7 @@ const Contact = () => {
                       <div className="col-sm-6">
                         <div className="form-group">
                           <input
+                            style={{ background: "black" }}
                             // className="form-control valid"
                             className="form-control"
                             name="email"
@@ -120,24 +127,26 @@ const Contact = () => {
                           />
                         </div>
                       </div>
+                    </div>
+                    <div className="col-12">
+                      <div className="form-group">
+                        <input
+                          style={{ background: "black" }}
+                          className="form-control"
+                          name="subject"
+                          id="subject"
+                          type="text"
+                          onfocus="this.placeholder = ''"
+                          onblur="this.placeholder = 'Entrer Subject'"
+                          placeholder="Entrer Subject"
+                        />
                       </div>
-                      <div className="col-12">
-                        <div className="form-group">
-                          <input
-                            className="form-control"
-                            name="subject"
-                            id="subject"
-                            type="text"
-                            onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Entrer Subject'"
-                            placeholder="Entrer Subject"
-                          />
-                        </div>
-                      </div>
+                    </div>
                     <div className="row">
                       <div className="col-12">
                         <div className="form-group">
                           <textarea
+                            style={{ background: "black" }}
                             className="form-control w-100"
                             name="message"
                             id="message"
@@ -150,8 +159,6 @@ const Contact = () => {
                           />
                         </div>
                       </div>
-                   
-                  
                     </div>
                     <div className="form-group mt-3">
                       <button
@@ -166,11 +173,21 @@ const Contact = () => {
                 <div className="col-lg-3 offset-lg-1">
                   <div className="media contact-info">
                     <span className="contact-info__icon">
-                      <i className="ti-home" />
+                      <i class="fas fa-university"></i>
                     </span>
                     <div className="media-body">
-                      <h3>Maison des associations de Sidi Bou Said .</h3>
-                      {/* <p>Rosemead, CA 91770</p> */}
+                      <h3>Maison des associations de Sidi Bou Said</h3>
+                      <p></p>
+                    </div>
+                  </div>
+
+                  <div className="media contact-info">
+                    <span className="contact-info__icon">
+                      <i class="far fa-paper-plane"></i>
+                    </span>
+                    <div className="media-body">
+                      <h3>clubdidon@gmail.com</h3>
+                      <p>Envoyez nous votre requete</p>
                     </div>
                   </div>
                   <div className="media contact-info">
@@ -180,15 +197,6 @@ const Contact = () => {
                     <div className="media-body">
                       <h3>24525690 / 53087334</h3>
                       <p>Du lundi au vendredi</p>
-                    </div>
-                  </div>
-                  <div className="media contact-info">
-                    <span className="contact-info__icon">
-                      <i className="ti-email" />
-                    </span>
-                    <div className="media-body">
-                      <h3>clubdidon@gmail.com</h3>
-                      <p>Envoyez nous votre requete</p>
                     </div>
                   </div>
                 </div>

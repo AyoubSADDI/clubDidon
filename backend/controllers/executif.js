@@ -1,10 +1,10 @@
-const Actualite = require('../models/Actualite');
+const Executif = require('../models/Executif');
 const cloudinary = require('cloudinary');
 
-//createActualite
-exports.createActualite = async (req, res, next) => {
+// CREATE Executif
+exports.createExecutif = async (req, res, next) => {
   // handling the image 
-  var imageUrl ="http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
+  var imageUrl = "http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
   try {
       const fileStr = req.body.imageUrl
        await cloudinary.uploader.upload(fileStr,{
@@ -17,51 +17,46 @@ exports.createActualite = async (req, res, next) => {
       console.log(error)
   }
   ////////////////
- const actualite = new Actualite({
+ const executif = new Executif({
        userName: req.body.userName,
-       titre: req.body.titre,
-       Date: req.body.Date,
-       categorie: req.body.categorie,
-       lieux: req.body.lieux,
+       name: req.body.name,
+       role: req.body.role,
        imageUrl,
-       fbUrl: req.body.fbUrl,
-       description: req.body.description,
-       descriptionDetail: req.body.descriptionDetail,
-       webSite: req.body.webSite, 
+       description: req.body.description,     
  });
 
- actualite.save().then(result =>{
+ executif.save().then(result =>{
    console.log(result);
  }).catch(err => console.log(err));
  res.status(201).json({
    message : "post image work",
-   createdActualite: actualite
+   createdExecutif: executif
  });
 };
 
-// getAllActualite
-exports.getAllActualite = (req, res, next) => {
-  Actualite.find()
+// GET ALL Executifs
+exports.getAllExecutif = (req, res, next) => {
+    Executif.find()
       .then((ev) => res.status(200).json(ev))
       .catch(err => res.status(400).json({ error: err }))
 }
 
-//getOneActualite
-exports.getOneActualite = (req, res, next) => {
-  Actualite.findById(req.params.id) // or Actualite.findOne({_id : req.params.id})
+//GET Single Executif
+exports.getOneExecutif = (req, res, next) => {
+    Executif.findById(req.params.id) // or Executif.findOne({_id : req.params.id})
       .then((ev) => res.status(200).json(ev))
       .catch(err => res.status(400).json({ error: err }))
 }
 
-//deleteActualite
-exports.deleteActualite = (req, res, next) => {
-  Actualite.deleteOne({ _id: req.params.id })
-      .then(() => res.status(200).json({ msg: `Actualite with id : ${req.params.id} has been removed` }))
+//Delete Executif
+exports.deleteExecutif = (req, res, next) => {
+    Executif.deleteOne({ _id: req.params.id })
+      .then(() => res.status(200).json({ msg: `Executif with id : ${req.params.id} has been removed` }))
       .catch(err => res.status(400).json({ error: err }))
 }
 
-//modifyActualite
-exports.modifyActualite = async (req, res, next) => {
+//Update Executif
+exports.modifyExecutif = async (req, res, next) => {
   // handling the image 
   if(req.body.imageUrl.startsWith("http")){
       imageUrl = req.body.imageUrl
@@ -81,7 +76,7 @@ exports.modifyActualite = async (req, res, next) => {
   }
   ////////////////
 
-  Actualite.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id,imageUrl:imageUrl })
-      .then(() => res.status(200).json({ msg: 'Actualite modified' }))
+  Executif.updateOne({ _id: req.params.id }, { ...req.body, _id: req.params.id,imageUrl:imageUrl })
+      .then(() => res.status(200).json({ msg: 'Executif modified' }))
       .catch(err => res.status(400).json({ error: err }))
 }

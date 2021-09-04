@@ -22,7 +22,7 @@ const Event = () => {
 
   console.log("*******"+new Date().toString())
   //let accessAllowed = (age > 18) ? true : false;
-  const eventAvenir_container = eventData.events.map((event) => (
+  const eventAvenir_container = eventData.events.reverse().map((event) => (
     
   (new Date(event.Date).valueOf() > new Date().valueOf() ) ?
   <div className="col-xl-4 col-lg-4 col-md-4" >
@@ -57,7 +57,7 @@ const Event = () => {
 :""
 ));
 
-const eventPasses_container = eventData.events.map((event) => (
+const eventPasses_container = eventData.events.reverse().map((event) => (
     
   (new Date(event.Date).valueOf() < new Date().valueOf() ) ?
   <div className="col-xl-4 col-lg-4 col-md-4" >

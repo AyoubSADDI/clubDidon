@@ -7,11 +7,10 @@ import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
 import sortie from "./assetsLog/login/img/SORTIE.jpg"
-import fb from "./assetsLog/login/img/fb.png"
 import Tanittt from "./assetsLog/login/img/Tanittt.png"
 import ID1 from "./assetsLog/login/img/ID1.png"
 import l12x from "./assetsLog/login/img/l12x.png"
-import ilisar from "./assetsLog/login/img/3ilisar.png"
+import moment from 'moment'
 
 
 
@@ -36,7 +35,11 @@ const ActualiteSortie = () => {
     dispatch(fetchActualites());
     console.log(actualiteData);
   }, []);
-  const actualiteS_container = actualiteData.actualites.map((actualite) => (
+  const clockevent=(newDate)=>{
+
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
+  const actualiteS_container = actualiteData.actualites.reverse().map((actualite) => (
     (actualite.categorie === "sortie" && new Date(actualite.Date).valueOf() > new Date().valueOf()  ) ?
     <div>
     <div id="Web_1366__0">
@@ -57,7 +60,7 @@ const ActualiteSortie = () => {
       </article>
     </div>	
     <div id="ID2_aout_2021">
-    <span>{actualite.Date}</span>
+    <span>{clockevent(actualite.Date)}</span>
     </div>
     <div className="Description">
       <h2>Description</h2>
@@ -69,7 +72,6 @@ const ActualiteSortie = () => {
     <span>{actualite.titre}<br /></span>
     </div>
     <img id="__________Facebook_et_1_page_s" src={actualite.imageUrl}       alt="" />
-    <img id="Hannball" src={ilisar} alt="" />
     <img id="p11" src={Tanittt} alt=""/>
   </section>
   

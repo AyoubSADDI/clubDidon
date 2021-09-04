@@ -17,7 +17,7 @@ const Planning = () => {
     dispatch(fetchPlannings());
   }, []);
 
-  const planning_container = planningData.plannings.map((planning) => (
+  const planning_container = planningData.plannings.reverse().map((planning) => (
     <tr>
      
     <td  className="tabt" style={{color: "white" }}>{planning.Date}</td>
@@ -42,7 +42,7 @@ const Planning = () => {
       </div>
       <Header />
 
-      <div className="slider-area12 ">
+      <div className="slider-area1212 ">
         <div className="slider-height2 hero-overly2 d-flex align-items-center">
           <div className="">
             <div className="row">
@@ -70,7 +70,7 @@ const Planning = () => {
           <div className="row">
             <div className="offset-xl-1 col-lg-8">
               <div className="about-details-cap">
-                <h4>Planning Annuel</h4>
+                <h4>Programme Annuel</h4>
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ const Planning = () => {
   </tbody>
 </table>
   <div className="Planning__Class">
-    <span>Planning</span><br />
+    <span>Programme</span><br />
   </div>
   <svg className="Line_4" viewBox="0 0 5 361">
     <path className="Line_4_Class" d="M 0 0 L 5 361">

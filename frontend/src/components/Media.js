@@ -5,10 +5,9 @@ import {
 } from "../componentsDash/redux/media/mediaActions";
 import Header from './Header'
 import Footer from './Footer'
-import ReadMoreReact from 'read-more-react';
 import Typical from 'react-typical'    
 import didonbirsaa from "./assetsLog/login/img/didonbirsaa.png";
-import IMG from "./assetsLog/login/img/IMG.png";
+import moment from 'moment'
 
 
 const Media = () => {
@@ -18,8 +17,12 @@ const Media = () => {
     useEffect(() => {
       dispatch(fetchMedias());
     }, []);
+    const clockevent=(newDate)=>{
 
-    const media_container = mediaData.medias.map((media) => (
+      return  moment(new Date(newDate)).format("DD/MM/YYYY")
+      }
+
+    const media_container = mediaData.medias.reverse().map((media) => (
     
             
             <div>
@@ -43,7 +46,7 @@ const Media = () => {
         <span>{media.titre} </span>
       </div>
       <div id="DATE12">
-        <span>{media.Date}</span>
+        <span>{clockevent(media.Date)}</span>
       </div> 
 
       </div> 

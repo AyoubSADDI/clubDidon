@@ -112,7 +112,7 @@ const Sortie = () => {
     dispatch(fetchSorties());
   }, []);
 
-  const sortie_container = sortieData.sorties.map((sortie) => (
+  const sortie_container = sortieData.sorties.reverse().map((sortie) => (
     <tr key={sortie._id}>
       <td>
         <h4>{sortie.titre}</h4>

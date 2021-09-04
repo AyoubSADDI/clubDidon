@@ -10,6 +10,7 @@ const actualiteSchema = mongoose.Schema({
   fbUrl: {type:String},
   description: { type: String},
   descriptionDetail: { type: String},
+  webSite: { type: String},
 });
 
 module.exports = mongoose.model('Actualite', actualiteSchema);

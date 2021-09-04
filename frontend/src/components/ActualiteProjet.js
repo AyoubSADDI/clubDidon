@@ -7,16 +7,19 @@ import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
 import projetdegi from "./assetsLog/login/img/projetdegi.jpg"
-import fb from "./assetsLog/login/img/fb.png"
 import TAJIR from "./assetsLog/login/img/TAJIR.png"
 import ID1 from "./assetsLog/login/img/ID1.png"
 import l12x from "./assetsLog/login/img/l12x.png"
-import kahinatashmon from "./assetsLog/login/img/kahinat ashmon.png"
+import moment from 'moment'
 
 
 
 
 const ActualiteProjet = () => {
+  const clockevent=(newDate)=>{
+
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
   const initialActualiteState = {
     _id: "",
     userName: "",
@@ -32,7 +35,7 @@ const ActualiteProjet = () => {
     dispatch(fetchActualites());
     console.log(actualiteData);
   }, []);
-  const actualiteP_container = actualiteData.actualites.map((actualite) => (
+  const actualiteP_container = actualiteData.actualites.reverse().map((actualite) => (
     (actualite.categorie === "projet" && new Date(actualite.Date).valueOf() > new Date().valueOf()) ?
     <div>
     <div id="Web_1366__0">
@@ -48,12 +51,13 @@ const ActualiteProjet = () => {
         <p  style={{color:"white"}}>
           {actualite.descriptionDetail} 
         </p>
-        <div > <a href={actualite.fbUrl} className="lien">Lien Facebook...</a>
-          </div>
+        {/* <div > <a href={actualite.fbUrl} className="lien">Lien Facebook...</a>
+        
+          </div> */}
         </article>
       </div>	
       <div id="ID2_aout_2021">
-      <span>{actualite.Date}</span>
+      <span>{clockevent(actualite.Date)}</span>
       </div>
       <div className="Description">
         <h2>Description</h2>
@@ -65,8 +69,8 @@ const ActualiteProjet = () => {
       <span>{actualite.titre}<br /></span>
       </div>
       <img id="__________Facebook_et_1_page_s" src={actualite.imageUrl} alt="" />
-      <img id="Hannball" src={TAJIR} alt="" />
-      <img id="p11" src={kahinatashmon} alt=""/>
+
+      <img id="p11" src={TAJIR} alt=""/>
     </section>
     </div>
     <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>

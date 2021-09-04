@@ -11,7 +11,8 @@ exports.createAdhesion = (req, res, next) => {
     profession: req.body.profession,
     telephone: req.body.telephone,
     email: req.body.email,
-    adresse: req.body.adresse
+    adresse: req.body.adresse,
+    createdAt: Date.now(),
 
   });
   adhesion.save().then(

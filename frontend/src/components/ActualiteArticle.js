@@ -7,12 +7,9 @@ import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
 import didon_birsa from "./assetsLog/login/img/didon_birsa.png"
-import hannabalmap from "./assetsLog/login/img/hannabalmap.jpg"
-import Hannball from "./assetsLog/login/img/Hannball.png"
 import ID1 from "./assetsLog/login/img/ID1.png"
-import l12x from "./assetsLog/login/img/l12x.png"
 import p11 from "./assetsLog/login/img/p11.png"
-
+import moment from 'moment'
 
 
 
@@ -33,11 +30,14 @@ const ActualiteArticle = () => {
     console.log(actualiteData);
   }, []);
   
-  const actualiteA_container = actualiteData.actualites.map((actualite) => (
+  const clockevent=(newDate)=>{
+
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
+  const actualiteA_container = actualiteData.actualites.reverse().map((actualite) => (
     (actualite.categorie === "article" ) ?
     <div>
     <div id="Web_1366__0">
-    <img id="l12x" src={l12x} alt=""/>
     <img id="ID1" src={ID1} alt="" />
     <img id="didon_birsa" src={didon_birsa} alt="" />
     <section>	
@@ -49,12 +49,12 @@ const ActualiteArticle = () => {
         <p  style={{color:"white"}}>
           {actualite.descriptionDetail} 
         </p>
-        <div > <a href={actualite.fbUrl} className="lien">Lien Facebook...</a>
+        <div > 
           </div>
         </article>
       </div>	
       <div id="ID2_aout_2021">
-      <span>{actualite.Date}</span>
+      <span>{clockevent(actualite.Date)}</span>
       </div>
       <div className="Description">
         <h2>Description</h2>
@@ -62,8 +62,6 @@ const ActualiteArticle = () => {
       <div id="La_fte_de_carthage">
       <span>{actualite.titre}<br /></span>
       </div>
-      <img id="__________Facebook_et_1_page_s" src={hannabalmap} alt=""/>
-      <img id="Hannball" src={Hannball} alt="" />
       <img id="p11" src={p11} alt=""/>
     </section>
     </div>

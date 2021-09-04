@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  fetchPartenaires,
-  DeletePartenaire,
-  AddPartenaire,
-  UpdatePartenaire,
-} from "./redux/partenaire/partenaireActions";
+  fetchExecutifs,
+  DeleteExecutif,
+  AddExecutif,
+  UpdateExecutif,
+} from "./redux/executif/executifActions";
 import SideBar from "./SideBar";
 import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
 
-const Partenaire = () => {
+const Execution = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem("login"));
   const userName = loginFromStorage.userId;
 
@@ -24,20 +24,19 @@ const Partenaire = () => {
     history.push("/login");
   };
 
-  const initialPartenaireState = {
+  const initialExecutionState = {
     _id: "",
     userName: "",
+    name: "",
+    role: "",
     imageUrl: "",
-    nomP: "",
-    proprieteLogo: "",
+    description: "",
   };
 
-  const [partenaire, setPartenaire] = useState(initialPartenaireState);
+  const [execution, setExecution] = useState(initialExecutionState);
   const [fileInputState, setFileInputState] = useState("");
-  const [search, SetSearch] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState("");
-  const [partenaireDetails, setPartenaireDetails] = useState(initialPartenaireState);
 
   const notifyAdd = () => {
     toast.success('Ajouter avec succès !',{
@@ -75,7 +74,7 @@ const Partenaire = () => {
   };
   const uploadImage = async (base64EncodedImage) => {
     console.log(base64EncodedImage);
-    partenaire.imageUrl = base64EncodedImage;
+    execution.imageUrl = base64EncodedImage;
   };
 
   const onAdd = (e) => {
@@ -86,53 +85,47 @@ const Partenaire = () => {
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
     console.log(userId);
-    partenaire.userName = userId;
-    dispatch(AddPartenaire(partenaire));
+    execution.userName = userId;
+    dispatch(AddExecutif(execution));
   };
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("partenaire : ", partenaire);
+    console.log("execution: ", execution);
     console.log("submitting : ", e);
     if (previewSource) uploadImage(previewSource);
-    dispatch(UpdatePartenaire(partenaire));
+    dispatch(UpdateExecutif(execution));
   };
 
-  const partenaireData = useSelector((state) => state.partenaire);
+  const executionData = useSelector((state) => state.execution);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchPartenaires());
+    dispatch(fetchExecutifs());
   }, []);
-
-  const partenaire_container = partenaireData.partenaires.filter((partenaire) => {
-    if (search === ""){
-      return partenaire
-    } else if (partenaire.nomP.toLowerCase().includes(search.toLowerCase())){
-      return partenaire
-    }
-      }).reverse().map((partenaire) => (
-    <tr key={partenaire._id}>
+ 
+  const execution_container = executionData.executifs.map((execution) => (
+    <tr key={execution._id}>
       <td>
-       {partenaire.nomP}
+        <h4>Nom et Prenom:{execution.name}</h4>
+        <p>Role:{execution.role} </p>
       </td>
-    
-      <td>{partenaire.proprieteLogo}</td>
+      <td> {execution.description}</td>
+      <td>{execution.userName}</td>
       <td>
         <img
-          src={partenaire.imageUrl}
+          src={execution.imageUrl}
           width="100"
           height="100"
-          name="partenaire-Image"
-          alt="partenaire"
+          name="Evénement-Image"
+          alt="Evénement"
         />{" "}
       </td>
-      <td> {partenaire.userName}</td>
       <td>
         <a
           href="#"
           className="btn btn-danger btn-sm btn-block mt-2"
-          onClick={() => dispatch(DeletePartenaire(partenaire._id),notifyDelete())}
+          onClick={() => dispatch(DeleteExecutif(execution._id),notifyDelete())}
         >
           <i className="fas fa-trash" />{" "}
         </a>
@@ -141,7 +134,7 @@ const Partenaire = () => {
           className="btn btn-primary btn-sm btn-block"
           data-toggle="modal"
           data-target="#modal_add_Sortie"
-          onClick={() => setPartenaire(partenaire)}
+          onClick={() => setExecution(execution)}
         >
           <i className="far fa-edit" />{" "}
         </a>
@@ -181,7 +174,7 @@ const Partenaire = () => {
                           <b>Accueil</b>
                         </li>
                         <li className="breadcrumb-item active">
-                          <b style={{ color: "red" }}>Partnaires</b>
+                          <b style={{ color: "red" }}>Evénements</b>
                         </li>
                         <li className="list-inline-item dropdown notif">
                           <a
@@ -239,10 +232,10 @@ const Partenaire = () => {
                             data-target="#modal_add_user"
                           >
                             <i
-                              className="fas fa-handshake"
+                              className="fas fa-user-plus"
                               aria-hidden="true"
                             />{" "}
-                            Ajouter nouveau Partenaire
+                            Ajouter nouveau Execution
                           </button>
                         </span>
                         <div
@@ -266,7 +259,7 @@ const Partenaire = () => {
                               >
                                 <div className="modal-header">
                                   <h5 className="modal-title">
-                                    Ajouter Nouveau Partenaire{" "}
+                                    Ajouter Nouveau Execution{" "}
                                   </h5>
                                   <button
                                     type="button"
@@ -281,25 +274,64 @@ const Partenaire = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Nom de Partenaire</label>
+                                        <label>Nom et Prénom:</label>
                                         <input
                                           className="form-control"
-                                          name="nomP"
+                                          name="name"
                                           type="text"
-                                          value={partenaire.nomP}
+                                          value={execution.name}
                                           onChange={(e) => {
-                                            const newPartenaireObj = {
-                                              ...partenaire,
-                                              nomP: e.target.value,
+                                            const newExecutionObj = {
+                                              ...execution,
+                                              name: e.target.value,
                                             };
-                                            setPartenaire(newPartenaireObj);
+                                            setExecution(newExecutionObj);
                                           }}
                                         />
                                       </div>
                                     </div>
                                   </div>
+                                  <div className="row">
+                                    <div className="col-lg-6">
+                                      <div className="form-group">
+                                        <label>Role:</label>
+                                        <input
+                                          className="form-control"
+                                          name="role"
+                                          type="text"
+                                          value={execution.role}
+                                          onChange={(e) => {
+                                            const newExecutionObj = {
+                                              ...execution,
+                                              name: e.target.value,
+                                            };
+                                            setExecution(newExecutionObj);
+                                          }}
+                                        />
+                                      </div>
+                                    </div>
+                                    <div class="form-group">
+                                    <div class="form-group">
+                                      <label>Description:</label>
+                                      <textarea
+                                        id="story"
+                                        name="story"
+                                        rows="10"
+                                        cols="58"
+                                        value={execution.description}
+                                        onChange={(e) => {
+                                          const newExecutionObj = {
+                                            ...execution,
+                                            description: e.target.value,
+                                          };
+                                          setExecution(newExecutionObj);
+                                        }}
+                                      ></textarea>
+                                    </div>
+                                    </div>
+                                  </div>                          
                                   <div className="form-group">
-                                    <label>Logo</label>
+                                    <label>Image</label>
                                     <br />
                                     <input
                                       type="file"
@@ -351,7 +383,7 @@ const Partenaire = () => {
                               >
                                 <div className="modal-header">
                                   <h5 className="modal-title">
-                                    Mettre à jour le Partenaire{" "}
+                                    Mettre à jour le Execution{" "}
                                   </h5>
                                   <button
                                     type="button"
@@ -366,25 +398,65 @@ const Partenaire = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Nom de Partenaire</label>
+                                        <label>Nom et Prénom</label>
                                         <input
                                           className="form-control"
-                                          name="nomP"
+                                          name="name"
                                           type="text"
-                                          value={partenaire.nomP}
+                                          value={execution.name}
                                           onChange={(e) => {
-                                            const newPartenaireObj = {
-                                              ...partenaire,
-                                              nomP: e.target.value,
+                                            const newExecutionObj = {
+                                              ...execution,
+                                              name: e.target.value,
                                             };
-                                            setPartenaire(newPartenaireObj);
+                                            setExecution(newExecutionObj);
                                           }}
                                         />
                                       </div>
                                     </div>
                                   </div>
-                               
-                             
+                                  <div className="row">
+                                    <div className="col-lg-6">
+                                      <div className="form-group">
+                                        <label>Role:</label>
+                                        <input
+                                          className="form-control"
+                                          name="role"
+                                          type="text"
+                                          value={execution.role}
+                                          onChange={(e) => {
+                                            const newExecutionObj = {
+                                              ...execution,
+                                              role: e.target.value,
+                                            };
+                                            setExecution(newExecutionObj);
+                                          }}
+                                        />
+                                      </div>
+                                    </div>
+                                 
+                                  </div>
+                                  <div className="row">
+                                   
+                                    <div className="row"></div>
+                                    <div class="form-group">
+                                      <label>Description:</label>
+                                      <textarea
+                                        id="story"
+                                        name="story"
+                                        rows="10"
+                                        cols="58"
+                                        value={execution.description}
+                                        onChange={(e) => {
+                                          const newExecutionObj = {
+                                            ...execution,
+                                            description: e.target.value,
+                                          };
+                                          setExecution(newExecutionObj);
+                                        }}
+                                      ></textarea>
+                                    </div>
+                                  </div>
                                   <div className="form-group">
                                     <label>Image</label>
                                     <br />
@@ -400,7 +472,7 @@ const Partenaire = () => {
                                     <img
                                       src={previewSource}
                                       alt="chosen"
-                                      style={{ height: "100px" , width:"100px" }}
+                                      style={{ height: "100px" }}
                                     />
                                   )}
                                 </div>
@@ -418,12 +490,9 @@ const Partenaire = () => {
                         </div>
                         <h3>
                           {" "}
-                          <i className="fas fa-handshake" />
-                          Toutes les Partenaires
+                          <i className="fas fa-plane-departure" />
+                          Toutes les Executions
                         </h3>
-                        <label>Recherche Par Nom de Partenaire :</label>
-                        <input className="recherche" type="text" id="name" name="name" required
-                          minlength="4" maxlength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
                       </div>
                       {/* end card-header */}
                       <div className="card-body">
@@ -431,14 +500,16 @@ const Partenaire = () => {
                           <table className="table table-bordered">
                             <thead>
                               <tr>
-                                <th style={{ minWidth: 50 }}>Nom de Partenaire</th>                              
-                                <th style={{ minWidth: 50 }}>PropriéteLogo</th>
-                                <th style={{ minWidth: 100 }}>Logo</th>
-                                <th style={{ width: 50 }}>Utilisateur</th>
+                                <th style={{ minWidth: 200 }}>
+                                  Execution Details
+                                </th>
+                                <th style={{ minWidth: 100 }}>Description</th>
+                                <th style={{ width: 100 }}>Date</th>
+                                <th style={{ minWidth: 100 }}>Image</th>                       
                                 <th style={{ minWidth: 50 }}>Actions</th>
                               </tr>
                             </thead>
-                            <tbody>{partenaire_container}</tbody>
+                            <tbody>{execution_container}</tbody>
                           </table>
                         </div>
                       </div>
@@ -461,4 +532,4 @@ const Partenaire = () => {
   );
 };
 
-export default Partenaire;
+export default Execution;

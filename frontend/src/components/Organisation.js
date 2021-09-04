@@ -70,7 +70,7 @@ const Organisation = () => {
                 </div>
                 <div className="team-caption">
                   <h3>
-                    <a href="#">Ines Hassoumi</a>
+                    <a href="#"></a>
                   </h3>
                   {/* <span >UX Designer</span> */}
                 </div>
@@ -98,22 +98,7 @@ const Organisation = () => {
             </div>
           </div>
           <div className="row">
-            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
-              <div className="single-team mb-30">
-                <div className="team-img">
-                  <img src="assets/img/gallery/1.jpg" alt="" />
-                </div>
-                <div className="team-caption" >
-                  <h3>
-                    <a href="#">Pr. André Abitbol</a>
-                  </h3>
-                  <span>
-                    Officier de l’Ordre National du Mérite Tunisien au titre de
-                    la Culture, Chevalier dans l’Ordre des Palmes Académiques
-                  </span>
-                </div>
-              </div>
-            </div>
+           
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
@@ -126,7 +111,23 @@ const Organisation = () => {
                   <span>
                     Ministre de la Culture en 2010, Représentant du directeur
                     général de l’UNESCO pour la sauvegarde des monuments
-                    d’Angkor
+                    d’Angkor.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
+              <div className="single-team mb-30">
+                <div className="team-img">
+                  <img src="assets/img/gallery/1.jpg" alt="" />
+                </div>
+                <div className="team-caption" >
+                  <h3>
+                    <a href="#">Pr. André Abitbol</a>
+                  </h3>
+                  <span>
+                    Officier de l’Ordre National du Mérite Tunisien au titre de
+                    la Culture, Chevalier dans l’Ordre des Palmes Académiques.
                   </span>
                 </div>
               </div>
@@ -142,7 +143,7 @@ const Organisation = () => {
                   </h3>
                   <span>
                     Ministre des finances en 2011, ancien Vice Président BMCE
-                    Maroc et homme d’affaires                                                    
+                    Maroc et homme d’affaires.                                                    
                   </span>
                 </div>
               </div>
@@ -163,10 +164,10 @@ const Organisation = () => {
                
                 <p>
                   {" "}
-                      1-  La commission des relations publiques<br></br>
-                      2-	La commission de la communication et de l’information <br></br>
-                      3-	La commission scientifique <br></br>
-                      4-	La commission artistique
+                      1-  La commission des relations publiques.<br></br>
+                      2-	La commission de la communication et de l’information. <br></br>
+                      3-	La commission scientifique. <br></br>
+                      4-	La commission artistique.
                 </p>
               </div>
             </div>
@@ -203,8 +204,8 @@ const Organisation = () => {
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                      Urbaniste à l'Institut Supérieur des Technologies de
-                      l'Environnement de l'Urbanisme et du Bâtiment
+                      Urbaniste diplômée de l'Institut Supérieur des Technologies de
+                      l'Environnement de l'Urbanisme et du Bâtiment.
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -233,8 +234,8 @@ const Organisation = () => {
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                      Docteur en informatique à l'Institut Supérieur de Gestion
-                      de Tunis et à l'université de Paris VI{" "}
+                      Docteur en informatique diplômée de l'Institut Supérieur de Gestion
+                      de Tunis et à l'université de Paris VI.{" "}
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -263,8 +264,8 @@ const Organisation = () => {
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                      Architecte à l'Ecole Nationale d'Architecture et
-                      d'Urbanisme de Tunis{" "}
+                      Architecte diplômée de l'Ecole Nationale d'Architecture et
+                      d'Urbanisme de Tunis.{" "}
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -290,9 +291,9 @@ const Organisation = () => {
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                    -Artiste plasticien spécialisé dans la sculpture.{" "} <br></br>
-                    -Bijoutier et styliste modéliste.<br></br>
-                    -Chercher en mode punique.
+                    -Artiste plasticien spécialisé dans la sculpture{" "} <br></br>
+                    -Bijoutier et styliste modéliste<br></br>
+                    -Chercheur en culture punique
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -318,9 +319,9 @@ const Organisation = () => {
                   </div>
                   <div className="support-caption1">
                     <p className="pera-top">
-                    -Artiste plasticien spécialisé dans l'art graphique.{" "}<br></br>
-                    -Dessinateur de bande dessinée.<br></br>
-                    -Développer de l'art punique.<br></br>
+                    -Artiste plasticien spécialisé dans l'art graphique{" "}<br></br>
+                    -Dessinateur de bandes dessinées<br></br>
+                    -Développeur dans l'art punique<br></br>
                     </p>
                     <p className="mb-65"></p>
                   </div>
@@ -350,7 +351,7 @@ const Organisation = () => {
                       >
                         <path
                           fillRule="evenodd"
-                          fill="rgb(240, 78, 60)"
+                          fill="rgb(255, 168, 0)"
                           d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
                         />
                       </svg>
@@ -368,7 +369,7 @@ const Organisation = () => {
                         />
                       </div>
                       <div className="founder-text">
-                        <span>Gandhi</span>
+                        <span>Mohandas Karamchand Gandhi</span>
                         <p>Homme politique, Philosophe, Révolutionnaire</p>
                       </div>
                     </div>
@@ -387,7 +388,7 @@ const Organisation = () => {
                       >
                         <path
                           fillRule="evenodd"
-                          fill="rgb(240, 78, 60)"
+                          fill="rgb(255, 168, 0)"
                           d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
                         />
                       </svg>
@@ -423,7 +424,7 @@ const Organisation = () => {
                       >
                         <path
                           fillRule="evenodd"
-                          fill="rgb(240, 78, 60)"
+                          fill="rgb(255, 168, 0)"
                           d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
                         />
                       </svg>
@@ -462,7 +463,7 @@ const Organisation = () => {
                       >
                         <path
                           fillRule="evenodd"
-                          fill="rgb(240, 78, 60)"
+                          fill="rgb(255, 168, 0)"
                           d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
                         />
                       </svg>
@@ -500,7 +501,7 @@ const Organisation = () => {
                       >
                         <path
                           fillRule="evenodd"
-                          fill="rgb(240, 78, 60)"
+                          fill="rgb(255, 168, 0)"
                           d="M57.053,48.209 L42.790,48.209 L52.299,29.242 L38.036,29.242 L38.036,0.790 L66.562,0.790 L66.562,29.242 L57.053,48.209 ZM4.755,48.209 L14.263,29.242 L0.000,29.242 L0.000,0.790 L28.527,0.790 L28.527,29.242 L19.018,48.209 L4.755,48.209 Z"
                         />
                       </svg>
@@ -534,30 +535,38 @@ const Organisation = () => {
       <div className="count-down-area pb-120">
         <div className="container">
           <div className="row justify-content-between">
+        
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter text-center">
-                <span className="counter">7</span>
-                <p>Projets terminés</p>
+                <span className="counter">814</span>
+                <p>av. J.-C</p><br></br>
+                <p>Fondation de Carthage par la reine Elyssa
+</p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 col-sm-6">
+              <div className="single-counter text-center">
+                <span className="counter">216</span>
+                <p>av. J.-C</p> <br></br>
+                <p>Bataille de Cannea du Général Hannibal Barca
+</p>
+              </div>
+            </div>
+            <div className="col-lg-3 col-md-6 col-sm-6">
+              <div className="single-counter text-center">
+                <span className="counter">146</span>
+                <p id="partener">av. J.-C</p><br></br>
+                <p id="partener">Construction des ports puniques</p>
               </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-6">
               <div className="single-counter active text-center">
-                <span className="counter">480</span>
-                <p>Clients actifs</p>
+                <span className="counter">2828</span>
+                <p>années</p><br></br>
+                <p>Création du club Didon de Carthage</p>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-counter text-center">
-                <span className="counter">248</span>
-                <p>Tasses de café</p>
-              </div>
-            </div>
-            <div className="col-lg-3 col-md-6 col-sm-6">
-              <div className="single-counter text-center">
-                <span className="counter">9774</span>
-                <p id="partener">Clients heureux</p>
-              </div>
-            </div>
+         
           </div>
         </div>
       </div>

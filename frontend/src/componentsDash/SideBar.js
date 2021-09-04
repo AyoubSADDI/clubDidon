@@ -144,6 +144,21 @@ const SideBar = () => {
                   </li>
                 </ul>
               </li>
+              <li className="submenu">
+                <a id="tables" href='/executionDash'>
+                  <i className="fas fa-handshake" />
+                  <span>Execution</span>
+                  <span className="menu-arrow" />
+                </a>
+                <ul className="list-unstyled">
+                  <li>
+                    <a href="tables-basic.html">Basic Tables</a>
+                  </li>
+                  <li>
+                    <a href="tables-datatable.html">Data Tables</a>
+                  </li>
+                </ul>
+              </li>
             </ul>
             <div className="clearfix" />
           </div>

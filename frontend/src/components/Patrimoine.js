@@ -24,7 +24,7 @@ const Patrimoine = () => {
       dispatch(fetchActualites());
       console.log(actualiteData);
     }, []);
-    const actualiteP_container = actualiteData.actualites.map((actualite) => (
+    const actualiteP_container = actualiteData.actualites.reverse().map((actualite) => (
       (actualite.categorie === "projet" && new Date(actualite.Date).valueOf() < new Date().valueOf()) ?
 
       <main id="zagh" className="bodyBg">

@@ -10,6 +10,7 @@ import SideBar from './SideBar'
 import {useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import moment from 'moment'
 
 toast.configure()
 
@@ -23,6 +24,10 @@ const Media = () => {
       localStorage.removeItem('login')
       history.push('/login')
   }
+  const clockevent=(newDate)=>{
+
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
   const initialMediaState = {
     _id: "",
     userName: "",
@@ -36,6 +41,8 @@ const Media = () => {
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState("");
+  const [search, SetSearch] = useState("");
+
 
   const notifyAdd = () => {
     toast.success('Ajouter avec succès !',{
@@ -99,15 +106,22 @@ const Media = () => {
       useEffect(() => {
         dispatch(fetchMedias());
       }, []);
-      const media_container = mediaData.medias.map((media) => (
+      const media_container = mediaData.medias.filter((media) => {
+        if (search === ""){
+          return media
+        } else if (media.Date.toLowerCase().includes(search.toLowerCase())){
+          return media
+        }
+          }).reverse().map((media) => (
         <tr key={media._id}>
           <td>
-            <h4>{media.titre}</h4>
-            <p>{media.Date} </p>
-            <p>{media.contenu}</p>
+            <h4>Titre: {media.titre}</h4>
+            <p>Créé par: {media.userName} </p>
+            <p>Date: {clockevent(media.Date)} </p>
+            <p>Contenu: {media.contenu}</p>
           </td>
           <td> {media.urlMagazin}</td>
-          <td> {media.userName}</td>
+         
           <td>
             <img
               src={media.imageUrl}
@@ -457,6 +471,9 @@ const Media = () => {
 
                     <h3>
                       <i  className="fas fa-photo-video" /> Toutes les Médias</h3>
+                      <label>Recherche Par Jour :</label>
+                        <input className="recherche" type="text" id="name" name="name" required
+                          minlength="4" maxlength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
                   </div>
                   {/* end card-header */}
                   <div className="card-body">
@@ -466,7 +483,6 @@ const Media = () => {
                           <tr>
                             <th style={{minWidth: 300}}>Media details</th>
                             <th style={{width: 120}}>url Magazin</th>
-                            <th style={{width: 120}}>Utilisateur</th>
                             <th style={{width: 120}}>Image</th>
                             <th style={{minWidth: 10}}>Actions</th>
                           </tr>

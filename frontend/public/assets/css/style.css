@@ -3605,6 +3605,11 @@ hero-btn {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.slider-area1212 {
+  background-image: url(../img/events/programme.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .slider-area12 {
   background-image: url(../img/events/event.jpg);
   background-repeat: no-repeat;
@@ -4059,7 +4064,7 @@ hero-btn {
   transition: all 0.4s ease-out 0s;
   position: relative;
   z-index: 1;
-  background: #ffff;
+  background: rgb(0, 0, 0);
 }
 
 @media (max-width: 575px) {
@@ -4091,12 +4096,12 @@ hero-btn {
   bottom: 0;
   left: 0;
   z-index: -1;
-  border: 9px solid #fff;
+  border: 9px solid rgb(0, 0, 0);
 }
 
 /* line 29, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_categories.scss */
 .categories-area .single-cat .cat-icon span {
-  color: #eb566c;
+  color: #ffffff;
   font-size: 65px;
   margin-bottom: 30px;
   display: block;
@@ -4151,7 +4156,7 @@ hero-btn {
 
 /* line 63, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_categories.scss */
 .categories-area .single-cat .cat-cap a {
-  color: #1c165c;
+  color: #fafafa;
   font-size: 16px;
   font-weight: 600;
   -webkit-transition: all 0.2s ease-out 0s;
@@ -4275,7 +4280,7 @@ hero-btn {
 
 /* line 8, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_count_down.scss */
 .count-down-area .single-counter.active {
-  background: #ff2143;
+  background: #641b55;
   border: 10px solid #fff;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
   position: relative;
@@ -4717,7 +4722,7 @@ hero-btn {
 
 /* line 64, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_testimonial.scss */
 .testimonial-area .testimonial-caption .testimonial-founder .founder-text span {
-  color: #f04e3c;
+  color: #ffa800;
   font-size: 30px;
   font-weight: 600;
 }
@@ -5146,7 +5151,7 @@ hero-btn {
 
 /* line 43, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-cap {
-  background: rgb(218, 217, 217);
+  background:#F2F1F0;
   padding: 30px 86px 36px 81px;
 }
 
@@ -5181,7 +5186,7 @@ hero-btn {
 /* line 59, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-cap h3 a {
   color: #641b55;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   line-height: 1.4;
   margin-bottom: 20px;
@@ -8647,7 +8652,7 @@ del {
 	transform: matrix(1,0,0,1,0,0);
 }
 .Planning__Class {
-	left: 216px;
+	left: 100px;
 	top: 376px;
 	position: absolute;
 	overflow: visible;
@@ -8847,7 +8852,7 @@ justify-content:center;}
 }
 #__________Facebook_et_1_page_s {
 	position: absolute;
-	width: 531px;
+	width: 1150px;
 	height: 625px;
 	left: 102px;
 	top: 1519px;
@@ -9029,4 +9034,14 @@ justify-content:center;}
         font-weight: bold;
         font-size: 59px;
         color: rgba(255,255,255,1);
+      }
+
+      .recherche{
+        width: 300px;
+        height: 40px;
+        font-size: 20px;
+        padding-left: 10px;
+        color: #000000;
+        background: #0066ff4d;
+        border-radius: 10px;
       }

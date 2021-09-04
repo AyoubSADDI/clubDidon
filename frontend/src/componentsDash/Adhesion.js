@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAdhesions,
   DeleteAdhesion,
-  // AddAdhesion,
-  // UpdateAdhesion,
 } from "./redux/adhesion/adhesionActions";
 import SideBar from './SideBar'
 import {useHistory } from 'react-router-dom'
@@ -51,7 +49,7 @@ const Adhesion = () => {
     dispatch(fetchAdhesions());
   }, []);
 
-  const adhesions_container = adhesionData.adhesions.map((adhesion) => (
+  const adhesions_container = adhesionData.adhesions.reverse().map((adhesion) => (
     <tr key={adhesion._id}>
                             <td>
                            {adhesion.nom}
@@ -77,6 +75,9 @@ const Adhesion = () => {
                             </td>
                             <td> 
                             {adhesion.adresse}                   
+                            </td>
+                            <td> 
+                            {adhesion.createdAt}                   
                             </td>
                             <td> 
                                <a href="#" className="btn btn-danger btn-sm btn-block mt-2"  onClick={() => dispatch(DeleteAdhesion(adhesion._id))}><i className="fas fa-trash" /> </a>
@@ -193,6 +194,7 @@ const Adhesion = () => {
                             <th style={{minWidth: 50}}>Téléphone</th>
                             <th style={{minWidth: 50}}>Email</th>
                             <th style={{minWidth: 80}}>Adresse</th>
+                            <th style={{minWidth: 80}}>Créé à</th>
                             <th style={{minWidth: 50}}>Actions</th>
                           </tr>
                         </thead>

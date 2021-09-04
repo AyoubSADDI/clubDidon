@@ -15,7 +15,7 @@ const About = () => {
     dispatch(fetchPartenaires());
   }, []);
 
-  const partenaire_container = partenaireData.partenaires.map((partenaire) => (
+  const partenaire_container = partenaireData.partenaires.reverse().map((partenaire) => (
        <div className="single-brand" key={partenaire._id}>
             <img src={partenaire.imageUrl}
                  alt="" />
@@ -88,9 +88,9 @@ Il s’agit d’une jeune association qui a pour principal objectif de jouer, av
 
 
               </p>
-              <p id="mission"> En effet, en plus des conférences et des sorties organisées dans les sites archéologiques, l’association « Didon de Carthage » souhaite élargir ses champs d’action et son rôle d’expertise, d’étude et de recherche en matière de pratiques numériques technologiques avec de nouveaux supports et usages – auprès du grand public et des professionnels. 
+              <p id="mission"> En effet, en plus des conférences et des sorties organisées dans les sites archéologiques, l’association  <br></br>« Didon de Carthage » souhaite élargir ses champs d’action et son rôle d’expertise, d’étude et de recherche en matière de pratiques numériques technologiques avec de nouveaux supports et usages – auprès du grand public et des professionnels.</p><br></br>
 
-Dans ce nouveau contexte numérique, notre association projette de réaliser des projets 3D autour de l’art visuel, qui feront l’objet tout au long de l’année d’expositions, de débats, d’événements, et se présenteront également comme un véritable support pour la conservation et la valorisation du patrimoine Tunisien et plus particulièrement du patrimoine de Carthage.  Nous espérons que ces projets rencontreront un vif succès auprès des adhérents mais aussi de l’ensemble des citoyens et particulièrement des jeunes Tunisiens. 
+              <p id="mission">Dans ce nouveau contexte numérique, notre association projette de réaliser des projets 3D autour de l’art visuel, qui feront l’objet tout au long de l’année d’expositions, de débats, d’événements, et se présenteront également comme un véritable support pour la conservation et la valorisation du patrimoine Tunisien et plus particulièrement du patrimoine de Carthage.  <br></br></p> <p id="mission">Nous espérons que ces projets rencontreront un vif succès auprès des adhérents mais aussi de l’ensemble des citoyens et particulièrement des jeunes Tunisiens. 
 </p>
             </div >
             <div className="about-details-cap mb-50 pt-5">
@@ -99,23 +99,23 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
 
               </p>
               <p id="activité"> 
-              -Mettre en valeur le patrimoine Carthaginois  <br></br>
+              -Mettre en valeur le patrimoine Carthaginois.  <br></br>
 
--Organiser des manifestations nationales et internationales des séminaires, des conférences, des tables rondes et des ateliers sur la civilisation Carthaginoise punique ainsi que les autres civilisations  <br></br>
+-Organiser des manifestations nationales et internationales des séminaires, des conférences, des tables rondes et des ateliers sur la civilisation Carthaginoise punique ainsi que les autres civilisations. <br></br>
 
--Rassembler les associations travaillant dans le même domaine culturel historique <br></br>
+-Rassembler les associations travaillant dans le même domaine culturel historique. <br></br>
 
--Faire connaître au grand public les richesses et les particularités des sites archéologiques dans toute la Tunisie  <br></br>
+-Faire connaître au grand public les richesses et les particularités des sites archéologiques dans toute la Tunisie. <br></br>
 
--Organiser des manifestations culturelles et artistiques sur le site de Carthage-Sidi Bou Saîd et toute la banlieue nord  <br></br>
+-Organiser des manifestations culturelles et artistiques sur le site de Carthage-Sidi Bou Saîd et toute la banlieue nord.  <br></br>
 
--Lier des relations culturelles et scientifiques avec des organisations similaires à l’intérieur et à l'extérieur du pays <br></br>
+-Lier des relations culturelles et scientifiques avec des organisations similaires à l’intérieur et à l'extérieur du pays. <br></br>
 
--Travailler sur la Renaissance de la civilisation Carthaginoise  <br></br>
+-Travailler sur la Renaissance de la civilisation Carthaginoise.  <br></br>
 
--Introduire les nouvelles technologies pour la mise en valeur du patrimoine de Carthage et de toute la Tunisie  
+-Introduire les nouvelles technologies pour la mise en valeur du patrimoine de Carthage et de toute la Tunisie.  
 <br></br>
--Valoriser le Rôle et la légende de la Reine Elyssa (Didon) Fondatrice de Carthage ainsi que les femmes Carthaginoises (et Tunisiennes) de l'époque punique jusqu'à nos jours 
+-Valoriser le Rôle et la légende de la Reine Elyssa (Didon) Fondatrice de Carthage ainsi que les femmes Carthaginoises (et Tunisiennes) de l'époque punique jusqu'à nos jours. 
 
 
 
@@ -127,7 +127,7 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
 	L’association Didon de Carthage est une organisation non gouvernementale fondée en 2014 par deux jeunes femmes tunisiennes passionnées de l’histoire de Carthage Mme Eryj Ben Sassi et Mlle Inès Hassoumi.
 
               </p>
-              <p id="activité"> L’association est inscrite officiellement au JORT en 2017. Elle est gérée par un groupe de passionnés, d’experts et d’amateurs dans le domaine du patrimoine, de l’archéologie et de l’histoire. Il s’agit d’une association apolitique et areligieuse qui a pour but de valoriser le patrimoine Tunisien et plus particulièrement le patrimoine Carthaginois.</p>
+              <p id="activité"> L’association est inscrite officiellement au JORT en 2017. Elle est gérée par un groupe de passionnés, d’experts et d’amateurs dans le domaine du patrimoine, de l’archéologie et de l’histoire.<br></br> </p>  <p id="activité">Il s’agit d’une association apolitique et areligieuse qui a pour but de valoriser le patrimoine Tunisien et plus particulièrement le patrimoine Carthaginois.</p>
             </div> 
           </div>
         </div>
@@ -158,24 +158,22 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="single-cat text-center mb-50">
               <div className="cat-icon">
-                <span className="flaticon-development" />
+                <span className="" />
               </div>
               <div className="cat-cap">
                 <h5><a href="services.html">Conférences </a></h5>
-                <p>Organiser des manifestations nationales et internationales des séminaires, des conférences, des tables rondes et des ateliers sur la civilisation Carthaginoise punique ainsi que les autres civilisations .</p>
+                <p>Organiser des manifestations nationales et internationales des séminaires, des conférences, des tables rondes et des ateliers sur la civilisation Carthaginoise.</p>
               </div>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="single-cat text-center mb-50">
               <div className="cat-icon">
-                <span className="flaticon-result" />
+                <span className="" />
               </div>
               <div className="cat-cap">
                 <h5><a href="services.html">Excursions</a></h5>
-                <p>Faire connaître au grand public les richesses et les particularités des sites archéologiques dans toute la Tunisie 
-
-.</p>
+                <p>Faire connaître au grand public les richesses et les particularités des sites archéologiques dans toute la Tunisie.</p>
 <br></br><br></br>
               </div>
             </div>
@@ -183,12 +181,11 @@ Dans ce nouveau contexte numérique, notre association projette de réaliser des
           <div className="col-lg-4 col-md-6 col-sm-6">
             <div className="single-cat text-center mb-50">
               <div className="cat-icon">
-                <span className="flaticon-team" />
+                <span className="" />
               </div>
               <div className="cat-cap">
                 <h5><a href="services.html">Evénements</a></h5>
-                <p id="charte" >Organiser des manifestations culturelles et artistiques sur le site de Carthage-Sidi Bou Saîd et toute la banlieue nord 
-.</p><br></br><br></br>
+                <p id="charte" >Organiser des manifestations culturelles et artistiques sur le site de Carthage-Sidi Bou Saîd et toute la banlieue nord.</p><br></br><br></br>
               </div>
             </div>
           </div>

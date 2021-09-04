@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals'
 import Login from './components/Login'
 import Index from './components/Index'
-import About from './components/About'
 import BlogDetails from './components/Blogdetails'
 import Blog from './components/Blog'
 import Element from './components/Elements'
@@ -37,16 +36,16 @@ import { Provider } from 'react-redux'
 import store from './componentsDash/redux/store'
 import PrivateRoutes from './PrivateRoutes'
 import PartenaireDash from './componentsDash/Partenaire'
+import ExecutionDash from './componentsDash/Execution'
+
 
 ReactDOM.render(
   <Provider store={store}>
   <BrowserRouter>
     <Switch>
-        <Route exact path='/Home' component={Index} />
-        <Route path='/login'  component={Login} />
-        <Route path='/about' component={About} />
-        <Route path='/Home/blogDetails' component={BlogDetails} />
-        <Route path='/blog/detId' component={Blog} />
+        <Route exact path='/' component={Index} />
+        <Route path='/login'  component={Login} /> 
+        <Route path='/executionDash' render={(props) => <ExecutionDash {...props} />} />
         <Route path='/element' render={(props) => <Element {...props} />} />
         <Route path='/service' render={(props) => <Service {...props} />} />
         <Route path='/apropos' render={(props) => <Apropos {...props} />} />
@@ -58,7 +57,6 @@ ReactDOM.render(
         <Route path='/contact' render={(props) => <Contact {...props} />} />
         <Route path='/maps' render={(props) => <Maps {...props} />} />
         <Route path='/adhesion' render={(props) => <Adhesion {...props} />} />
-        <Route path='/blogDetails' render={(props) => <BlogDetails {...props} />} />
         <PrivateRoutes path='/indexDash' render={(props) => <IndexDash {...props} />} />
         <Route path='/adhesionDash' render={(props) => <AdhesionDash {...props} />} />
         <Route path='/conferenceDash' render={(props) => <ConferenceDash {...props} />} />
@@ -75,8 +73,9 @@ ReactDOM.render(
         <Route path='/actualiteProjet' render={(props) => <ActualiteProjet {...props} />} />
         <Route path='/planification' render={(props) => <Planif {...props} />} />
         <Route path='/media' render={(props) => <Media {...props} />} />
+        <Route path='/:id' render={(props) => <Blog {...props} />} />
+       
       </Switch>
- 
   </BrowserRouter>
   </Provider>,
   document.getElementById('root')

@@ -7,8 +7,16 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
 import ReadMoreReact from 'read-more-react';
+import moment from 'moment'
 
 const Programme = () => {
+
+const clockevent=(newDate)=>{
+
+return  moment(new Date(newDate)).format("DD/MM/YYYY")
+}
+
+  
 
   const actualiteData = useSelector((state) => state.actualite);
   const dispatch = useDispatch();
@@ -16,7 +24,9 @@ const Programme = () => {
     dispatch(fetchActualites());
     console.log(actualiteData);
   }, []);
-  const eventPasse_container = actualiteData.actualites.map((actualite) => (
+  const eventPasse_container = actualiteData.actualites.reverse().map((actualite) => (
+
+   
     (actualite.categorie === "evenement"  && new Date(actualite.Date).valueOf() < new Date().valueOf() ) ?
     <div className="col-xl-4 col-lg-4 col-md-4" >
     <div className="home-blog-single mb-30">
@@ -25,7 +35,9 @@ const Programme = () => {
         <img src={actualite.imageUrl}
                    alt="" />
           <ul>
-            <li>By Admin/{actualite.Date}</li>
+         
+           
+            <li>{clockevent(actualite.Date)} </li>
           </ul>
         </div>
         <div className="blog-cap">
@@ -34,8 +46,8 @@ const Programme = () => {
           min="60"
           ideal="70"
           max="80"
-          readMoreText="-read more"/>       <br></br>          
-         <a href='/blog/' className="more-btn">Details</a><br></br>
+          readMoreText="-Lire la suite"/>       <br></br>          
+           <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
   
        
          <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
@@ -49,7 +61,7 @@ const Programme = () => {
   
   :""
   ));
-  const ConfPasses_container = actualiteData.actualites.map((actualite) => (
+  const ConfPasses_container = actualiteData.actualites.reverse().map((actualite) => (
     
     (actualite.categorie === "conference"  && new Date(actualite.Date).valueOf() < new Date().valueOf() ) ?
     <div className="col-xl-4 col-lg-4 col-md-4" >
@@ -59,7 +71,7 @@ const Programme = () => {
         <img src={actualite.imageUrl}
                    alt="" />
           <ul>
-            <li>By Admin/{actualite.Date}</li>
+          <li>{clockevent(actualite.Date)} </li>
           </ul>
         </div>
         <div className="blog-cap">
@@ -68,9 +80,9 @@ const Programme = () => {
           min="60"
           ideal="70"
           max="80"
-          readMoreText="-read more"/>   
+          readMoreText="-Lire la suite"/>   
           <br></br>          
-         <a href="/blogDetails" className="more-btn">Details</a><br></br>
+          <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
   
        
          <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
@@ -87,7 +99,7 @@ const Programme = () => {
   
   
 
-    const sortiePass_container = actualiteData.actualites.map((actualite) => (
+    const sortiePass_container = actualiteData.actualites.reverse().map((actualite) => (
       (actualite.categorie === "sortie" && new Date(actualite.Date).valueOf() < new Date().valueOf() ) ?
       <div className="col-xl-4 col-lg-4 col-md-4">
       <div className="home-blog-single mb-30">
@@ -96,7 +108,8 @@ const Programme = () => {
           <img src={actualite.imageUrl}
                      alt="" />
             <ul>
-              <li>By Admin/{actualite.Date}</li>
+            <li>{clockevent(actualite.Date)} </li>
+
             </ul>
           </div>
           <div className="blog-cap">
@@ -105,8 +118,8 @@ const Programme = () => {
             min="60"
             ideal="70"
             max="80"
-            readMoreText="-read more"/>      <br></br>           
-           <a href="/blogDetails" className="more-btn">Details</a><br></br> 
+            readMoreText="-Lire la suite"/>      <br></br>           
+           <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
            <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
       
           </div>

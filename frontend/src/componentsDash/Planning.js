@@ -106,7 +106,7 @@ const Planning = () => {
     dispatch(fetchPlannings());
   }, []);
 
- const plannings_container = planningData.plannings.map((planning) => (
+ const plannings_container = planningData.plannings.reverse().map((planning) => (
   <tr>
 <td  key={planning._id}>
 {planning.Date}

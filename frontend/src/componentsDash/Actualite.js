@@ -10,6 +10,7 @@ import SideBar from "./SideBar";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import moment from 'moment'
 
 toast.configure();
 
@@ -35,6 +36,7 @@ const Actualite = () => {
     fbUrl:"",
     description:"",
     descriptionDetail:"",
+    webSite:"",
   };
 
   const notifyAdd = () => {
@@ -43,7 +45,10 @@ const Actualite = () => {
       autoClose: 6000,
     });
   };
+  const clockevent=(newDate)=>{
 
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
   const notifyDelete = () => {
     toast.success("Supprimer avec succès !", {
       position: toast.POSITION.TOP_RIGHT,
@@ -61,10 +66,14 @@ const Actualite = () => {
   const [actualite, setActualite] = useState(initialActualiteState);
   const [categorieState, setCategorieState] = useState(false);
   const [fileInputState, setFileInputState] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
+  const [search, SetSearch] = useState("");
   const [previewSource, setPreviewSource] = useState("");
-  const [actualiteeventDetails, setActualiteDetails] = useState(initialActualiteState);
-  
+  const [conf, setConf] = useState(false);
+  const [event, setEvent] = useState(false);
+  const [article, setArticle] = useState(false);
+  const [sortie, setSortie] = useState(false);
+  const [projet, setProjet] = useState(false);
+
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
@@ -89,6 +98,7 @@ const Actualite = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
+  
   }, []);
 
   const onAdd = (e) => {
@@ -110,15 +120,25 @@ const Actualite = () => {
     dispatch(UpdateActualite(actualite));
   };
 
-  const actualite_container = actualiteData.actualites.map((actualite) => (
+  const actualite_container = actualiteData.actualites.filter((actualite) => {
+if (search === ""){
+  return actualite
+} else if (actualite.categorie.toLowerCase().includes(search.toLowerCase())){
+  return actualite
+}
+  }).map((actualite) => (
     <tr key={actualite._id}>
-      <td>
-        <h4>Titre: {actualite.titre}</h4>
+      <td>     
+        <h4>Categorie:{actualite.categorie}</h4>
+        <p>Titre: {actualite.titre}</p>
         <p>Lieux: {actualite.lieux} </p>
-        <p>DescriptionDetail: {actualite.descriptionDetail}</p>
+        <p>Date: {clockevent(actualite.Date)}</p>
+        <p>Ajouter par:{actualite.userName}</p>
+        <p>Description: {actualite.description}</p>
+        <p>Contenu: {actualite.descriptionDetail}</p>
+        
       </td>
-      <td>{actualite.description}</td>
-      <td>{actualite.Date}</td>
+    
       <td>
         <img
           src={actualite.imageUrl}
@@ -128,9 +148,8 @@ const Actualite = () => {
           alt="actualite"
         />{" "}
       </td>
-      <td>{actualite.userName}</td>
-      <td>{actualite.categorie}</td>
-      <td>{actualite.fbUrl}</td>
+      <td>Facebook_Url:{actualite.fbUrl}<br></br><br></br> Site_Web:{actualite.webSite}</td>
+     
       <td>
         <a
           href="#"
@@ -279,57 +298,13 @@ const Actualite = () => {
                                     <span className="sr-only">Close</span>
                                   </button>
                                 </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-lg-12">
-                                      <div className="form-group">
-                                        <label>Titre</label>
-                                        <input
-                                          className="form-control"
-                                          name="titre"
-                                          type="text"
-                                          value={actualite.titre}
-                                          onChange={(e) => {
-                                            const newActualiteObj = {
-                                              ...actualite,
-                                              titre: e.target.value,
-                                            };
-                                            setActualite(newActualiteObj);
-                                          }}
-                                        />{" "}
-                                      </div>
-                                      
-                                    </div>
-                                  </div>
-
-                                  <div className="row">
-                                    <div className="col-lg-12">
-                                      <div className="form-group">
-                                        <label>Date</label>
-                                        <input
-                                          className="form-control"
-                                          name="Date"
-                                          type="date"
-                                          value={actualite.Date}
-                                          onChange={(e) => {
-                                            const newActualiteObj = {
-                                              ...actualite,
-                                              Date: e.target.value,
-                                            };
-                                            setActualite(newActualiteObj);
-                                          }}
-                                        />{" "}
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <label>Categorie</label>
+                                <div className="row ml-2">
+                                <label>Categorie:</label>
                                   <br></br>
-                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
-                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
-                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
-                                                    */}
-                                  <div class="form-check">
+                                  </div>
+                                <div className="row ml-2">
+                               
+                                <div class="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -340,6 +315,7 @@ const Actualite = () => {
                                           categorie: e.target.value,
                                         };
                                         setActualite(newActualiteObj);
+                                        setConf(true);
                                       }}
                                       checked={
                                         actualite.categorie === "conference"
@@ -364,6 +340,7 @@ const Actualite = () => {
                                           categorie: e.target.value,
                                         };
                                         setActualite(newActualiteObj);
+                                        setEvent(true);
                                       }}
                                       checked={
                                         actualite.categorie === "evenement"
@@ -387,6 +364,7 @@ const Actualite = () => {
                                           categorie: e.target.value,
                                         };
                                         setActualite(newActualiteObj);
+                                        setSortie(true);
                                       }}
                                       checked={actualite.categorie === "sortie"}
                                     />
@@ -408,6 +386,7 @@ const Actualite = () => {
                                           categorie: e.target.value,
                                         };
                                         setActualite(newActualiteObj);
+                                        setProjet(true);
                                       }}
                                       checked={
                                         actualite.categorie === "projet"
@@ -431,6 +410,7 @@ const Actualite = () => {
                                           categorie: e.target.value,
                                         };
                                         setActualite(newActualiteObj);
+                                        setArticle(true);
                                       }}
                                       checked={
                                         actualite.categorie === "article"
@@ -443,8 +423,59 @@ const Actualite = () => {
                                       Article
                                     </label>
                                   </div>
-                                  <div class="form-group">
-                                      <label>Lieux</label>
+                                  </div>
+                                <div className="modal-body">
+                                  <div className="row">
+                                    <div className="col-lg-12">
+                                      <div className="form-group" >
+                                        <label>Titre:</label>
+                                        <input
+                                          className="form-control"
+                                          name="titre"
+                                          type="text"
+                                          value={actualite.titre}
+                                          onChange={(e) => {
+                                            const newActualiteObj = {
+                                              ...actualite,
+                                              titre: e.target.value,
+                                            };
+                                            setActualite(newActualiteObj);
+                                          }}
+                                        />{" "}
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+
+                                  <div className="row">
+                                    <div className="col-lg-12">
+                                      <div className="form-group">
+                                        <label>Date:</label>
+                                        <input
+                                          className="form-control"
+                                          name="Date"
+                                          type="date"
+                                          value={actualite.Date}
+                                          onChange={(e) => {
+                                            const newActualiteObj = {
+                                              ...actualite,
+                                              Date: e.target.value,
+                                            };
+                                            setActualite(newActualiteObj);
+                                          }}
+                                        />{" "}
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                
+                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
+                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
+                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
+                                                    */}
+                                
+                                  <div class="form-group" hidden={article}>
+                                      <label>Lieux:</label>
                                       <input
                                         className="form-control"
                                         name="lieux"
@@ -459,8 +490,8 @@ const Actualite = () => {
                                         }}
                                       />
                                     </div>
-                                    <div class="form-group">
-                                      <label>FacebookUrl</label>
+                                    <div class="form-group" hidden={article}>
+                                      <label>Page Facebook Url:</label>
                                       <input
                                         className="form-control"
                                         name="fbUrl"
@@ -475,8 +506,24 @@ const Actualite = () => {
                                         }}
                                       />
                                     </div>
+                                    <div class="form-group" hidden={article || conf || sortie || event}>
+                                      <label>Lien Site web:</label>
+                                      <input
+                                        className="form-control"
+                                        name="webSite"
+                                        type="text"
+                                        value={actualite.webSite}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            webSite: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
                                     <div class="form-group">
-                                      <label>Description</label>
+                                      <label>Description:</label>
                                       <input
                                         className="form-control"
                                         name="description"
@@ -495,7 +542,7 @@ const Actualite = () => {
                                     <div class="col-lg-12"></div>
                                     <div className="row"></div>
                                     <div class="form-group">
-                                      <label>Contenu</label>
+                                      <label>Contenu:</label>
                                       <textarea
                                         id="story"
                                         name="story"
@@ -512,8 +559,8 @@ const Actualite = () => {
                                       ></textarea>
                                     </div>
                                   </div>
-                                  <div className="form-group">
-                                    <label>Image</label>
+                                  <div className="form-group" hidden={article}>
+                                    <label>Affiche:</label>
                                     <br />
                                     <input
                                       type="file"
@@ -576,52 +623,11 @@ const Actualite = () => {
                                     <span className="sr-only">Close</span>
                                   </button>
                                 </div>
-                                <div className="modal-body">
-                                  <div className="row">
-                                    <div className="col-lg-12">
-                                      <div className="form-group">
-                                        <label>Titre</label>
-                                        <input
-                                          className="form-control"
-                                          name="titre"
-                                          type="text"
-                                          value={actualite.titre}
-                                          onChange={(e) => {
-                                            const newActualiteObj = {
-                                              ...actualite,
-                                              titre: e.target.value,
-                                            };
-                                            setActualite(newActualiteObj);
-                                          }}
-                                        />{" "}
-                                      </div>
-                                      
-                                    </div>
-                                  </div>
 
-                                  <div className="row">
-                                    <div className="col-lg-12">
-                                      <div className="form-group">
-                                        <label>Date</label>
-                                        <input
-                                          className="form-control"
-                                          name="Date"
-                                          type="date"
-                                          value={actualite.Date}
-                                          onChange={(e) => {
-                                            const newActualiteObj = {
-                                              ...actualite,
-                                              Date: e.target.value,
-                                            };
-                                            setActualite(newActualiteObj);
-                                          }}
-                                        />{" "}
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                  <label>Categorie</label>
+                                <label>Categorie:</label>
                                   <br></br>
+                                <div className="row ml-2">
+                                
                                   {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
                                           Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
                                           Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
@@ -740,8 +746,54 @@ const Actualite = () => {
                                       Article
                                     </label>
                                   </div>
+                                  </div>
+                                <div className="modal-body">
+                                  <div className="row">
+                                    <div className="col-lg-12">
+                                      <div className="form-group">
+                                        <label>Titre:</label>
+                                        <input
+                                          className="form-control"
+                                          name="titre"
+                                          type="text"
+                                          value={actualite.titre}
+                                          onChange={(e) => {
+                                            const newActualiteObj = {
+                                              ...actualite,
+                                              titre: e.target.value,
+                                            };
+                                            setActualite(newActualiteObj);
+                                          }}
+                                        />{" "}
+                                      </div>
+                                      
+                                    </div>
+                                  </div>
+
+                                  <div className="row">
+                                    <div className="col-lg-12">
+                                      <div className="form-group">
+                                        <label>Date:</label>
+                                        <input
+                                          className="form-control"
+                                          name="Date"
+                                          type="date"
+                                          value={actualite.Date}
+                                          onChange={(e) => {
+                                            const newActualiteObj = {
+                                              ...actualite,
+                                              Date: e.target.value,
+                                            };
+                                            setActualite(newActualiteObj);
+                                          }}
+                                        />{" "}
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                
                                   <div class="form-group">
-                                      <label>Lieux</label>
+                                      <label>Lieux:</label>
                                       <input
                                         className="form-control"
                                         name="lieux"
@@ -757,7 +809,7 @@ const Actualite = () => {
                                       />
                                     </div>
                                     <div class="form-group">
-                                      <label>FacebookUrl</label>
+                                      <label>Page Facebook Url:</label>
                                       <input
                                         className="form-control"
                                         name="fbUrl"
@@ -772,8 +824,24 @@ const Actualite = () => {
                                         }}
                                       />
                                     </div>
+                                    <div class="form-group" >
+                                      <label>Lien Site web:</label>
+                                      <input
+                                        className="form-control"
+                                        name="webSite"
+                                        type="text"
+                                        value={actualite.webSite}                                      
+                                        onChange={(e) => {
+                                          const newActualiteObj = {
+                                            ...actualite,
+                                            webSite: e.target.value,
+                                          };
+                                          setActualite(newActualiteObj);
+                                        }}
+                                      />
+                                    </div>
                                     <div class="form-group">
-                                      <label>Description</label>
+                                      <label>Description:</label>
                                       <input
                                         className="form-control"
                                         name="description"
@@ -792,7 +860,7 @@ const Actualite = () => {
                                     <div class="col-lg-12"></div>
                                     <div className="row"></div>
                                     <div class="form-group">
-                                      <label>Contenu</label>
+                                      <label>Contenu:</label>
                                       <textarea
                                         id="story"
                                         name="story"
@@ -810,7 +878,7 @@ const Actualite = () => {
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Image</label>
+                                    <label>Affiche:</label>
                                     <br />
                                     <input
                                       type="file"
@@ -845,6 +913,9 @@ const Actualite = () => {
                           <i className="fas fa-newspaper" /> Toutes les
                           Actualites
                         </h3>
+                        <label>Recherche Par Catégorie:</label>
+                        <input className="recherche" type="text" id="name" name="name" required
+                          minlength="4" maxlength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
                       </div>
                       {/* end card-header */}
                       <div className="card-body">
@@ -855,12 +926,8 @@ const Actualite = () => {
                               <th style={{ minWidth: 200 }}>
                                   Actualite Details
                                 </th>
-                                <th style={{ minWidth: 100 }}>Description</th>
-                                <th style={{ width: 100 }}>Date</th>
                                 <th style={{ minWidth: 100 }}>Image</th>
-                                <th style={{ minWidth: 50 }}>Utilisateur</th>
-                                <th style={{ minWidth: 50 }}>Catégorie</th>
-                                <th style={{ minWidth: 50 }}>FbUrl</th>
+                                <th style={{ minWidth: 100 }}>Liens</th>
                                 <th style={{ minWidth: 50 }}>Actions</th>
                               </tr>
                             </thead>
