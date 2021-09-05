@@ -6,10 +6,6 @@ import {
 import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
-import Conference from "./assetsLog/login/img/Conference.jpg"
-import ID1 from "./assetsLog/login/img/ID1.png"
-import l12x from "./assetsLog/login/img/l12x.png"
-import Baal from "./assetsLog/login/img/Baal.png"
 import moment from 'moment'
 
 
@@ -44,9 +40,9 @@ const ActualiteConference = () => {
     (actualite.categorie === "conference"  && new Date(actualite.Date).valueOf() > new Date().valueOf()  ) ?
   <div>
   <div id="Web_1366__0">
-  <img id="l12x" src={l12x} alt=""/>
-  <img id="ID1" src={ID1} alt="" />
-  <img id="didon_birsa" src={Conference} alt="" />
+  <img id="l12x"  src="assets/img/actualite/conference/l12x.png" alt=""/>
+  <img id="ID1"  src="assets/img/actualite/conference/ID1.png" alt="" />
+  <img id="didon_birsa"  src="assets/img/actualite/conference/Conference.jpg" alt="" />
   <section>	
     <div className="DESCRIPTION">
       <article className="article">
@@ -73,7 +69,7 @@ const ActualiteConference = () => {
       <span>{actualite.titre}<br /></span>
     </div>
     <img id="__________Facebook_et_1_page_s" src={actualite.imageUrl}       alt="" />
-    <img id="p11" src={Baal} alt=""/>
+    <img id="p11"  src="assets/img/actualite/conference/Baal.png" alt=""/>
   </section>
   </div>
   <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>

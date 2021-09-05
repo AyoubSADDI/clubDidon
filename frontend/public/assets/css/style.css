@@ -3694,13 +3694,13 @@ hero-btn {
 
 /* line 31, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
 .slider-area2 {
-  background-image: url(../img/hero/didonnn.jpg);
+  background-image: url(../img/about/didonnn.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 .slider-area202 {
-  background-image: url(../img/hero/REBNEWSs.jpg);
+  background-image: url(../img/blog/REBNEWSs.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -3713,22 +3713,22 @@ hero-btn {
 }
 
 .slider-area19 {
-  background-image: url(../img/programe/ma5tota.jpg);
+  background-image: url(../img/actualite/ma5tota.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .slider-area1919 {
-  background-image: url(../img/hero/mediaNEWS.png);
+  background-image: url(../img/media/mediaNEWS.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .slider-area1212 {
-  background-image: url(../img/events/programme.jpg);
+  background-image: url(../img/planning/programme.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 .slider-area12 {
-  background-image: url(../img/events/event.jpg);
+  background-image: url(../img/programme/event.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -8964,7 +8964,7 @@ justify-content:center;}
 	top: 115px;
 	position: absolute;
 	overflow: visible;
-	width: 388px;
+	width: 1070px;
 	white-space: nowrap;
 	text-align: left;
 	font-family: Segoe UI;

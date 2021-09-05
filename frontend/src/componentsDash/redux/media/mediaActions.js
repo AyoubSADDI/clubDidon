@@ -68,7 +68,7 @@ export const fetchMedias = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/media`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}media`, {
         headers: {
           Authorization: token,
         },
@@ -91,7 +91,7 @@ export const DeleteMedia = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/media/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}media/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -106,7 +106,7 @@ export const AddMedia = (ev) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/media/`, ev, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}media/`, ev, {
         headers: {
           Authorization: token,
         },
@@ -125,7 +125,7 @@ export const UpdateMedia = (ev) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/media/${ev._id}`, ev, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}media/${ev._id}`, ev, {
         headers: {
           Authorization: token,
         },

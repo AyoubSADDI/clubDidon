@@ -68,7 +68,7 @@ export const fetchPlannings = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/planning`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}planning`, {
         headers: {
           Authorization: token,
         },
@@ -91,7 +91,7 @@ export const DeletePlanning = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/planning/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}planning/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -106,7 +106,7 @@ export const AddPlanning = (pl) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/planning/`, pl, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}planning/`, pl, {
         headers: {
           Authorization: token,
         },
@@ -125,7 +125,7 @@ export const UpdatePlanning = (pl) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/planning/${pl._id}`, pl, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}planning/${pl._id}`, pl, {
         headers: {
           Authorization: token,
         },

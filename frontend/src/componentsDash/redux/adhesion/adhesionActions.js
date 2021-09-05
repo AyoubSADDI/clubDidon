@@ -68,7 +68,7 @@ export const fetchAdhesions = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/adhesion`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}adhesion`, {
         headers: {
           Authorization: token,
         },
@@ -91,7 +91,7 @@ export const DeleteAdhesion = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/adhesion/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}adhesion/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -106,7 +106,7 @@ export const AddAdhesion = (ac) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/adhesion/`, ac, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}adhesion/`, ac, {
         headers: {
           Authorization: token,
         },
@@ -125,7 +125,7 @@ export const UpdateAdhesion = (ac) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/adhesion/${ac._id}`, ac, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}adhesion/${ac._id}`, ac, {
         headers: {
           Authorization: token,
         },

@@ -67,7 +67,7 @@ export const fetchPartenaires = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/partenaire`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}partenaire`, {
         headers: {
           Authorization: token,
         },
@@ -90,7 +90,7 @@ export const DeletePartenaire = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/partenaire/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}partenaire/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -105,7 +105,7 @@ export const AddPartenaire = (conf) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/partenaire/`, conf, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}partenaire/`, conf, {
         headers: {
           Authorization: token,
         },
@@ -124,7 +124,7 @@ export const UpdatePartenaire = (conf) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/partenaire/${conf._id}`, conf, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}partenaire/${conf._id}`, conf, {
         headers: {
           Authorization: token,
         },

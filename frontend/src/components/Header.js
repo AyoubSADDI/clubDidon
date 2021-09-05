@@ -34,6 +34,7 @@ const Header = () => {
                                     src="assets/img/logo/logo4.jpg"
                                     width="180"
                                     height="50"
+                                    alt=""
                                   />
                                 </a>
                               </div>

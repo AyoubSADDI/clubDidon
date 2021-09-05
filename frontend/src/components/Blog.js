@@ -41,7 +41,7 @@ const date = actualitedetail.Date;
           <Header/>
             <main>
                 {/*? Hero Start */}
-                <div className="slider-area2">
+                <div className="slider-area202">
                     <div className="slider-height2 hero-overly2 d-flex align-items-center">
                         <div className="">
                             <div className="row">

@@ -8,7 +8,7 @@ exports.createActualite = async (req, res, next) => {
   try {
       const fileStr = req.body.imageUrl
        await cloudinary.uploader.upload(fileStr,{
-          upload_preset : 'photos'
+          upload_preset : process.env.UPLOAD_PRESET
       }).then((res)=>{
           imageUrl = res.url
           console.log("imageUrl : ", imageUrl)
@@ -71,7 +71,7 @@ exports.modifyActualite = async (req, res, next) => {
   try {
       const fileStr = req.body.imageUrl
       const uploadedResponse = await cloudinary.uploader.upload(fileStr,{
-          upload_preset : 'photos'
+          upload_preset : process.env.UPLOAD_PRESET
       })
       imageUrl = uploadedResponse.url
   } catch (error) {

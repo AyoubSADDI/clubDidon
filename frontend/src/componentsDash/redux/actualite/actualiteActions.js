@@ -68,7 +68,7 @@ export const fetchActualites = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/actualite`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}actualite`, {
         headers: {
           Authorization: token,
         },
@@ -91,7 +91,7 @@ export const DeleteActualite = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/actualite/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}actualite/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -106,7 +106,7 @@ export const AddActualite = (ac) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/actualite/`, ac, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}actualite/`, ac, {
         headers: {
           Authorization: token,
         },
@@ -125,7 +125,7 @@ export const UpdateActualite = (ac) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/actualite/${ac._id}`, ac, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}actualite/${ac._id}`, ac, {
         headers: {
           Authorization: token,
         },

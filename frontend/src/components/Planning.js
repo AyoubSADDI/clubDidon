@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   fetchPlannings,
 } from "../componentsDash/redux/planning/planningActions";
-import bg from "./assetsLog/login/img/bg.png"
-import ktiba from "./assetsLog/login/img/ktiba.png"
 import Header from "./Header";
 import Typical from "react-typical";
 
@@ -79,7 +77,7 @@ const Planning = () => {
         </div>
        
         <div id="Web_1366__1" className="Web_1366__1_Class">
-  <img className="ID4_Class" src={bg}  alt=""/>	
+  <img className="ID4_Class" src="assets/img/planning/bg.png"  alt=""/>	
   <svg className="Path_1_i" viewBox="0 0 572 562.812">	
   </svg>
   <table className="tab" style={{width: "55%" }}>
@@ -105,7 +103,7 @@ const Planning = () => {
     <path className="Line_5_Class" d="M 0 0 L 0 196">
     </path>
   </svg>
-  <img className="ktiba_Class" src={ktiba} alt="" />
+  <img className="ktiba_Class" src="assets/img/planning/ktiba.png" alt="" />
 </div>
 
     {" "}

@@ -7,11 +7,8 @@ const mongoose = require('mongoose');
 const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
 const adhesionRoutes = require('./routes/adhesion');
-const conferenceRoutes = require('./routes/conference');
-const eventRoutes = require('./routes/event');
 const mediaRoutes = require('./routes/media');
 const planningRoutes = require('./routes/planning');
-const sortieRoutes = require('./routes/sortie');
 const actualiteRoutes = require('./routes/actualite');
 const partenaireRoutes = require('./routes/partenaire');
 const executifRoutes = require('./routes/executif');
@@ -37,16 +34,13 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({limit: '50mb', extended: true})); 
 app.use(express.json({ limit: '50mb'}));
 
-app.use('/api/stuff'      ,stuffRoutes);
-app.use('/api/auth'       ,userRoutes);
-app.use('/api/adhesion'   ,adhesionRoutes);
-app.use('/api/conference' ,conferenceRoutes);
-app.use('/api/event'      ,eventRoutes);
-app.use('/api/planning'   ,planningRoutes);
-app.use('/api/sortie'     ,sortieRoutes);
-app.use('/api/actualite'  ,actualiteRoutes);
-app.use('/api/partenaire' ,partenaireRoutes);
-app.use('/api/media'      ,mediaRoutes);
-app.use('/api/executif'   ,executifRoutes);
+app.use(`${process.env.API_REST}stuff`     ,stuffRoutes);
+app.use(`${process.env.API_REST}auth`       ,userRoutes);
+app.use(`${process.env.API_REST}adhesion`  ,adhesionRoutes);
+app.use(`${process.env.API_REST}planning`   ,planningRoutes);
+app.use(`${process.env.API_REST}actualite`  ,actualiteRoutes);
+app.use(`${process.env.API_REST}partenaire` ,partenaireRoutes);
+app.use(`${process.env.API_REST}media`      ,mediaRoutes);
+app.use(`${process.env.API_REST}executif`  ,executifRoutes);
 
 module.exports = app;

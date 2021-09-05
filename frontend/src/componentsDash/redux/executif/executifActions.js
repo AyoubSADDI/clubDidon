@@ -68,7 +68,7 @@ export const fetchExecutifs = () => {
         )
         */
     axios
-      .get(`${process.env.REACT_APP_CLIENT_URL}api/executif`, {
+      .get(`${process.env.REACT_APP_CLIENT_URL}executif`, {
         headers: {
           Authorization: token,
         },
@@ -91,7 +91,7 @@ export const DeleteExecutif = (id) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .delete(`${process.env.REACT_APP_CLIENT_URL}api/executif/${id}`, {
+      .delete(`${process.env.REACT_APP_CLIENT_URL}executif/${id}`, {
         headers: {
           Authorization: token,
         },
@@ -106,7 +106,7 @@ export const AddExecutif = (ev) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .post(`${process.env.REACT_APP_CLIENT_URL}api/executif/`, ev, {
+      .post(`${process.env.REACT_APP_CLIENT_URL}executif/`, ev, {
         headers: {
           Authorization: token,
         },
@@ -125,7 +125,7 @@ export const UpdateExecutif = (ev) => {
     const token = "Bearer " + tokenFromStorage.token;
     console.log(token);
     axios
-      .put(`${process.env.REACT_APP_CLIENT_URL}api/executif/${ev._id}`, ev, {
+      .put(`${process.env.REACT_APP_CLIENT_URL}executif/${ev._id}`, ev, {
         headers: {
           Authorization: token,
         },

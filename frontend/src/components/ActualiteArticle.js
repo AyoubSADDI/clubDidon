@@ -6,9 +6,6 @@ import {
 import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'
-import didon_birsa from "./assetsLog/login/img/didon_birsa.png"
-import ID1 from "./assetsLog/login/img/ID1.png"
-import p11 from "./assetsLog/login/img/p11.png"
 import moment from 'moment'
 
 
@@ -38,8 +35,8 @@ const ActualiteArticle = () => {
     (actualite.categorie === "article" ) ?
     <div>
     <div id="Web_1366__0">
-    <img id="ID1" src={ID1} alt="" />
-    <img id="didon_birsa" src={didon_birsa} alt="" />
+    <img id="ID1"  src="assets/img/actualite/article/ID1.png" alt="" />
+    <img id="didon_birsa"  src="assets/img/actualite/article/didon_birsa.png" alt="" />
     <section>	
       <div className="DESCRIPTION">
         <article className="article">
@@ -62,7 +59,7 @@ const ActualiteArticle = () => {
       <div id="La_fte_de_carthage">
       <span>{actualite.titre}<br /></span>
       </div>
-      <img id="p11" src={p11} alt=""/>
+      <img id="p11"  src="assets/img/actualite/article/p11.png" alt=""/>
     </section>
     </div>
     <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
@@ -120,6 +117,7 @@ const ActualiteArticle = () => {
 
   
   </main>
+  <Footer/>
   <div id="back-top">
     <a title="Go to Top" href="#"><i className="fas fa-level-up-alt" /></a>
   </div>

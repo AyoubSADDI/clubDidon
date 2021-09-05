@@ -6,7 +6,6 @@ import {
 import Header from './Header'
 import Footer from './Footer'
 import Typical from 'react-typical'    
-import didonbirsaa from "./assetsLog/login/img/didonbirsaa.png";
 import moment from 'moment'
 
 
@@ -27,7 +26,7 @@ const Media = () => {
             
             <div>
                   <div id="Web">
-        <img id="ACBIRSA" src={didonbirsaa} alt="" />
+        <img id="ACBIRSA" src="assets/img/media/didonbirsaa.png" alt="" />
              <div id="GP4">
           <img id="IMG" src={media.imageUrl} alt="" />
         </div>  
@@ -109,6 +108,7 @@ const Media = () => {
 
   
   </main>
+  <Footer/>
   <div id="back-top">
     <a title="Go to Top" href="#"><i className="fas fa-level-up-alt" /></a>
   </div>

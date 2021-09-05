@@ -8,7 +8,7 @@ exports.createPartenaire = async (req, res, next) => {
   try {
       const fileStr = req.body.imageUrl
        await cloudinary.uploader.upload(fileStr,{
-          upload_preset : 'photos'
+          upload_preset : process.env.UPLOAD_PRESET
       }).then((res)=>{
           imageUrl = res.url;
           proprieteLogo= res.height+" * "+ res.width ;
@@ -68,7 +68,7 @@ exports.modifyPartenaire = async (req, res, next) => {
   try {
       const fileStr = req.body.imageUrl
       const uploadedResponse = await cloudinary.uploader.upload(fileStr,{
-          upload_preset : 'photos'
+          upload_preset : process.env.UPLOAD_PRESET
       })
       imageUrl = uploadedResponse.url
       proprieteLogo = uploadedResponse.height+" * "+uploadedResponse.width

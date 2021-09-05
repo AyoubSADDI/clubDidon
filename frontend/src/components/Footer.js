@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer>
     {/*? Footer Start* data-background="assets/img/gallery/footer_bg.jpg"*/}
-    <div className="footer-area section-bg " data-background="assets/img/gallery/Énée_Didon_par_Pierre-Narcisse_Guérin.jpg">
+    <div className="footer-area section-bg " data-background="assets/img/footer/Énée_Didon_par_Pierre-Narcisse_Guérin.jpg">
       <div className="container">
         <div className="footer-top footer-padding">
           <div className="row d-flex justify-content-between">
