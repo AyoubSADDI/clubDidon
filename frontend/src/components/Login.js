@@ -1,5 +1,4 @@
 import React ,{Component} from 'react'
-import './assetsLog/login/style/style.css'
 import './assetsLog/login/img/carth.jpg'
 import { Redirect } from "react-router-dom";
 
@@ -52,7 +51,7 @@ class Login extends Component{
     <div className="body">
     <div className="loginbox">
   <img src='assets/img/logo/logoo.png' className="woman" alt="" />
-  <b><h1 className="white">Connexion Pour Les Administrateurs</h1></b>
+  <b><h1 >Connexion</h1></b>
   <form onSubmit={(e)=>{this.login(e)}}>
     {/* <p className="white">Email</p> */}
     <span className="row">
@@ -64,7 +63,7 @@ class Login extends Component{
     <input type="password" name placeholder="Enter Mot de passe" onChange={(event)=>{this.setState({password:event.target.value})}}/>
     </span>
     <input type="submit" name defaultValue="login" value="Connexion"/>
-    <b><a href="#">lost your password?</a></b> <br />
+    {/* <b><a href="#">lost your password?</a></b> <br /> */}
   </form>
 </div>
 </div>
