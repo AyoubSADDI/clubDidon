@@ -99,7 +99,7 @@ const ActualiteArticle = () => {
                 <h2>Bienvenue à
                 <Typical
                 loop={Infinity}
-                wrapper="b"
+                wrapper="a"
                 steps={[
                   ' Actualités article',1000,'  Club didon de Carthage',1000,
                 ]}

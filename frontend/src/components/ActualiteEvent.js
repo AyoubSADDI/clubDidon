@@ -110,7 +110,7 @@ const ActualiteEvent = () => {
                 <h2>Bienvenue à
                 <Typical
                 loop={Infinity}
-                wrapper="b"
+                wrapper="a"
                 steps={[
                   ' Actualités Evénements',1000,'  Club didon de Carthage',1000,
                 ]}

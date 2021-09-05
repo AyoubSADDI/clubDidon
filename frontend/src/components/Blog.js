@@ -4,6 +4,7 @@ import Footer from './Footer'
 import Typical from 'react-typical'
 import { useState } from 'react'
 import DayJs from "react-dayjs"
+import moment from 'moment'
 
 const Blog = (props) => {
 
@@ -18,13 +19,10 @@ fetch("http://localhost:5000/api/actualite/"+props.match.params.id)
     }
 );
 });
+const clockevent=(newDate)=>{
 
-
-const date = actualitedetail.Date;
-
-
-
-
+    return  moment(new Date(newDate)).format("DD/MM/YYYY")
+    }
     return (
         <div>
             <div id="preloader-active">
@@ -48,15 +46,16 @@ const date = actualitedetail.Date;
                                 <div className="col-xl-12">
                                     <div className="hero-cap hero-cap2 text-right">
                                        
-                                        <h2>Bienvenue à
-                                        <Typical
-                                        loop={Infinity}
-                                        wrapper="b"
-                                        steps={[
-                                        '_Blog',1000,'_Blog',1000,
-                                        ]}
-                                        />
-                                        </h2>
+                                    <h2>
+                    Bienvenue à
+                    <Typical
+                      loop={Infinity}
+                      wrapper="a"
+                      steps={[
+                        " Details", 1000
+                      ]}
+                    />
+                  </h2>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +73,7 @@ const date = actualitedetail.Date;
                                         <div className="blog_item_img">
                                             <img className="card-img rounded-0" src={actualitedetail.imageUrl} alt="" />
                                             <a href="#" className="blog_item_date">
-                                               <DayJs asString={ true }>{actualitedetail.Date}</DayJs>
+                                                {clockevent(actualitedetail.Date)}
                                                 <p>{actualitedetail.lieux}</p>
                                             </a>
                                         </div>

@@ -62,7 +62,7 @@ const Organisation = () => {
                       Bienvenue à
                       <Typical
                         loop={Infinity}
-                        wrapper="b"
+                        wrapper="a"
                         steps={[
                           " Organisation",
                           1000,

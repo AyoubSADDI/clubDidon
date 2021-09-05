@@ -88,7 +88,7 @@ const Patrimoine = () => {
                       Bienvenue à
                       <Typical
                         loop={Infinity}
-                        wrapper="b"
+                        wrapper="a"
                         steps={[
                           " Patrimoine Digital",
                           1000,

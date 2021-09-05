@@ -1,5 +1,4 @@
 import React ,{Component} from 'react'
-import './assetsLog/login/img/carth.jpg'
 import { Redirect } from "react-router-dom";
 
 class Login extends Component{

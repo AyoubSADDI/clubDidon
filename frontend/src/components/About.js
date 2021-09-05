@@ -44,7 +44,7 @@ const About = () => {
                       Bienvenue à
                       <Typical
                         loop={Infinity}
-                        wrapper="b"
+                        wrapper="a"
                         steps={[
                           " Propos",
                           1000,

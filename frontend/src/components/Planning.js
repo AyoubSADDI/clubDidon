@@ -52,7 +52,7 @@ const Planning = () => {
                     Bienvenue à
                     <Typical
                       loop={Infinity}
-                      wrapper="b"
+                      wrapper="a"
                       steps={[
                         ' Programmes',1000,'  Club didon de Carthage',1000,
                     ]

@@ -66,7 +66,7 @@ const Contact = () => {
                         Bienvenue à
                         <Typical
                           loop={Infinity}
-                          wrapper="b"
+                          wrapper="a"
                           steps={[
                             " Contact",
                             1000,
@@ -107,8 +107,8 @@ const Contact = () => {
                             id="name"
                             type="text"
                             onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Entrer your name'"
-                            placeholder="Entrer your name"
+                            onblur="this.placeholder = 'Nom et Prénom'"
+                            placeholder="Nom et Prénom"
                           />
                         </div>
                       </div>
@@ -122,8 +122,8 @@ const Contact = () => {
                             id="email"
                             type="email"
                             onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Entrer email address'"
-                            placeholder="Entrer email address"
+                            onblur="this.placeholder = 'Email'"
+                            placeholder="Email"
                           />
                         </div>
                       </div>
@@ -137,8 +137,8 @@ const Contact = () => {
                           id="subject"
                           type="text"
                           onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Entrer Subject'"
-                          placeholder="Entrer Subject"
+                          onblur="this.placeholder = 'Objet'"
+                          placeholder="Objet"
                         />
                       </div>
                     </div>
@@ -153,8 +153,8 @@ const Contact = () => {
                             cols={30}
                             rows={9}
                             onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Entrer Message'"
-                            placeholder=" Entrer Message"
+                            onblur="this.placeholder = 'Message'"
+                            placeholder=" Message"
                             defaultValue={""}
                           />
                         </div>

@@ -4,14 +4,6 @@ import { useHistory } from "react-router-dom";
 const Header = () => {
   const token = JSON.parse(localStorage.getItem("login"));
 
-  const history = useHistory();
-  const onLogout = (e) => {
-    e.preventDefault();
-    console.log("deconxxxxx");
-    localStorage.removeItem("login");
-    history.push("/login");
-  };
-
   return (
     <div>
       <header>
@@ -56,7 +48,7 @@ const Header = () => {
                                   <a href="/actualiteArticle">Article </a>
                                 </li>
                                 <li>
-                                  <a href="/actualiteConference">Conference</a>
+                                  <a href="/actualiteConference">Conférence</a>
                                 </li>
                                 <li>
                                   <a href="/actualiteEvent">Événement</a>

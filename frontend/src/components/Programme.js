@@ -41,13 +41,12 @@ return  moment(new Date(newDate)).format("DD/MM/YYYY")
           </ul>
         </div>
         <div className="blog-cap">
-          <h3><a href="blog_details.html">{actualite.titre}</a></h3>
+          <h3><a href={"/"+actualite._id}>{actualite.titre}</a></h3>
           <ReadMoreReact text={actualite.description}
           min="60"
           ideal="70"
           max="80"
           readMoreText="-Lire la suite"/>       <br></br>          
-           <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
   
        
          <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
@@ -75,14 +74,13 @@ return  moment(new Date(newDate)).format("DD/MM/YYYY")
           </ul>
         </div>
         <div className="blog-cap">
-          <h3><a href="blog_details.html">{actualite.titre}</a></h3>
+          <h3><a href={"/"+actualite._id}>{actualite.titre}</a></h3>
           <ReadMoreReact text={actualite.description}
           min="60"
           ideal="70"
           max="80"
           readMoreText="-Lire la suite"/>   
           <br></br>          
-          <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
   
        
          <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
@@ -113,13 +111,12 @@ return  moment(new Date(newDate)).format("DD/MM/YYYY")
             </ul>
           </div>
           <div className="blog-cap">
-            <h3><a href="blog_details.html">{actualite.titre}</a></h3>
+            <h3><a href={"/"+actualite._id}>{actualite.titre}</a></h3>
             <ReadMoreReact text={actualite.description}
             min="60"
             ideal="70"
             max="80"
             readMoreText="-Lire la suite"/>      <br></br>           
-           <a href={"/"+actualite._id} className="more-btn">Details</a><br></br> 
            <a href={actualite.fbUrl} className="more-btn">Reserver Par <i className="fab fa-facebook-f" /></a>
       
           </div>
@@ -153,8 +150,10 @@ return  moment(new Date(newDate)).format("DD/MM/YYYY")
                     Bienvenue à
                     <Typical
                       loop={Infinity}
-                      wrapper="b"
-                      steps={[" Activités", 1000, "  Club didon de Carthage", 1000]}
+                      wrapper="a"
+                      steps={[
+                        " Activités", 1000, "  Club didon de Carthage", 1000
+                      ]}
                     />
                   </h2>
                 </div>

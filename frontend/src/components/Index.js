@@ -1,85 +1,8 @@
-import React, { useEffect,useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  fetchActualites,
-  DeleteActualite,
-  AddActualite,
-  UpdateActualite,
-} from "../componentsDash/redux/actualite/actualiteActions";
+import React from "react";
 import Header from './Header'
 import video from './video/video.mp4'
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
-import { useHistory } from "react-router-dom";
 
-toast.configure()
 const Index = () => {
-  const loginFromStorage = JSON.parse(localStorage.getItem("login"));
-  const userName = loginFromStorage.userId;
-
-  const history = useHistory();
-  const onLogout = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("login");
-    history.push("/login");
-  };
-
-  const initialActualiteState = {
-    _id: "",
-    userName: "",
-    ptitre: "",
-    dtitre: "",
-    contenu: "",
-  };
-
-  const notifyAdd = () => {
-    toast.success('Ajouter avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-    
-  const notifyDelete = () => {
-    toast.success('Supprimer avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-    
-  const notifyUpdate = () => {
-    toast.success('Mise à jour avec succès !',{
-      position: toast.POSITION.TOP_RIGHT , 
-      autoClose:6000
-    })
-    }
-
-  const [actualite, setActualite] = useState(initialActualiteState);
-
-
-  const actualiteData = useSelector((state) => state.actualite);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchActualites());
-    console.log(actualiteData);
-  }, []);
-
-  const onAdd = (e) => {
-    e.preventDefault();
-    console.log("submitting : ", e);
-    const loginFromStorage = JSON.parse(localStorage.getItem("login"));
-    const userId = loginFromStorage.userId;
-    console.log(userId);
-    actualite.userName = userId;
-    dispatch(AddActualite(actualite));
-  };
-
-  const onUpdate = (e) => {
-    e.preventDefault();
-    console.log("actualite : ", actualite);
-    console.log("submitting : ", e);
-    dispatch(UpdateActualite(actualite));
-  };
-
 
   return (
   
