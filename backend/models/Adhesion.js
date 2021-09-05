@@ -10,7 +10,8 @@ const adhesionSchema = mongoose.Schema({
   telephone: { type: Number},
   email: { type: String},
   adresse: { type: String},
-  createdAt: {type: Date , default: Date.now}
+  createdAt: {type: Date , default: Date.now},
+  paiement :{type: String}
 });
 
 module.exports = mongoose.model('Adhesion', adhesionSchema);

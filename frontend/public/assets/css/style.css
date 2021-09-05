@@ -101,7 +101,7 @@
   color: #fff !important;
   display: inline-block;
   padding: 18px 44px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -219,7 +219,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   color: #641b55;
   margin-top: 0px;
   font-style: normal;
@@ -526,7 +526,7 @@ hr {
   background: #ff2143;
   padding: 27px 44px;
   text-transform: uppercase;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -3033,7 +3033,7 @@ hero-btn {
 /* line 940, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle span {
   font-size: 18px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   font-weight: 500;
   margin-bottom: 17px;
   text-transform: uppercase;
@@ -3047,6 +3047,7 @@ hero-btn {
   /* line 940, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
   .section-tittle span {
     font-size: 14px;
+    font-family: "Book Antiqua";
   }
 }
 
@@ -3061,6 +3062,7 @@ hero-btn {
   left: 0px;
   top: 50%;
   transform: translateY(-50%);
+  font-family: "Book Antiqua";
 }
 
 /* line 965, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
@@ -3069,12 +3071,14 @@ hero-btn {
   display: block;
   color: #641b55;
   font-weight: 900;
+  font-family: "Book Antiqua";
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /* line 965, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
   .section-tittle h2 {
     font-size: 31px;
+    font-family: "Book Antiqua";
   }
 }
 
@@ -3082,6 +3086,7 @@ hero-btn {
   /* line 965, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
   .section-tittle h2 {
     font-size: 31px;
+    font-family: "Book Antiqua";
   }
 }
 
@@ -3277,7 +3282,7 @@ hero-btn {
   margin-right: 30px;
   font-size: 12px;
   font-weight: 100;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   text-transform: uppercase;
 }
 
@@ -3673,7 +3678,7 @@ hero-btn {
 /* line 48, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_h1-hero.scss */
 .slider-area .hero__caption span {
   font-size: 25px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   font-weight: 600;
   margin-bottom: 22px;
   text-transform: uppercase;
@@ -4246,23 +4251,25 @@ hero-btn {
   font-size: 20px;
   font-weight: 500;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
 }
 .support-company-area .right-caption .support-caption1 p.pera-top {
   font-size: 20px;
   font-weight: 500;
   color: rgb(255, 255, 255);
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
 }
 
 /* line 37, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_about.scss */
 .support-company-area .right-caption .support-caption p {
   font-size: 15px;
   color: #cecece;
+  font-family: "Book Antiqua";
 }
 .support-company-area .right-caption .support-caption1 p {
   font-size: 15px;
   color: #161414;
+  font-family: "Book Antiqua";
 }
 
 /* line 1, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_count_down.scss */
@@ -4312,7 +4319,7 @@ hero-btn {
   color: #ffffff;
   font-size: 60px;
   font-weight: 400;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   line-height: 1;
   margin-bottom: 12px;
   display: block;
@@ -4389,7 +4396,7 @@ hero-btn {
 .services-area .single-services .services-caption span {
   margin-bottom: 15px;
   line-height: 13px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   position: relative;
   color: #e94d65;
   font-weight: 300;
@@ -4535,7 +4542,7 @@ hero-btn {
   color: #ffffff;
   font-size: 14px;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   display: block;
   position: relative;
   margin-left: 50px;
@@ -4579,7 +4586,7 @@ hero-btn {
 /* line 59, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 .about-details .about-details-cap h4 {
   font-size: 30px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   font-weight: 700;
   margin-bottom: 30px;
   color: #641b55;
@@ -4591,6 +4598,7 @@ hero-btn {
 /* line 69, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 .about-details .about-details-cap h4::before {
   position: absolute;
+  font-family: "Book Antiqua";
   content: "";
   width: 54px;
   height: 2px;
@@ -4604,7 +4612,8 @@ hero-btn {
 /* line 81, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 .about-details .about-details-cap p {
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 18px;
+  font-family: "Book Antiqua";
   text-justify: inter-word;
 }
 
@@ -4725,12 +4734,14 @@ hero-btn {
   color: #ffa800;
   font-size: 30px;
   font-weight: 600;
+  font-family: "Book Antiqua";
 }
 
 @media (max-width: 575px) {
   /* line 64, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_testimonial.scss */
   .testimonial-area .testimonial-caption .testimonial-founder .founder-text span {
     font-size: 26px;
+    font-family: "Book Antiqua";
   }
 }
 
@@ -4738,6 +4749,7 @@ hero-btn {
 .testimonial-area .testimonial-caption .testimonial-founder .founder-text p {
   color: #57667e;
   font-weight: 500;
+  font-family: "Book Antiqua";
   line-height: 1.5;
 }
 
@@ -4812,7 +4824,8 @@ hero-btn {
   line-height: 1.8;
   margin-bottom: 35px;
   color: #000000;
-  font-weight: 550;
+  font-weight: 800;
+  
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -4865,7 +4878,7 @@ hero-btn {
 .footer-area .footer-top .single-footer-caption .footer-tittle h4 {
   color: rgb(0, 0, 0);
   font-family: "Poppins", sans-serif;
-  font-size: 21px;
+  font-size: 25px;
   margin-bottom: 38px;
   font-weight: 600;
   text-transform: uppercase;
@@ -4883,7 +4896,7 @@ hero-btn {
 /* line 56, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 .footer-area .footer-top .single-footer-caption .footer-tittle ul li a {
   color: #000000;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 /* line 59, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
@@ -5121,7 +5134,7 @@ hero-btn {
 /* line 23, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-img ul li {
   font-size: 19px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   font-weight: 350;
   color: #000000;
   padding: 20px 30px 20px 84px;
@@ -5238,7 +5251,7 @@ hero-btn {
   color: #ffa800;
   text-transform: capitalize;
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   position: relative;
   padding-left: 50px;
 }
@@ -6902,7 +6915,7 @@ hero-btn {
   color: #fff;
   font-weight: 900;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Book Antiqua";
   text-transform: capitalize;
 }
 
@@ -8780,8 +8793,8 @@ justify-content:center;}
 	width: 701px;
 	height: 324px;
 	text-align: left;
-	font-family: Segoe UI;
-	font-style: normal;
+  font-family: "Book Antiqua";
+  font-style: normal;
 	font-weight: normal;
 	font-size: 20px;
 	color: rgba(255,255,255,1);
@@ -8814,8 +8827,8 @@ justify-content:center;}
 	width: 470px;
 	white-space: nowrap;
 	text-align: left;
-	font-family: Segoe UI;
-	font-style: normal;
+  font-family: "Book Antiqua";
+  font-style: normal;
 	font-weight: bold;
 	font-size: 60px;
 	color: rgba(199,199,199,1);

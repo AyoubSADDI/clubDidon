@@ -20,8 +20,6 @@ const Event = () => {
     dispatch(fetchEvents());
   }, []);
 
-  console.log("*******"+new Date().toString())
-  //let accessAllowed = (age > 18) ? true : false;
   const eventAvenir_container = eventData.events.reverse().map((event) => (
     
   (new Date(event.Date).valueOf() > new Date().valueOf() ) ?

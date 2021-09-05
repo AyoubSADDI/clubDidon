@@ -37,7 +37,7 @@ const reducer = (state = initialState, action) => {
         executifs: state.executifs.filter(
           (ev) => ev._id !== action.payload
         ),
-      }; 
+      };
     case ADD_EXECUTIF:
       return {
         ...state,

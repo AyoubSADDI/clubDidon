@@ -572,7 +572,7 @@ body.adminbody .main-sidebar.left {
 }
 
 #sidebar-menu .label {
-    margin-top: 2px
+    margin-top: 20px
 }
 
 #sidebar-menu .subdrop {
@@ -587,7 +587,7 @@ body.adminbody .main-sidebar.left {
 #sidebar-menu>ul>li>a {
     color: #fbfbfb;
     display: block;
-    padding: 33px 10px 15px 10px;
+    padding: 23px 10px 15px 10px;
     font-weight: 400;
     font-size: .9rem
 }

@@ -8,6 +8,7 @@ import ktiba from "./assetsLog/login/img/ktiba.png"
 import Header from "./Header";
 import Typical from "react-typical";
 
+
 const Planning = () => {
 
   const planningData = useSelector((state) => state.planning);
@@ -29,6 +30,7 @@ const Planning = () => {
     ));
            
   return (
+   
     <div>
       <div id="preloader-active">
         <div className="preloader d-flex align-items-center justify-content-center">
@@ -41,7 +43,7 @@ const Planning = () => {
         </div>
       </div>
       <Header />
-
+      <main>
       <div className="slider-area1212 ">
         <div className="slider-height2 hero-overly2 d-flex align-items-center">
           <div className="">
@@ -54,7 +56,7 @@ const Planning = () => {
                       loop={Infinity}
                       wrapper="b"
                       steps={[
-                        ' Planifications',1000,'  Club didon de Carthage',1000,
+                        ' Programmes',1000,'  Club didon de Carthage',1000,
                     ]
                     }
                     />
@@ -108,7 +110,12 @@ const Planning = () => {
 
     {" "}
       </div> 
+      </main>
+  <div id="back-top">
+    <a title="Go to Top" href="#"><i className="fas fa-level-up-alt" /></a>
+  </div>
     </div>
+   
   );
 };
 

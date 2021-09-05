@@ -154,7 +154,7 @@ return  moment(new Date(newDate)).format("DD/MM/YYYY")
                     <Typical
                       loop={Infinity}
                       wrapper="b"
-                      steps={[" Programme", 1000, "  Club didon de Carthage", 1000]}
+                      steps={[" Activités", 1000, "  Club didon de Carthage", 1000]}
                     />
                   </h2>
                 </div>

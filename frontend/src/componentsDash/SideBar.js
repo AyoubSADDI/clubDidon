@@ -145,9 +145,9 @@ const SideBar = () => {
                 </ul>
               </li>
               <li className="submenu">
-                <a id="tables" href='/executionDash'>
-                  <i className="fas fa-handshake" />
-                  <span>Execution</span>
+                <a id="tables" href='/executifDash'>
+                <i class="fas fa-users-cog"></i>
+                  <span>Executif</span>
                   <span className="menu-arrow" />
                 </a>
                 <ul className="list-unstyled">

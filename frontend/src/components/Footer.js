@@ -30,31 +30,21 @@ const Footer = () => {
             <div className="col-xl-2 col-lg-2 col-md-3 col-sm-5">
               <div className="single-footer-caption mb-50">
                 <div className="footer-tittle">
-                  <h4>Location </h4>
+                  <h4>Menu </h4>
                   <ul>
-                    <li><a href="#">Advanced</a></li>
-                    <li><a href="#"> Management</a></li>
-                    <li><a href="#">Corporate</a></li>
-                    <li><a href="#">Customer</a></li>
-                    <li><a href="#">Information</a></li>
+                    <li><a href="/apropos">A Propos</a></li>
+                    <li><a href="/organisation"> Organisation</a></li>
+                    <li><a href="/programme">Activités</a></li>
+                    <li><a href="/patrimoine">Patrimoine Numérique</a></li>
+                    <li><a href="/planification">Programme</a></li>
+                    <li><a href="/media">Medias</a></li>
+                    <li><a href="/adhesion">Adhésion</a></li>
+                    <li><a href="/contact">Contact</a></li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="col-xl-2 col-lg-2 col-md-3 col-sm-5">
-              <div className="single-footer-caption mb-50">
-                <div className="footer-tittle">
-                  <h4>Explore</h4>
-                  <ul>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Proparties</a></li>
-                    <li><a href="#">Licenses</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+         
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-8">
               <div className="single-footer-caption mb-50">
                 <div className="footer-tittle">

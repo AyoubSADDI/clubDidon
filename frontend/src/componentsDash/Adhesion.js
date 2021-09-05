@@ -1,16 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   fetchAdhesions,
   DeleteAdhesion,
+  UpdateAdhesion,
 } from "./redux/adhesion/adhesionActions";
 import SideBar from './SideBar'
 import {useHistory } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure()
+
 
 const Adhesion = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem('login'))
   const userName = loginFromStorage.userId
 
+  const notifyAdd = () => {
+    toast.success('Ajouter avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
+    
+  const notifyDelete = () => {
+    toast.success('Supprimer avec succès !',{
+      position: toast.POSITION.TOP_RIGHT , 
+      autoClose:6000
+    })
+    }
   const history = useHistory()
   const onLogout = (e) => {
     e.preventDefault()
@@ -18,30 +37,31 @@ const Adhesion = () => {
       history.push('/login')
   }
 
-  // const initialAdhesionState = {
-  //   _id: "",
-  //   nom: "",
-  //   prenom: "",
-  //   dateNais: "",
-  //   cin: "",
-  //   societe: "",
-  //   profession: "",
-  //   telephone: "",
-  //   email: "",
-  //   adresse: "",
-  // };
+  const initialAdhesionState = {
+    _id: "",
+    nom: "",
+    prenom: "",
+    dateNais: "",
+    cin: "",
+    societe: "",
+    profession: "",
+    telephone: "",
+    email: "",
+    adresse: "",
+    paiement:"",
+  };
 
   
-  // const [adhesion, setAdhesion] = useState(initialAdhesionState);
+  const [adhesion, setAdhesion] = useState(initialAdhesionState);
  
 
-  // const onUpdate = (e) => {
-  //   e.preventDefault();
-  //   console.log("event : ", adhesion);
-  //   console.log("submitting : ", e);
-  //   dispatch(UpdateAdhesion(adhesion));
-  // };
-
+  const onUpdate = (e) => {
+    e.preventDefault();
+    console.log("event : ", adhesion);
+    console.log("submitting : ", e);
+    dispatch(UpdateAdhesion(adhesion));
+  };
+  
   const adhesionData = useSelector((state) => state.adhesion);
 
   const dispatch = useDispatch();
@@ -52,15 +72,13 @@ const Adhesion = () => {
   const adhesions_container = adhesionData.adhesions.reverse().map((adhesion) => (
     <tr key={adhesion._id}>
                             <td>
-                           {adhesion.nom}
+                          
+                            <h4>Cin:  {adhesion.cin}</h4>
+                            <p>Nom et Prénom: {adhesion.nom} {adhesion.prenom}</p>
+                            <p>Date de Nais: {adhesion.dateNais}</p>
+                            
                             </td>
-                            <td>{adhesion.prenom}</td>
-                            <td> 
-                             {adhesion.dateNais}                   
-                            </td>
-                            <td> 
-                             {adhesion.cin}
-                            </td>
+                         
                             <td> 
                            {adhesion.societe}                  
                             </td>
@@ -80,9 +98,11 @@ const Adhesion = () => {
                             {adhesion.createdAt}                   
                             </td>
                             <td> 
-                               <a href="#" className="btn btn-danger btn-sm btn-block mt-2"  onClick={() => dispatch(DeleteAdhesion(adhesion._id))}><i className="fas fa-trash" /> </a>
-                               <a href="#" className="btn btn-success btn-sm btn-block mt-2" data-toggle="modal" data-target="#modal_add_user"><i className="fas fa-user-plus" /> </a>
-                               <a href="#" className="btn btn-info btn-sm btn-block mt-2" ><i className="fas fa-file-archive"  /> </a>
+                            {adhesion.paiement}                   
+                            </td>
+                            <td> 
+                               <a href="#" className="btn btn-danger btn-sm btn-block mt-2"  onClick={() => dispatch(DeleteAdhesion(adhesion._id),notifyDelete())}><i className="fas fa-trash" /> </a>
+                               <a href="#" className="btn btn-success btn-sm btn-block mt-2" data-toggle="modal" data-target="#modal_add_user"   onClick={() => setAdhesion(adhesion)}><i className="fas fa-user-plus" /> </a>
                             </td>
                           </tr>
   ));
@@ -145,9 +165,16 @@ const Adhesion = () => {
                     <div className="modal fade custom-modal" tabIndex={-1} role="dialog" aria-labelledby="modal_add_user" aria-hidden="true" id="modal_add_user">
                       <div className="modal-dialog">
                         <div className="modal-content">
-                          <form action="#" method="post" encType="multipart/form-data">
+                        <form
+                                encType="multipart/form-data"
+                                className="form"
+                                onSubmit={(e) => {
+                                  onUpdate(e);
+                                  notifyAdd();
+                                }}
+                              >
                             <div className="modal-header">
-                              <h5 className="modal-title">Ajouter Dans l'historique</h5>
+                              <h5 className="modal-title">Ajouter leur Historique de paiement</h5>
                               <button type="button" className="close" data-dismiss="modal">
                                 <span aria-hidden="true">×</span>
                                 <span className="sr-only">Close</span>
@@ -155,22 +182,30 @@ const Adhesion = () => {
                             </div>
                             <div className="modal-body">
                               <div className="row">
-                                <div className="col-lg-6">
+                               
+                                <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>Date début paiment</label>
-                                    <input className="form-control" name="début" type="date" required />
-                                  </div>
+                                    <label>Description de paiement</label>
+                                    <textarea
+                                        id="story"
+                                        name="story"
+                                        rows="10"
+                                        cols="56"
+                                        value={adhesion.paiement}
+                                        onChange={(e) => {
+                                          const newAdhesionObj = {
+                                            ...adhesion,
+                                            paiement: e.target.value,
+                                          };
+                                          setAdhesion(newAdhesionObj);
+                                        }}
+                                      ></textarea>                       
                                 </div>
-                                <div className="col-lg-6">
-                                  <div className="form-group">
-                                    <label>Date fin paiment</label>
-                                    <input className="form-control" name="fin" type="date" required />
-                                  </div>
                                 </div>
                               </div>
                             </div>
                             <div className="modal-footer">
-                              <button type="button" className="btn btn-primary">Ajouter</button>
+                              <button type="submit" className="btn btn-primary">Ajouter</button>
                             </div>
                           </form>
                         </div>
@@ -185,16 +220,14 @@ const Adhesion = () => {
                       <table className="table table-bordered">
                         <thead>
                           <tr>
-                            <th style={{minWidth: 50}}>Prénom</th>
-                            <th style={{width: 50}}>Nom</th>
-                            <th style={{minWidth: 50}}>Date de Naissance</th>
-                            <th style={{minWidth: 50}}>Cin</th>
+                            <th style={{minWidth: 200}}>Adhesion Details</th>                          
                             <th style={{minWidth: 80}}>Société ou Etab</th>
                             <th style={{minWidth: 80}}>Profession</th>
                             <th style={{minWidth: 50}}>Téléphone</th>
                             <th style={{minWidth: 50}}>Email</th>
                             <th style={{minWidth: 80}}>Adresse</th>
                             <th style={{minWidth: 80}}>Créé à</th>
+                            <th style={{minWidth: 80}}>Paiement</th>
                             <th style={{minWidth: 50}}>Actions</th>
                           </tr>
                         </thead>

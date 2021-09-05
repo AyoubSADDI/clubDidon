@@ -13,6 +13,7 @@ exports.createAdhesion = (req, res, next) => {
     email: req.body.email,
     adresse: req.body.adresse,
     createdAt: Date.now(),
+    paiement:"Non Payée",
 
   });
   adhesion.save().then(
@@ -57,7 +58,8 @@ exports.modifyAdhesion = (req, res, next) => {
     profession: req.body.profession,
     telephone: req.body.telephone,
     email: req.body.email,
-    adresse: req.body.adresse
+    adresse: req.body.adresse,
+    paiement: req.body.paiement
   });
   Adhesion.updateOne({_id: req.params.id}, adhesion).then(
     () => {

@@ -13,7 +13,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 toast.configure()
 
-const Execution = () => {
+const Executif = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem("login"));
   const userName = loginFromStorage.userId;
 
@@ -24,7 +24,7 @@ const Execution = () => {
     history.push("/login");
   };
 
-  const initialExecutionState = {
+  const initialExecutifState = {
     _id: "",
     userName: "",
     name: "",
@@ -33,10 +33,11 @@ const Execution = () => {
     description: "",
   };
 
-  const [execution, setExecution] = useState(initialExecutionState);
+  const [executif, setExecutif] = useState(initialExecutifState);
   const [fileInputState, setFileInputState] = useState("");
   const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState("");
+  const [executifDetails, setExecutifDetails] = useState(initialExecutifState);
 
   const notifyAdd = () => {
     toast.success('Ajouter avec succès !',{
@@ -74,7 +75,7 @@ const Execution = () => {
   };
   const uploadImage = async (base64EncodedImage) => {
     console.log(base64EncodedImage);
-    execution.imageUrl = base64EncodedImage;
+    executif.imageUrl = base64EncodedImage;
   };
 
   const onAdd = (e) => {
@@ -85,47 +86,47 @@ const Execution = () => {
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
     console.log(userId);
-    execution.userName = userId;
-    dispatch(AddExecutif(execution));
+    executif.userName = userId;
+    dispatch(AddExecutif(executif));
   };
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("execution: ", execution);
+    console.log("executif : ", executif);
     console.log("submitting : ", e);
     if (previewSource) uploadImage(previewSource);
-    dispatch(UpdateExecutif(execution));
+    dispatch(UpdateExecutif(executif));
   };
 
-  const executionData = useSelector((state) => state.execution);
+  const executifData = useSelector((state) => state.executif);
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchExecutifs());
   }, []);
- 
-  const execution_container = executionData.executifs.map((execution) => (
-    <tr key={execution._id}>
+
+  const event_container = executifData.executifs.reverse().map((executif) => (
+    <tr key={executif._id}>
       <td>
-        <h4>Nom et Prenom:{execution.name}</h4>
-        <p>Role:{execution.role} </p>
+        <h4>Nom et Prénom:{executif.name}</h4>
+        <p>Role:{executif.role} </p>
+        <p>Description:{executif.description}</p>
       </td>
-      <td> {execution.description}</td>
-      <td>{execution.userName}</td>
       <td>
         <img
-          src={execution.imageUrl}
+          src={executif.imageUrl}
           width="100"
           height="100"
-          name="Evénement-Image"
-          alt="Evénement"
+          name="executif-Image"
+          alt="executif"
         />{" "}
       </td>
+      <td>{executif.userName}</td>
       <td>
         <a
           href="#"
           className="btn btn-danger btn-sm btn-block mt-2"
-          onClick={() => dispatch(DeleteExecutif(execution._id),notifyDelete())}
+          onClick={() => dispatch(DeleteExecutif(executif._id),notifyDelete())}
         >
           <i className="fas fa-trash" />{" "}
         </a>
@@ -134,7 +135,7 @@ const Execution = () => {
           className="btn btn-primary btn-sm btn-block"
           data-toggle="modal"
           data-target="#modal_add_Sortie"
-          onClick={() => setExecution(execution)}
+          onClick={() => setExecutif(executif)}
         >
           <i className="far fa-edit" />{" "}
         </a>
@@ -235,7 +236,7 @@ const Execution = () => {
                               className="fas fa-user-plus"
                               aria-hidden="true"
                             />{" "}
-                            Ajouter nouveau Execution
+                            Ajouter nouveau Exécutif
                           </button>
                         </span>
                         <div
@@ -259,7 +260,7 @@ const Execution = () => {
                               >
                                 <div className="modal-header">
                                   <h5 className="modal-title">
-                                    Ajouter Nouveau Execution{" "}
+                                    Ajouter Nouveau Exécutif{" "}
                                   </h5>
                                   <button
                                     type="button"
@@ -279,13 +280,13 @@ const Execution = () => {
                                           className="form-control"
                                           name="name"
                                           type="text"
-                                          value={execution.name}
+                                          value={executif.name}
                                           onChange={(e) => {
-                                            const newExecutionObj = {
-                                              ...execution,
+                                            const newExecutifObj = {
+                                              ...executif,
                                               name: e.target.value,
                                             };
-                                            setExecution(newExecutionObj);
+                                            setExecutif(newExecutifObj);
                                           }}
                                         />
                                       </div>
@@ -299,18 +300,22 @@ const Execution = () => {
                                           className="form-control"
                                           name="role"
                                           type="text"
-                                          value={execution.role}
+                                          value={executif.role}
                                           onChange={(e) => {
-                                            const newExecutionObj = {
-                                              ...execution,
-                                              name: e.target.value,
+                                            const newExecutifObj = {
+                                              ...executif,
+                                              role: e.target.value,
                                             };
-                                            setExecution(newExecutionObj);
+                                            setExecutif(newExecutifObj);
                                           }}
                                         />
                                       </div>
                                     </div>
-                                    <div class="form-group">
+                                  
+                                  </div>
+                                  <div className="row">
+                                  
+                                    <div className="row"></div>
                                     <div class="form-group">
                                       <label>Description:</label>
                                       <textarea
@@ -318,20 +323,19 @@ const Execution = () => {
                                         name="story"
                                         rows="10"
                                         cols="58"
-                                        value={execution.description}
+                                        value={executif.description}
                                         onChange={(e) => {
-                                          const newExecutionObj = {
-                                            ...execution,
+                                          const newExecutifObj = {
+                                            ...executif,
                                             description: e.target.value,
                                           };
-                                          setExecution(newExecutionObj);
+                                          setExecutif(newExecutifObj);
                                         }}
                                       ></textarea>
                                     </div>
-                                    </div>
-                                  </div>                          
+                                  </div>
                                   <div className="form-group">
-                                    <label>Image</label>
+                                    <label>Image:</label>
                                     <br />
                                     <input
                                       type="file"
@@ -383,7 +387,7 @@ const Execution = () => {
                               >
                                 <div className="modal-header">
                                   <h5 className="modal-title">
-                                    Mettre à jour le Execution{" "}
+                                    Mettre à jour le Exécutif{" "}
                                   </h5>
                                   <button
                                     type="button"
@@ -398,18 +402,18 @@ const Execution = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Nom et Prénom</label>
+                                        <label>Nom et Prénom:</label>
                                         <input
                                           className="form-control"
                                           name="name"
                                           type="text"
-                                          value={execution.name}
+                                          value={executif.name}
                                           onChange={(e) => {
-                                            const newExecutionObj = {
-                                              ...execution,
+                                            const newExecutifObj = {
+                                              ...executif,
                                               name: e.target.value,
                                             };
-                                            setExecution(newExecutionObj);
+                                            setExecutif(newExecutifObj);
                                           }}
                                         />
                                       </div>
@@ -423,13 +427,13 @@ const Execution = () => {
                                           className="form-control"
                                           name="role"
                                           type="text"
-                                          value={execution.role}
+                                          value={executif.role}
                                           onChange={(e) => {
-                                            const newExecutionObj = {
-                                              ...execution,
+                                            const newExecutifObj = {
+                                              ...executif,
                                               role: e.target.value,
                                             };
-                                            setExecution(newExecutionObj);
+                                            setExecutif(newExecutifObj);
                                           }}
                                         />
                                       </div>
@@ -446,19 +450,19 @@ const Execution = () => {
                                         name="story"
                                         rows="10"
                                         cols="58"
-                                        value={execution.description}
+                                        value={executif.description}
                                         onChange={(e) => {
-                                          const newExecutionObj = {
-                                            ...execution,
+                                          const newExecutifObj = {
+                                            ...executif,
                                             description: e.target.value,
                                           };
-                                          setExecution(newExecutionObj);
+                                          setExecutif(newExecutifObj);
                                         }}
                                       ></textarea>
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Image</label>
+                                    <label>Image:</label>
                                     <br />
                                     <input
                                       type="file"
@@ -490,8 +494,8 @@ const Execution = () => {
                         </div>
                         <h3>
                           {" "}
-                          <i className="fas fa-plane-departure" />
-                          Toutes les Executions
+                          <i class="fas fa-users-cog"></i>                 
+                                   Toutes les Exécutifs
                         </h3>
                       </div>
                       {/* end card-header */}
@@ -501,15 +505,14 @@ const Execution = () => {
                             <thead>
                               <tr>
                                 <th style={{ minWidth: 200 }}>
-                                  Execution Details
+                                  Executif Details
                                 </th>
-                                <th style={{ minWidth: 100 }}>Description</th>
-                                <th style={{ width: 100 }}>Date</th>
-                                <th style={{ minWidth: 100 }}>Image</th>                       
+                                <th style={{ minWidth: 100 }}>Image</th>
+                                <th style={{ width: 100 }}>Utilisateur</th>
                                 <th style={{ minWidth: 50 }}>Actions</th>
                               </tr>
                             </thead>
-                            <tbody>{execution_container}</tbody>
+                            <tbody>{event_container}</tbody>
                           </table>
                         </div>
                       </div>
@@ -532,4 +535,4 @@ const Execution = () => {
   );
 };
 
-export default Execution;
+export default Executif;

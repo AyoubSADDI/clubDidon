@@ -1,9 +1,50 @@
-import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import Typical from "react-typical";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  fetchExecutifs,
+} from "../componentsDash/redux/executif/executifActions";
+import Header from './Header'
+import Footer from './Footer'
+import Typical from 'react-typical'
 
 const Organisation = () => {
+  const bureauData = useSelector((state) => state.executif);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchExecutifs());
+  }, []);
+
+  const bureau_container = bureauData.executifs.map((executif) => (
+    
+    <div className="support-company-area pt-100 pb-100 section-bg fix">
+    <div className="container">
+      <div className="row align-items-center">
+        <div className="col-xl-6 col-lg-6">
+          <div className="support-location-img">
+            <img src={executif.imageUrl} alt="" />
+          </div>
+        </div>
+        <div className="col-xl-6 col-lg-6">
+          <div className="right-caption">
+            {/* Section Tittle */}
+            <div className="section-tittle section-tittle3 mb-50">
+              <h2>{executif.name} </h2>
+              <span>{executif.role}</span>
+            </div>
+            <div className="support-caption1">
+              <p className="pera-top">
+             {executif.description}
+              </p>
+              <p className="mb-65"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  ));
   return (
     <div>
       <div id="preloader-active">
@@ -185,151 +226,8 @@ const Organisation = () => {
           </div>
         </div>
       </div>
-      <main className="bodyBg">
-        {/* data-background="/assets/img/organisation/bl.jpg" */}
-        <div className="support-company-area pt-100 pb-100 section-bg fix">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/gallery/2.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="right-caption">
-                  {/* Section Tittle */}
-                  <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Eryj Ben Sassi</h2>
-                    <span>Présidente</span>
-                  </div>
-                  <div className="support-caption1">
-                    <p className="pera-top">
-                      Urbaniste diplômée de l'Institut Supérieur des Technologies de
-                      l'Environnement de l'Urbanisme et du Bâtiment.
-                    </p>
-                    <p className="mb-65"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <main className="bodyBg">
-        {/* data-background="/assets/img/organisation/bl.jpg" */}
-        <div className="support-company-area pt-100 pb-100 section-bg fix">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/gallery/6.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="right-caption">
-                  {/* Section Tittle */}
-                  <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Ines Hassoumi</h2>
-                    <span>Vice Présidente </span>
-                  </div>
-                  <div className="support-caption1">
-                    <p className="pera-top">
-                      Docteur en informatique diplômée de l'Institut Supérieur de Gestion
-                      de Tunis et à l'université de Paris VI.{" "}
-                    </p>
-                    <p className="mb-65"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <main className="bodyBg">
-        {/* data-background="/assets/img/organisation/bl.jpg" */}
-        <div className="support-company-area pt-100 pb-100 section-bg fix">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/gallery/4.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="right-caption">
-                  {/* Section Tittle */}
-                  <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Nahawend Makni </h2>
-                    <span>Secrétaire générale </span>
-                  </div>
-                  <div className="support-caption1">
-                    <p className="pera-top">
-                      Architecte diplômée de l'Ecole Nationale d'Architecture et
-                      d'Urbanisme de Tunis.{" "}
-                    </p>
-                    <p className="mb-65"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="support-company-area pt-100 pb-100 section-bg fix">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/gallery/7.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="right-caption">
-                  {/* Section Tittle */}
-                  <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Shérif arfaoui</h2>
-                    <span>Responsable artistique</span>
-                  </div>
-                  <div className="support-caption1">
-                    <p className="pera-top">
-                    -Artiste plasticien spécialisé dans la sculpture{" "} <br></br>
-                    -Bijoutier et styliste modéliste<br></br>
-                    -Chercheur en culture punique
-                    </p>
-                    <p className="mb-65"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="support-company-area pt-100 pb-100 section-bg fix">
-          <div className="container">
-            <div className="row align-items-center">
-              <div className="col-xl-6 col-lg-6">
-                <div className="support-location-img">
-                  <img src="assets/img/gallery/8.jpg" alt="" />
-                </div>
-              </div>
-              <div className="col-xl-6 col-lg-6">
-                <div className="right-caption">
-                  {/* Section Tittle */}
-                  <div className="section-tittle section-tittle3 mb-50">
-                    <h2>Rayen Manai </h2>
-                    <span>Responsable de l’identité visuelle</span>
-                  </div>
-                  <div className="support-caption1">
-                    <p className="pera-top">
-                    -Artiste plasticien spécialisé dans l'art graphique{" "}<br></br>
-                    -Dessinateur de bandes dessinées<br></br>
-                    -Développeur dans l'art punique<br></br>
-                    </p>
-                    <p className="mb-65"></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <main className="bodyBg"> 
+      {bureau_container}
       </main>
       {/* data-background="assets/img/gallery/section_bg04.jpg" */}
       {/*? Testimonial Start */}

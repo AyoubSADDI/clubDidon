@@ -9,6 +9,7 @@ import partenaireReducer from './partenaire/partenaireReducer'
 import mediaReducer from './media/mediaReducer'
 import executifReducer from './executif/executifReducer'
 
+
 const rootReducer = combineReducers({
     conference : conferenceReducer,
     sortie     : sortieReducer,
