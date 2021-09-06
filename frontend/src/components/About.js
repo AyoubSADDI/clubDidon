@@ -170,7 +170,6 @@ const About = () => {
             </div>
           </div>
         </div>
-
         {/*? Categories Area Start */}
         <div className="categories-area ">
           <div className="container">
@@ -235,13 +234,255 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>{" "}
+        <div className="about-details bodyBg">
+          <div className="container">
+            <div className="row">
+              <div className="offset-xl-1 col-lg-8">
+                <div className="about-details-cap pt-5">
+                  <h4>Nos Partenaires Socila</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="brand-area pt-5">
+          <div className="container">
+            <div className="brand-active brand-border pb-40">
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo1.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo2.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo3.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo4.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo5.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo6.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo7.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo8.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo9.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Social/logo10.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="about-details bodyBg">
           <div className="container">
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap pt-5">
-                  <h4>Nos Partenaires</h4>
+                  <h4>Nos Partenaires Privé</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="brand-area pt-5">
+          <div className="container">
+            <div className="brand-active brand-border pb-40">
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo1.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo2.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo3.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo4.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo5.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo6.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo7.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo8.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo9.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Privé/logo10.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="about-details bodyBg">
+          <div className="container">
+            <div className="row">
+              <div className="offset-xl-1 col-lg-8">
+                <div className="about-details-cap pt-5">
+                  <h4>Nos Partenaires Media</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="brand-area pt-5">
+          <div className="container">
+            <div className="brand-active brand-border pb-40">
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Media/logo1.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Media/logo2.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Media/logo3.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="about-details bodyBg">
+          <div className="container">
+            <div className="row">
+              <div className="offset-xl-1 col-lg-8">
+                <div className="about-details-cap pt-5">
+                  <h4>Nos Partenaires Association</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="brand-area pt-5">
+          <div className="container">
+            <div className="brand-active brand-border pb-40">
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo1.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo2.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo3.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo4.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo5.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Association/logo6.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="about-details bodyBg">
+          <div className="container">
+            <div className="row">
+              <div className="offset-xl-1 col-lg-8">
+                <div className="about-details-cap pt-5">
+                  <h4>Autres Partenaires</h4>
                 </div>
               </div>
             </div>

@@ -7,18 +7,17 @@ import { useSelector, useDispatch } from "react-redux";
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-toast.configure()
+toast.configure();
 const Adhesion = () => {
-
   const notify = () => {
-  toast.success('Envoyer avec succès !',{
-    position: toast.POSITION.TOP_RIGHT , 
-    autoClose:6000
-  })
-  }
+    toast.success("Envoyer avec succès !", {
+      position: toast.POSITION.TOP_RIGHT,
+      autoClose: 6000,
+    });
+  };
 
   const initialAdhesionState = {
     _id: "",
@@ -31,7 +30,7 @@ const Adhesion = () => {
     telephone: "",
     email: "",
     adresse: "",
-    createdAt:"",
+    createdAt: "",
   };
 
   const [adhesion, setAdhesion] = useState(initialAdhesionState);
@@ -47,7 +46,6 @@ const Adhesion = () => {
     e.preventDefault();
     console.log("submitting : ", e);
     dispatch(AddAdhesion(adhesion));
-  
   };
 
   return (
@@ -79,8 +77,10 @@ const Adhesion = () => {
                         loop={Infinity}
                         wrapper="a"
                         steps={[
-                          ' Adhésion',1000,'  Club didon de Carthage',1000,
-                         
+                          " Adhésion",
+                          1000,
+                          "  Club didon de Carthage",
+                          1000,
                         ]}
                       />
                     </h2>

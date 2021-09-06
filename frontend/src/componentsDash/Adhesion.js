@@ -190,7 +190,7 @@ const Adhesion = () => {
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="56"
+                                        cols="64"
                                         value={adhesion.paiement}
                                         onChange={(e) => {
                                           const newAdhesionObj = {

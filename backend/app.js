@@ -4,7 +4,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 const mongoose = require('mongoose');
-const stuffRoutes = require('./routes/stuff');
 const userRoutes = require('./routes/user');
 const adhesionRoutes = require('./routes/adhesion');
 const mediaRoutes = require('./routes/media');
@@ -34,7 +33,6 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({limit: '50mb', extended: true})); 
 app.use(express.json({ limit: '50mb'}));
 
-app.use(`${process.env.API_REST}stuff`     ,stuffRoutes);
 app.use(`${process.env.API_REST}auth`       ,userRoutes);
 app.use(`${process.env.API_REST}adhesion`  ,adhesionRoutes);
 app.use(`${process.env.API_REST}planning`   ,planningRoutes);

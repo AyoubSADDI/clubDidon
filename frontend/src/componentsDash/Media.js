@@ -231,9 +231,9 @@ const Media = () => {
                             </div>
                             <div className="modal-body">
                               <div className="row">
-                                <div className="col-lg-12">
+                                <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Titre</label>
+                                    <label>Titre:</label>
                                     <input
                                           className="form-control"
                                           name="titre"
@@ -248,11 +248,9 @@ const Media = () => {
                                           }}
                                         />                                  </div>
                                 </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-lg-12">
+                                <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Date</label>
+                                    <label>Date:</label>
                                     <input
                                           className="form-control"
                                           name="Date"
@@ -267,12 +265,12 @@ const Media = () => {
                                           }}
                                         />                                  </div>
                                 </div>
-                               
                               </div>
+                            
                               <div className="row">
                                 <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>url Magazin</label>
+                                    <label>url Magazin:</label>
                                     <input
                                           className="form-control"
                                           name="urlMagazin"
@@ -292,12 +290,12 @@ const Media = () => {
                               </div>
                               <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>Contenu</label>
+                                    <label>Contenu:</label>
                                     <textarea
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="56"
+                                        cols="62"
                                         value={media.contenu}
                                         onChange={(e) => {
                                           const newMediaObj = {
@@ -312,7 +310,7 @@ const Media = () => {
                               <div className="row">
                                 <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Image</label>
+                                    <label>Image(1382*1024):</label>
                                     <input
                                       type="file"
                                       name="imageUrl"
@@ -359,9 +357,9 @@ const Media = () => {
                             </div>
                             <div className="modal-body">
                               <div className="row">
-                                <div className="col-lg-12">
+                                <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Titre</label>
+                                    <label>Titre:</label>
                                     <input
                                           className="form-control"
                                           name="titre"
@@ -376,11 +374,9 @@ const Media = () => {
                                           }}
                                         />                                  </div>
                                 </div>
-                              </div>
-                              <div className="row">
-                                <div className="col-lg-12">
+                                <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Date</label>
+                                    <label>Date:</label>
                                     <input
                                           className="form-control"
                                           name="Date"
@@ -395,12 +391,12 @@ const Media = () => {
                                           }}
                                         />                                  </div>
                                 </div>
-                               
                               </div>
+                             
                               <div className="row">
                                 <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>url Magazin</label>
+                                    <label>url Magazin:</label>
                                     <input
                                           className="form-control"
                                           name="urlMagazin"
@@ -420,12 +416,12 @@ const Media = () => {
                               </div>
                               <div className="col-lg-12">
                                   <div className="form-group">
-                                    <label>Contenu</label>
+                                    <label>Contenu:</label>
                                     <textarea
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="56"
+                                        cols="62"
                                         value={media.contenu}
                                         onChange={(e) => {
                                           const newMediaObj = {
@@ -440,7 +436,7 @@ const Media = () => {
                               <div className="row">
                                 <div className="col-lg-6">
                                   <div className="form-group">
-                                    <label>Image</label>
+                                  <label>Image(1382*1024):</label>
                                     <input
                                       type="file"
                                       name="imageUrl"

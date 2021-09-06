@@ -109,7 +109,7 @@ const Executif = () => {
     <tr key={executif._id}>
       <td>
         <h4>Nom et Prénom:{executif.name}</h4>
-        <p>Role:{executif.role} </p>
+        <p>Rôle:{executif.role} </p>
         <p>Description:{executif.description}</p>
       </td>
       <td>
@@ -175,7 +175,7 @@ const Executif = () => {
                           <b>Accueil</b>
                         </li>
                         <li className="breadcrumb-item active">
-                          <b style={{ color: "red" }}>Evénements</b>
+                          <b style={{ color: "red" }}>Executifs</b>
                         </li>
                         <li className="list-inline-item dropdown notif">
                           <a
@@ -273,7 +273,7 @@ const Executif = () => {
                                 </div>
                                 <div className="modal-body">
                                   <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-6">
                                       <div className="form-group">
                                         <label>Nom et Prénom:</label>
                                         <input
@@ -291,8 +291,6 @@ const Executif = () => {
                                         />
                                       </div>
                                     </div>
-                                  </div>
-                                  <div className="row">
                                     <div className="col-lg-6">
                                       <div className="form-group">
                                         <label>Role:</label>
@@ -311,18 +309,17 @@ const Executif = () => {
                                         />
                                       </div>
                                     </div>
-                                  
                                   </div>
+                                
                                   <div className="row">
                                   
-                                    <div className="row"></div>
                                     <div class="form-group">
                                       <label>Description:</label>
                                       <textarea
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="58"
+                                        cols="67"
                                         value={executif.description}
                                         onChange={(e) => {
                                           const newExecutifObj = {
@@ -335,7 +332,7 @@ const Executif = () => {
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Image:</label>
+                                    <label>Image(443*360):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -400,7 +397,7 @@ const Executif = () => {
                                 </div>
                                 <div className="modal-body">
                                   <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-6">
                                       <div className="form-group">
                                         <label>Nom et Prénom:</label>
                                         <input
@@ -418,8 +415,6 @@ const Executif = () => {
                                         />
                                       </div>
                                     </div>
-                                  </div>
-                                  <div className="row">
                                     <div className="col-lg-6">
                                       <div className="form-group">
                                         <label>Role:</label>
@@ -438,18 +433,16 @@ const Executif = () => {
                                         />
                                       </div>
                                     </div>
-                                 
                                   </div>
+                                 
                                   <div className="row">
-                                   
-                                    <div className="row"></div>
                                     <div class="form-group">
                                       <label>Description:</label>
                                       <textarea
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="58"
+                                        cols="67"
                                         value={executif.description}
                                         onChange={(e) => {
                                           const newExecutifObj = {
@@ -462,7 +455,7 @@ const Executif = () => {
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Image:</label>
+                                  <label>Image(443*360):</label>
                                     <br />
                                     <input
                                       type="file"

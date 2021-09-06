@@ -281,7 +281,7 @@ const Partenaire = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Nom de Partenaire</label>
+                                        <label>Nom de Partenaire:</label>
                                         <input
                                           className="form-control"
                                           name="nomP"
@@ -299,7 +299,7 @@ const Partenaire = () => {
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Logo</label>
+                                    <label>Logo(114*160):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -366,7 +366,7 @@ const Partenaire = () => {
                                   <div className="row">
                                     <div className="col-lg-12">
                                       <div className="form-group">
-                                        <label>Nom de Partenaire</label>
+                                        <label>Nom de Partenaire:</label>
                                         <input
                                           className="form-control"
                                           name="nomP"
@@ -386,7 +386,7 @@ const Partenaire = () => {
                                
                              
                                   <div className="form-group">
-                                    <label>Image</label>
+                                  <label>Logo(114*160):</label>
                                     <br />
                                     <input
                                       type="file"

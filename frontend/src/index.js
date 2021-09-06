@@ -29,7 +29,6 @@ import PrivateRoutes from './PrivateRoutes'
 import PartenaireDash from './componentsDash/Partenaire'
 import ExecutifDash from './componentsDash/Executif'
 
-
 ReactDOM.render(
   <Provider store={store}>
   <BrowserRouter>
@@ -57,9 +56,8 @@ ReactDOM.render(
         <Route path='/planification' render={(props) => <Planif {...props} />} />
         <Route path='/media' render={(props) => <Media {...props} />} />
         <Route path='/executifDash' render={(props) => <ExecutifDash {...props} />} />
-        <Route path='/:id' render={(props) => <Blog {...props} />} />
-       
-      </Switch>
+        <Route path='/:id' render={(props) => <Blog {...props} />} />   
+    </Switch>
   </BrowserRouter>
   </Provider>,
   document.getElementById('root')

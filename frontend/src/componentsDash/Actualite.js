@@ -126,7 +126,7 @@ if (search === ""){
 } else if (actualite.categorie.toLowerCase().includes(search.toLowerCase())){
   return actualite
 }
-  }).map((actualite) => (
+  }).reverse().map((actualite) => (
     <tr key={actualite._id}>
       <td>     
         <h4>Categorie:{actualite.categorie}</h4>
@@ -426,7 +426,7 @@ if (search === ""){
                                   </div>
                                 <div className="modal-body">
                                   <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-4">
                                       <div className="form-group" >
                                         <label>Titre:</label>
                                         <input
@@ -443,12 +443,8 @@ if (search === ""){
                                           }}
                                         />{" "}
                                       </div>
-                                      
                                     </div>
-                                  </div>
-
-                                  <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-4">
                                       <div className="form-group">
                                         <label>Date:</label>
                                         <input
@@ -466,15 +462,8 @@ if (search === ""){
                                         />{" "}
                                       </div>
                                     </div>
-                                  </div>
-
-                                
-                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
-                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
-                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
-                                                    */}
-                                
-                                  <div class="form-group" hidden={article}>
+                                    <div className="col-lg-4">
+                                    <div class="form-group" hidden={article}>
                                       <label>Lieux:</label>
                                       <input
                                         className="form-control"
@@ -490,6 +479,11 @@ if (search === ""){
                                         }}
                                       />
                                     </div>
+                                  </div>
+                                  </div>
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-6">
                                     <div class="form-group" hidden={article}>
                                       <label>Page Facebook Url:</label>
                                       <input
@@ -506,6 +500,8 @@ if (search === ""){
                                         }}
                                       />
                                     </div>
+                                    </div>
+                                    <div className="col-lg-6">
                                     <div class="form-group" hidden={article || conf || sortie || event}>
                                       <label>Lien Site web:</label>
                                       <input
@@ -522,6 +518,11 @@ if (search === ""){
                                         }}
                                       />
                                     </div>
+                                    </div>
+                                   
+                                    </div>
+                                    </div>
+                                 
                                     <div class="form-group">
                                       <label>Description:</label>
                                       <input
@@ -547,7 +548,7 @@ if (search === ""){
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="58"
+                                        cols="67"
                                         value={actualite.descriptionDetail}
                                         onChange={(e) => {
                                           const newActualiteObj = {
@@ -560,7 +561,7 @@ if (search === ""){
                                     </div>
                                   </div>
                                   <div className="form-group" hidden={article}>
-                                    <label>Affiche:</label>
+                                    <label>Affiche(712*534):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -628,10 +629,7 @@ if (search === ""){
                                   <br></br>
                                 <div className="row ml-2">
                                 
-                                  {/* Conferences <input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)}  name="categories" value="Conferences"></input>
-                                          Evenement<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Evenement"></input>
-                                          Sortie<input type="checkbox" onChange={(e)=>setCategorieState(e.target.value)} name="categories"  value="Sortie"></input>  
-                                                    */}
+                                 
                                   <div class="form-check">
                                     <input
                                       className="form-check-input"
@@ -747,10 +745,10 @@ if (search === ""){
                                     </label>
                                   </div>
                                   </div>
-                                <div className="modal-body">
+                                  <div className="modal-body">
                                   <div className="row">
-                                    <div className="col-lg-12">
-                                      <div className="form-group">
+                                    <div className="col-lg-4">
+                                      <div className="form-group" >
                                         <label>Titre:</label>
                                         <input
                                           className="form-control"
@@ -766,12 +764,8 @@ if (search === ""){
                                           }}
                                         />{" "}
                                       </div>
-                                      
                                     </div>
-                                  </div>
-
-                                  <div className="row">
-                                    <div className="col-lg-12">
+                                    <div className="col-lg-4">
                                       <div className="form-group">
                                         <label>Date:</label>
                                         <input
@@ -789,10 +783,8 @@ if (search === ""){
                                         />{" "}
                                       </div>
                                     </div>
-                                  </div>
-
-                                
-                                  <div class="form-group">
+                                    <div className="col-lg-4">
+                                    <div class="form-group" hidden={article}>
                                       <label>Lieux:</label>
                                       <input
                                         className="form-control"
@@ -808,7 +800,12 @@ if (search === ""){
                                         }}
                                       />
                                     </div>
-                                    <div class="form-group">
+                                  </div>
+                                  </div>
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-6">
+                                    <div class="form-group" hidden={article}>
                                       <label>Page Facebook Url:</label>
                                       <input
                                         className="form-control"
@@ -824,7 +821,9 @@ if (search === ""){
                                         }}
                                       />
                                     </div>
-                                    <div class="form-group" >
+                                    </div>
+                                    <div className="col-lg-6">
+                                    <div class="form-group" hidden={article || conf || sortie || event}>
                                       <label>Lien Site web:</label>
                                       <input
                                         className="form-control"
@@ -839,6 +838,10 @@ if (search === ""){
                                           setActualite(newActualiteObj);
                                         }}
                                       />
+                                    </div>
+                                    </div>
+                                   
+                                    </div>
                                     </div>
                                     <div class="form-group">
                                       <label>Description:</label>
@@ -865,7 +868,7 @@ if (search === ""){
                                         id="story"
                                         name="story"
                                         rows="10"
-                                        cols="58"
+                                        cols="67"
                                         value={actualite.descriptionDetail}
                                         onChange={(e) => {
                                           const newActualiteObj = {
@@ -878,7 +881,7 @@ if (search === ""){
                                     </div>
                                   </div>
                                   <div className="form-group">
-                                    <label>Affiche:</label>
+                                  <label>Affiche(712*534):</label>
                                     <br />
                                     <input
                                       type="file"

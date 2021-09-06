@@ -1,5 +1,4 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
 
 const Header = () => {
   const token = JSON.parse(localStorage.getItem("login"));
@@ -31,16 +30,14 @@ const Header = () => {
                                 </a>
                               </div>
                             </li>
-                          
+
                             <li>
                               <a href="/apropos">A propos</a>
-                             
                             </li>
                             <li>
                               <a href="/organisation">Organisation</a>
-                            
-                            </li>                      
-                          
+                            </li>
+
                             <li>
                               <a href="/actualiteArticle">Actualités </a>
                               <ul className="submenu">
@@ -54,17 +51,13 @@ const Header = () => {
                                   <a href="/actualiteEvent">Événement</a>
                                 </li>
                                 <li>
-                                  <a href="/actualiteSortie">
-                                    Sortie
-                                  </a>
+                                  <a href="/actualiteSortie">Sortie</a>
                                 </li>
                                 <li>
-                                  <a href="/actualiteProjet">Projet Numérique</a>
+                                  <a href="/actualiteProjet">
+                                    Projet Numérique
+                                  </a>
                                 </li>
-                               
-                             
-                           
-                              
                               </ul>
                             </li>
                             <li>
@@ -76,7 +69,7 @@ const Header = () => {
                             <li>
                               <a href="/planification">Programme</a>
                             </li>
-                          
+
                             <li>
                               <a href="/media">Medias</a>
                             </li>
