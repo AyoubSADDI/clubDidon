@@ -11,6 +11,12 @@ const actualiteSchema = mongoose.Schema({
   description: { type: String},
   descriptionDetail: { type: String},
   webSite: { type: String},
+  imageUrl1:{ type: String},
+  imageUrl2:{ type: String},
+  imageUrl3:{ type: String},
+  imageUrl4:{ type: String},
+  imageUrl5:{ type: String},
+  imageUrl6:{ type: String},
 });
 
 module.exports = mongoose.model('Actualite', actualiteSchema);

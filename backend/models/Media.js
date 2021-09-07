@@ -7,6 +7,7 @@ const mediaSchema = mongoose.Schema({
   contenu: { type: String},
   urlMagazin:{ type: String},
   imageUrl:{ type: String},
+ 
 });
 
 module.exports = mongoose.model('Media', mediaSchema);

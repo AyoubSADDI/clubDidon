@@ -222,7 +222,7 @@ body {
   text-align: center;
   color: #ffd700 ;
   text-transform: uppercase;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* line 75, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_variables.scss */
@@ -6254,7 +6254,7 @@ hero-btn {
 
 /* line 988, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .blog_right_sidebar .instagram_feeds .instagram_row li {
-  width: 33.33%;
+  width: 100%;
   float: left;
   padding-right: 6px;
   padding-left: 6px;

@@ -1,7 +1,8 @@
 import React from "react";
 
 const Header = () => {
-  const token = JSON.parse(localStorage.getItem("login"));
+  const tokenn = JSON.parse(localStorage.getItem("login"));
+  const token = tokenn.token
 
   return (
     <div>

@@ -15,7 +15,6 @@ class Login extends Component {
 
   login(e) {
     e.preventDefault();
-    console.log("login here...");
     fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
       headers: {
@@ -23,8 +22,6 @@ class Login extends Component {
       },
       body: JSON.stringify(this.state),
     }).then((response) => {
-      console.log("ayoubbbbbbbbbbbb");
-      console.log(this.state);
       response.json().then((result) => {
         console.warn("result", result);
         localStorage.setItem(

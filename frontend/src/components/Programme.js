@@ -43,7 +43,8 @@ const Programme = () => {
                   readMoreText="-Lire la suite"
                 />{" "}
                 <br></br>
-                <a href={actualite.fbUrl} className="more-btn" hidden={actualite.fbUrl ===""}>
+                {/* className="more-btn" */}
+                <a href={actualite.fbUrl} disabled={actualite.fbUrl ===""} >
                   Page <i className="fab fa-facebook-f" />
                 </a>
               </div>
@@ -81,7 +82,7 @@ const Programme = () => {
                 />
                 <br></br>
 
-                <a href={actualite.fbUrl} className="more-btn" hidden={actualite.fbUrl ===""}>
+                <a href={actualite.fbUrl}  disabled={actualite.fbUrl ===""}>
                   Page <i className="fab fa-facebook-f" />
                 </a>
               </div>
@@ -119,7 +120,7 @@ const Programme = () => {
                   readMoreText="-Lire la suite"
                 />{" "}
                 <br></br>
-                <a href={actualite.fbUrl} className="more-btn" hidden={actualite.fbUrl ===""}>
+                <a href={actualite.fbUrl}  disabled={!actualite.fbUrl}>
                   Page <i className="fab fa-facebook-f" />
                 </a>
               </div>

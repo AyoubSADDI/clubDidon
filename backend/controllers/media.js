@@ -1,21 +1,22 @@
 const Media = require('../models/Media');
-const cloudinary = require('cloudinary');
+const cloudinary = require('../middleware/cloudinary');
 
 // CREATE Media
 exports.createMedia = async (req, res, next) => {
   // handling the image 
   var imageUrl = "http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
+
   try {
       const fileStr = req.body.imageUrl
        await cloudinary.uploader.upload(fileStr,{
-          upload_preset : process.env.UPLOAD_PRESET
+          upload_preset : 'photos'
       }).then((res)=>{
           imageUrl = res.url
-          console.log("imageUrl : ", imageUrl)
       })
   } catch (error) {
       console.log(error)
   }
+ 
   ////////////////
  const media = new Media({
        userName: req.body.userName,
@@ -67,7 +68,7 @@ exports.modifyMedia = async (req, res, next) => {
   try {
       const fileStr = req.body.imageUrl
       const uploadedResponse = await cloudinary.uploader.upload(fileStr,{
-          upload_preset : process.env.UPLOAD_PRESET
+          upload_preset : 'photos'
       })
       imageUrl = uploadedResponse.url
   } catch (error) {

@@ -88,46 +88,6 @@ const Blog = (props) => {
               </div>
               <div className="col-lg-4">
                 <div className="blog_right_sidebar">
-                  {/* <aside className="single_sidebar_widget popular_post_widget">
-                                        <h3 className="widget_title">Recent Post</h3>
-                                        <div className="media post_item">
-                                            <img src="assets/img/post/post_1.png" alt="post" />
-                                            <div className="media-body">
-                                                <a href="blog_details.html">
-                                                    <h3>From life was you fish...</h3>
-                                                </a>
-                                                <p>January 12, 2019</p>
-                                            </div>
-                                        </div>
-                                        <div className="media post_item">
-                                            <img src="assets/img/post/post_2.png" alt="post" />
-                                            <div className="media-body">
-                                                <a href="blog_details.html">
-                                                    <h3>The Amazing Hubble</h3>
-                                                </a>
-                                                <p>02 Hours ago</p>
-                                            </div>
-                                        </div>
-                                        <div className="media post_item">
-                                            <img src="assets/img/post/post_3.png" alt="post" />
-                                            <div className="media-body">
-                                                <a href="blog_details.html">
-                                                    <h3>Astronomy Or Astrology</h3>
-                                                </a>
-                                                <p>03 Hours ago</p>
-                                            </div>
-                                        </div>
-                                        <div className="media post_item">
-                                            <img src="assets/img/post/post_4.png" alt="post" />
-                                            <div className="media-body">
-                                                <a href="blog_details.html">
-                                                    <h3>Asteroids telescope</h3>
-                                                </a>
-                                                <p>01 Hours ago</p>
-                                            </div>
-                                        </div>
-                                    </aside> */}
-
                   <aside className="single_sidebar_widget instagram_feeds">
                     <h4 className="widget_title">Photos</h4>
                     <ul className="instagram_row flex-wrap">
@@ -135,7 +95,7 @@ const Blog = (props) => {
                         <a href="#">
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_5.png"
+                            src={actualitedetail.imageUrl1}
                             alt
                           />
                         </a>
@@ -144,7 +104,7 @@ const Blog = (props) => {
                         <a href="#">
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_6.png"
+                            src={actualitedetail.imageUrl2}
                             alt
                           />
                         </a>
@@ -153,7 +113,7 @@ const Blog = (props) => {
                         <a href="#">
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_7.png"
+                            src={actualitedetail.imageUrl3}
                             alt
                           />
                         </a>
@@ -162,7 +122,7 @@ const Blog = (props) => {
                         <a href="#">
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_8.png"
+                            src={actualitedetail.imageUrl4}
                             alt
                           />
                         </a>
@@ -171,19 +131,19 @@ const Blog = (props) => {
                         <a href="#">
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_9.png"
+                            src={actualitedetail.imageUrl5}
                             alt
                           />
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+                      
                           <img
                             className="img-fluid"
-                            src="assets/img/post/post_10.png"
+                            src={actualitedetail.imageUrl6}
                             alt
                           />
-                        </a>
+                      
                       </li>
                     </ul>
                   </aside>

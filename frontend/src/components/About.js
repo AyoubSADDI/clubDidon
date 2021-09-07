@@ -421,6 +421,18 @@ const About = () => {
                   alt=""
                 />
               </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Media/logo4.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+                <img
+                  src="assets/img/about/partenaires/Media/logo5.png"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>

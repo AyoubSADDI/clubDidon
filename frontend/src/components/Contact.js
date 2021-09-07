@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
@@ -9,6 +9,15 @@ import "react-toastify/dist/ReactToastify.css";
 toast.configure();
 
 const Contact = () => {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [objet, setObjet] = useState("");
+  const [message, setMessage] = useState("");
+
+
+
+
   const notify = () => {
     toast.success("Envoyer avec succès !", {
       position: toast.POSITION.TOP_RIGHT,
@@ -109,6 +118,7 @@ const Contact = () => {
                             onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Nom et Prénom'"
                             placeholder="Nom et Prénom"
+                            onChange={event => {setName(event.target.value)}}
                           />
                         </div>
                       </div>
@@ -124,6 +134,7 @@ const Contact = () => {
                             onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Email'"
                             placeholder="Email"
+                            onChange={event => {setEmail(event.target.value)}}
                           />
                         </div>
                       </div>
@@ -139,6 +150,7 @@ const Contact = () => {
                           onfocus="this.placeholder = ''"
                           onblur="this.placeholder = 'Objet'"
                           placeholder="Objet"
+                          onChange={event => {setObjet(event.target.value)}}
                         />
                       </div>
                     </div>
@@ -156,14 +168,15 @@ const Contact = () => {
                             onblur="this.placeholder = 'Message'"
                             placeholder=" Message"
                             defaultValue={""}
+                            onChange={event => {setMessage(event.target.value)}}
                           />
                         </div>
                       </div>
                     </div>
                     <div className="form-group mt-3">
                       <button
-                        type="submit"
-                        className="button button-contactForm boxed-btn"
+                        type="submit" disabled={!name || !email || !objet || !message  }
+                        className="boxed-btn"
                       >
                         Envoyer
                       </button>

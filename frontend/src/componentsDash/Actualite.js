@@ -37,6 +37,13 @@ const Actualite = () => {
     description:"",
     descriptionDetail:"",
     webSite:"",
+    imageUrl1:"",
+    imageUrl2:"",
+    imageUrl3:"",
+    imageUrl4:"",
+    imageUrl5:"",
+    imageUrl6:"",
+
   };
 
   const notifyAdd = () => {
@@ -66,14 +73,28 @@ const Actualite = () => {
   const [actualite, setActualite] = useState(initialActualiteState);
   const [categorieState, setCategorieState] = useState(false);
   const [fileInputState, setFileInputState] = useState("");
-  const [search, SetSearch] = useState("");
   const [previewSource, setPreviewSource] = useState("");
+  const [search, SetSearch] = useState("");
   const [conf, setConf] = useState(false);
   const [event, setEvent] = useState(false);
   const [article, setArticle] = useState(false);
   const [sortie, setSortie] = useState(false);
   const [projet, setProjet] = useState(false);
+  const [fileInputState1, setFileInputState1] = useState("");
+  const [previewSource1, setPreviewSource1] = useState("");
+  const [fileInputState2, setFileInputState2] = useState("");
+  const [previewSource2, setPreviewSource2] = useState("");
+  const [fileInputState3, setFileInputState3] = useState("");
+  const [previewSource3, setPreviewSource3] = useState("");
+  const [fileInputState4, setFileInputState4] = useState("");
+  const [previewSource4, setPreviewSource4] = useState("");
+  const [fileInputState5, setFileInputState5] = useState("");
+  const [previewSource5, setPreviewSource5] = useState("");
+  const [fileInputState6, setFileInputState6] = useState("");
+  const [previewSource6, setPreviewSource6] = useState("");
 
+
+// test
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
@@ -91,7 +112,116 @@ const Actualite = () => {
     console.log(base64EncodedImage);
     actualite.imageUrl = base64EncodedImage;
   };
+  // test1
+  const onFileChange1 = (event) => {
+    // Update the state
+    const file = event.target.files[0];
+    console.log(event.target.files[0]);
+    previewFile1(file);
+  };
+  const previewFile1 = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPreviewSource1(reader.result);
+    };
+  };
+  const uploadImage1 = async (base64EncodedImage) => {
+    console.log(base64EncodedImage);
+    actualite.imageUrl1 = base64EncodedImage;
+  };
+  // test2
+  const onFileChange2 = (event) => {
+    // Update the state
+    const file = event.target.files[0];
+    console.log(event.target.files[0]);
+    previewFile2(file);
+  };
+  const previewFile2 = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPreviewSource2(reader.result);
+    };
+  };
+  const uploadImage2 = async (base64EncodedImage) => {
+    console.log(base64EncodedImage);
+    actualite.imageUrl2 = base64EncodedImage;
+  };
+  // test3
+  const onFileChange3 = (event) => {
+    // Update the state
+    const file = event.target.files[0];
+    console.log(event.target.files[0]);
+    previewFile3(file);
+  };
+  const previewFile3 = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      setPreviewSource3(reader.result);
+    };
+  };
+  const uploadImage3 = async (base64EncodedImage) => {
+    console.log(base64EncodedImage);
+    actualite.imageUrl3 = base64EncodedImage;
+  };
 
+// test4
+const onFileChange4 = (event) => {
+  // Update the state
+  const file = event.target.files[0];
+  console.log(event.target.files[0]);
+  previewFile4(file);
+};
+const previewFile4 = (file) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    setPreviewSource4(reader.result);
+  };
+};
+const uploadImage4 = async (base64EncodedImage) => {
+  console.log(base64EncodedImage);
+  actualite.imageUrl4 = base64EncodedImage;
+};
+// test5
+const onFileChange5 = (event) => {
+  // Update the state
+  const file = event.target.files[0];
+  console.log(event.target.files[0]);
+  previewFile5(file);
+};
+const previewFile5 = (file) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    setPreviewSource5(reader.result);
+  };
+};
+const uploadImage5 = async (base64EncodedImage) => {
+  console.log(base64EncodedImage);
+  actualite.imageUrl5 = base64EncodedImage;
+};
+
+// test6
+const onFileChange6 = (event) => {
+  // Update the state
+  const file = event.target.files[0];
+  console.log(event.target.files[0]);
+  previewFile6(file);
+};
+const previewFile6= (file) => {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  reader.onload = () => {
+    setPreviewSource6(reader.result);
+  };
+};
+const uploadImage6 = async (base64EncodedImage) => {
+  console.log(base64EncodedImage);
+  actualite.imageUrl6 = base64EncodedImage;
+};
 
 
   const actualiteData = useSelector((state) => state.actualite);
@@ -108,7 +238,7 @@ const Actualite = () => {
     const userId = loginFromStorage.userId;
     actualite.userName = userId;
     if (!previewSource) return  dispatch(AddActualite(actualite));
-    uploadImage(previewSource);
+    uploadImage(previewSource);uploadImage1(previewSource1);uploadImage2(previewSource2);uploadImage3(previewSource3);uploadImage4(previewSource4);uploadImage5(previewSource5);uploadImage6(previewSource6);
     dispatch(AddActualite(actualite));
   };
  
@@ -116,7 +246,7 @@ const Actualite = () => {
     e.preventDefault();
     console.log("actualite : ", actualite);
     console.log("submitting : ", e);
-    if (previewSource) uploadImage(previewSource);
+    if (previewSource) uploadImage(previewSource);uploadImage1(previewSource1);uploadImage2(previewSource2);uploadImage3(previewSource3);uploadImage4(previewSource4);uploadImage5(previewSource5);uploadImage6(previewSource6);
     dispatch(UpdateActualite(actualite));
   };
 
@@ -140,8 +270,57 @@ if (search === ""){
       </td>
     
       <td>
+        Affiche:
         <img
           src={actualite.imageUrl}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 1:
+           <img hidden={!actualite.imageUrl1}
+          src={actualite.imageUrl1}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 2:
+          <img hidden={!actualite.imageUrl2}
+          src={actualite.imageUrl2}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 3:
+          <img hidden={!actualite.imageUrl3}
+          src={actualite.imageUrl3}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 4:
+          <img hidden={!actualite.imageUrl4}
+          src={actualite.imageUrl4}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 5:
+          <img hidden={!actualite.imageUrl5}
+          src={actualite.imageUrl5}
+          width="100"
+          height="100"
+          name="actualite-Image"
+          alt="actualite"
+        />{" "}
+        Image 6:
+          <img hidden={!actualite.imageUrl6}
+          src={actualite.imageUrl6}
           width="100"
           height="100"
           name="actualite-Image"
@@ -316,6 +495,10 @@ if (search === ""){
                                         };
                                         setActualite(newActualiteObj);
                                         setConf(true);
+                                        setArticle(false);
+                                        setProjet(false);
+                                        setSortie(false);
+                                        setEvent(false);
                                       }}
                                       checked={
                                         actualite.categorie === "conference"
@@ -341,6 +524,11 @@ if (search === ""){
                                         };
                                         setActualite(newActualiteObj);
                                         setEvent(true);
+                                        setConf(false);
+                                        setArticle(false);
+                                        setProjet(false);
+                                        setSortie(false);
+                                        
                                       }}
                                       checked={
                                         actualite.categorie === "evenement"
@@ -365,6 +553,10 @@ if (search === ""){
                                         };
                                         setActualite(newActualiteObj);
                                         setSortie(true);
+                                        setConf(false);
+                                        setArticle(false);
+                                        setProjet(false);
+                                        setEvent(false);
                                       }}
                                       checked={actualite.categorie === "sortie"}
                                     />
@@ -387,6 +579,10 @@ if (search === ""){
                                         };
                                         setActualite(newActualiteObj);
                                         setProjet(true);
+                                        setConf(false);
+                                        setArticle(false);
+                                        setSortie(false);
+                                        setEvent(false);
                                       }}
                                       checked={
                                         actualite.categorie === "projet"
@@ -411,6 +607,11 @@ if (search === ""){
                                         };
                                         setActualite(newActualiteObj);
                                         setArticle(true);
+                                        setConf(false);
+                                        setProjet(false);
+                                        setSortie(false);
+                                        setEvent(false);
+
                                       }}
                                       checked={
                                         actualite.categorie === "article"
@@ -502,7 +703,7 @@ if (search === ""){
                                     </div>
                                     </div>
                                     <div className="col-lg-6">
-                                    <div class="form-group" hidden={article || conf || sortie || event}>
+                                    <div class="form-group" hidden={article || conf || event || sortie} >
                                       <label>Lien Site web:</label>
                                       <input
                                         className="form-control"
@@ -560,6 +761,9 @@ if (search === ""){
                                       ></textarea>
                                     </div>
                                   </div>
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-4">
                                   <div className="form-group" hidden={article}>
                                     <label>Affiche(712*534):</label>
                                     <br />
@@ -574,6 +778,130 @@ if (search === ""){
                                   {previewSource && (
                                     <img
                                       src={previewSource}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                   </div>
+                                   <div className="col-lg-4">
+                                  <div className="form-group">
+                                  <label>Image1(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl1"
+                                      className="from-input"
+                                      value={fileInputState1}
+                                      onChange={onFileChange1}
+                                    />
+                                  </div>
+                                  {previewSource1 && (
+                                    <img
+                                      src={previewSource1}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                  </div>
+                                   <div className="col-lg-4">
+
+                                    <div className="form-group">
+                                  <label>Image2(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl2"
+                                      className="from-input"
+                                      value={fileInputState2}
+                                      onChange={onFileChange2}
+                                    />
+                                  </div>
+                                  {previewSource2 && (
+                                    <img
+                                      src={previewSource2}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                  </div>  </div>  </div>
+                                  
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-4">
+                                  <div className="form-group" hidden={article}>
+                                    <label>Affiche3(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl3"
+                                      className="from-input"
+                                      value={fileInputState3}
+                                      onChange={onFileChange3}
+                                    />
+                                  </div>
+                                  {previewSource3 && (
+                                    <img
+                                      src={previewSource3}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                   </div>
+                                   <div className="col-lg-4">
+                                  <div className="form-group" hidden={article}>
+                                  <label>Image4(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl4"
+                                      className="from-input"
+                                      value={fileInputState4}
+                                      onChange={onFileChange4}
+                                    />
+                                  </div>
+                                  {previewSource4 && (
+                                    <img
+                                      src={previewSource4}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                  </div>
+                                   <div className="col-lg-4">
+
+                                    <div className="form-group" hidden={article}>
+                                  <label>Image5(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl5"
+                                      className="from-input"
+                                      value={fileInputState5}
+                                      onChange={onFileChange5}
+                                    />
+                                  </div>
+                                  {previewSource5&& (
+                                    <img
+                                      src={previewSource5}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                  </div>  </div>  </div>
+                                      <div className="form-group" hidden={article}>
+                                  <label>Image6(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl6"
+                                      className="from-input"
+                                      value={fileInputState6}
+                                      onChange={onFileChange6}
+                                    />
+                                  </div>
+                                  {previewSource6 && (
+                                    <img
+                                      src={previewSource6}
                                       alt="chosen"
                                       style={{ height: "100px" }}
                                     />
@@ -898,6 +1226,115 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
+                                   <div className="form-group">
+                                  <label>Image1(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl1"
+                                      className="from-input"
+                                      value={fileInputState1}
+                                      onChange={onFileChange1}
+                                    />
+                                  </div>
+                                  {previewSource1 && (
+                                    <img
+                                      src={previewSource1}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                      <div className="form-group">
+                                  <label>Image2(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl2"
+                                      className="from-input"
+                                      value={fileInputState2}
+                                      onChange={onFileChange2}
+                                    />
+                                  </div>
+                                  {previewSource2 && (
+                                    <img
+                                      src={previewSource2}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                      <div className="form-group">
+                                  <label>Image3(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl3"
+                                      className="from-input"
+                                      value={fileInputState3}
+                                      onChange={onFileChange3}
+                                    />
+                                  </div>
+                                  {previewSource3 && (
+                                    <img
+                                      src={previewSource3}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                      <div className="form-group">
+                                  <label>Image4(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl4"
+                                      className="from-input"
+                                      value={fileInputState4}
+                                      onChange={onFileChange4}
+                                    />
+                                  </div>
+                                  {previewSource4 && (
+                                    <img
+                                      src={previewSource4}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                      <div className="form-group">
+                                  <label>Image5(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl5"
+                                      className="from-input"
+                                      value={fileInputState5}
+                                      onChange={onFileChange5}
+                                    />
+                                  </div>
+                                  {previewSource5 && (
+                                    <img
+                                      src={previewSource5}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                                      <div className="form-group">
+                                  <label>Image6(712*534):</label>
+                                    <br />
+                                    <input
+                                      type="file"
+                                      name="imageUrl6"
+                                      className="from-input"
+                                      value={fileInputState6}
+                                      onChange={onFileChange6}
+                                    />
+                                  </div>
+                                  {previewSource6 && (
+                                    <img
+                                      src={previewSource6}
+                                      alt="chosen"
+                                      style={{ height: "100px" }}
+                                    />
+                                  )}
+                              
                                 </div>
 
                                 <div className="modal-footer">

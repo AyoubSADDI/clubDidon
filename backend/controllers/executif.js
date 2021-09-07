@@ -1,5 +1,5 @@
 const Executif = require('../models/Executif');
-const cloudinary = require('cloudinary');
+const cloudinary = require('../middleware/cloudinary');
 
 // CREATE Executif
 exports.createExecutif = async (req, res, next) => {

@@ -34,12 +34,12 @@ const Media = () => {
     titre: "",
     Date: "",
     imageUrl: "",
+    imageUrle: "",
     contenu: "",
     urlMagazin: "",   
   };
   const [media, setMedia] = useState(initialMediaState);
   const [fileInputState, setFileInputState] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [search, SetSearch] = useState("");
 
@@ -82,6 +82,7 @@ const Media = () => {
         console.log(base64EncodedImage);
         media.imageUrl = base64EncodedImage;
       };
+      
 
       const onAdd = (e) => {
         e.preventDefault();
@@ -328,6 +329,8 @@ const Media = () => {
                                   )}
                              </div>           
                           </div>
+
+                         
                             </div>
                             <div className="modal-footer">
                               <button type="submit" className="btn btn-primary">Ajouter</button>

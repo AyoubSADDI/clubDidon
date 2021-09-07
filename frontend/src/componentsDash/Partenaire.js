@@ -28,6 +28,7 @@ const Partenaire = () => {
     _id: "",
     userName: "",
     imageUrl: "",
+    imageUrle: "",
     nomP: "",
     proprieteLogo: "",
   };
@@ -35,9 +36,10 @@ const Partenaire = () => {
   const [partenaire, setPartenaire] = useState(initialPartenaireState);
   const [fileInputState, setFileInputState] = useState("");
   const [search, SetSearch] = useState("");
-  const [selectedFile, setSelectedFile] = useState("");
   const [previewSource, setPreviewSource] = useState("");
-  const [partenaireDetails, setPartenaireDetails] = useState(initialPartenaireState);
+  const [previewSourcee, setPreviewSourcee] = useState("");
+  const [fileInputStatee, setFileInputStatee] = useState("");
+
 
   const notifyAdd = () => {
     toast.success('Ajouter avec succès !',{
@@ -127,6 +129,7 @@ const Partenaire = () => {
           alt="partenaire"
         />{" "}
       </td>
+    
       <td> {partenaire.userName}</td>
       <td>
         <a
@@ -316,6 +319,7 @@ const Partenaire = () => {
                                       style={{ height: "100px" }}
                                     />
                                   )}
+                                
                                 </div>
                                 <div className="modal-footer">
                                   <button

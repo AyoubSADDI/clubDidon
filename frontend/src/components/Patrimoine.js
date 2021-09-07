@@ -44,6 +44,8 @@ const Patrimoine = () => {
                       <p className="pera-top">{actualite.description}</p>
                       <p className="mb-65">{actualite.descriptionDetail} </p>
                       <a href={actualite.webSite} hidden={actualite.webSite ===""}>Visiter Notre Site</a>
+                      <a href={actualite.fbUrl} hidden={actualite.fbUrl ===""}>Visiter Notre Page FB</a>
+
                     </div>
                   </div>
                 </div>

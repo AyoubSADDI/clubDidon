@@ -1,10 +1,11 @@
 const Partenaire = require('../models/partenaire');
-const cloudinary = require('cloudinary');
+const cloudinary = require('../middleware/cloudinary');
 
 // CREATE Partenaire
 exports.createPartenaire = async (req, res, next) => {
   // handling the image 
   var imageUrl = "http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
+
   try {
       const fileStr = req.body.imageUrl
        await cloudinary.uploader.upload(fileStr,{
@@ -18,6 +19,8 @@ exports.createPartenaire = async (req, res, next) => {
   } catch (error) {
       console.log(error)
   }
+
+ 
   ////////////////
  const partenaire = new Partenaire({
        userName: req.body.userName,
