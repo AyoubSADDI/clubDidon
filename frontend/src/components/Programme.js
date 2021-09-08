@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import Typical from "react-typical";
 import ReadMoreReact from "read-more-react";
 import moment from "moment";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Programme = () => {
   const clockevent = (newDate) => {
@@ -26,7 +27,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-                <img src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -64,7 +65,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-                <img src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -103,7 +104,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-                <img src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -139,7 +140,7 @@ const Programme = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

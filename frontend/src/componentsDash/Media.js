@@ -11,6 +11,7 @@ import {useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from 'moment'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 toast.configure()
 
@@ -124,7 +125,7 @@ const Media = () => {
           <td> {media.urlMagazin}</td>
          
           <td>
-            <img
+          <LazyLoadImage
               src={media.imageUrl}
               width="100"
               height="100"
@@ -170,13 +171,13 @@ const Media = () => {
             <div className="row">
               <div className="col-xl-12">
                 <div className="breadcrumb-holder">
-                <img src='assets/img/logo/logo4.jpg' width="180" height="50" />                  <ol className="breadcrumb float-right">
+                <LazyLoadImage src='assets/img/logo/logo4.jpg' width="180" height="50" />                  <ol className="breadcrumb float-right">
                   <li className="breadcrumb-item"><b style={{fontSize:"22px" , color:"black "}}>{userName}</b></li>
                   <li className="breadcrumb-item"><b>Accueil</b></li> 
                   <li className="breadcrumb-item active"><b style={{color:"red"}}>Medias</b></li>
                   <li className="list-inline-item dropdown notif">
               <a className="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-              <img src="assets/img/logo/woman.png" alt="Profile image" className="avatar-rounded" />
+              <LazyLoadImage src="assets/img/logo/woman.png" alt="Profile image" className="avatar-rounded" />
               </a>
               <div className="dropdown-menu dropdown-menu-right profile-dropdown ">
                 {/* item*/}

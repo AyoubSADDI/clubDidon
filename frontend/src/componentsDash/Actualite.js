@@ -11,6 +11,8 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from 'moment'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 
 toast.configure();
 
@@ -246,7 +248,21 @@ const uploadImage6 = async (base64EncodedImage) => {
     e.preventDefault();
     console.log("actualite : ", actualite);
     console.log("submitting : ", e);
-    if (previewSource) uploadImage(previewSource);uploadImage1(previewSource1);uploadImage2(previewSource2);uploadImage3(previewSource3);uploadImage4(previewSource4);uploadImage5(previewSource5);uploadImage6(previewSource6);
+
+    if (previewSource) 
+    uploadImage(previewSource);
+    if (previewSource1) 
+    uploadImage1(previewSource1);
+    if (previewSource2) 
+    uploadImage2(previewSource2);
+    if (previewSource3) 
+    uploadImage3(previewSource3);
+    if (previewSource4) 
+    uploadImage4(previewSource4);
+    if (previewSource5) 
+    uploadImage5(previewSource5);
+    if (previewSource6) 
+    uploadImage6(previewSource6);
     dispatch(UpdateActualite(actualite));
   };
 
@@ -271,7 +287,7 @@ if (search === ""){
     
       <td>
         Affiche:
-        <img
+         <LazyLoadImage
           src={actualite.imageUrl}
           width="100"
           height="100"
@@ -279,7 +295,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 1:
-           <img hidden={!actualite.imageUrl1}
+            <LazyLoadImage hidden={!actualite.imageUrl1}
           src={actualite.imageUrl1}
           width="100"
           height="100"
@@ -287,7 +303,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 2:
-          <img hidden={!actualite.imageUrl2}
+           <LazyLoadImage hidden={!actualite.imageUrl2}
           src={actualite.imageUrl2}
           width="100"
           height="100"
@@ -295,7 +311,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 3:
-          <img hidden={!actualite.imageUrl3}
+           <LazyLoadImage hidden={!actualite.imageUrl3}
           src={actualite.imageUrl3}
           width="100"
           height="100"
@@ -303,7 +319,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 4:
-          <img hidden={!actualite.imageUrl4}
+           <LazyLoadImage hidden={!actualite.imageUrl4}
           src={actualite.imageUrl4}
           width="100"
           height="100"
@@ -311,7 +327,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 5:
-          <img hidden={!actualite.imageUrl5}
+           <LazyLoadImage hidden={!actualite.imageUrl5}
           src={actualite.imageUrl5}
           width="100"
           height="100"
@@ -319,7 +335,7 @@ if (search === ""){
           alt="actualite"
         />{" "}
         Image 6:
-          <img hidden={!actualite.imageUrl6}
+           <LazyLoadImage hidden={!actualite.imageUrl6}
           src={actualite.imageUrl6}
           width="100"
           height="100"
@@ -366,7 +382,7 @@ if (search === ""){
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="breadcrumb-holder">
-                      <img
+                    <LazyLoadImage
                         src="assets/img/logo/logo4.jpg"
                         width="180"
                         height="50"
@@ -391,7 +407,7 @@ if (search === ""){
                             aria-haspopup="false"
                             aria-expanded="false"
                           >
-                            <img
+                           <LazyLoadImage
                               src="assets/img/logo/woman.png"
                               alt="Profile image"
                               className="avatar-rounded"
@@ -784,7 +800,7 @@ if (search === ""){
                                   )}
                                    </div>
                                    <div className="col-lg-4">
-                                  <div className="form-group">
+                                  <div className="form-group" hidden={article || projet}>
                                   <label>Image1(712*534):</label>
                                     <br />
                                     <input
@@ -805,7 +821,7 @@ if (search === ""){
                                   </div>
                                    <div className="col-lg-4">
 
-                                    <div className="form-group">
+                                    <div className="form-group" hidden={article || projet}>
                                   <label>Image2(712*534):</label>
                                     <br />
                                     <input
@@ -828,8 +844,8 @@ if (search === ""){
                                   <div className="modal-body">
                                   <div className="row">
                                   <div className="col-lg-4">
-                                  <div className="form-group" hidden={article}>
-                                    <label>Affiche3(712*534):</label>
+                                  <div className="form-group" hidden={article || projet}>
+                                    <label>Image3(712*534):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -848,7 +864,7 @@ if (search === ""){
                                   )}
                                    </div>
                                    <div className="col-lg-4">
-                                  <div className="form-group" hidden={article}>
+                                  <div className="form-group" hidden={article || projet}>
                                   <label>Image4(712*534):</label>
                                     <br />
                                     <input
@@ -869,7 +885,7 @@ if (search === ""){
                                   </div>
                                    <div className="col-lg-4">
 
-                                    <div className="form-group" hidden={article}>
+                                    <div className="form-group" hidden={article || projet}>
                                   <label>Image5(712*534):</label>
                                     <br />
                                     <input
@@ -888,7 +904,7 @@ if (search === ""){
                                     />
                                   )}
                                   </div>  </div>  </div>
-                                      <div className="form-group" hidden={article}>
+                                      <div className="form-group" hidden={article || projet}>
                                   <label>Image6(712*534):</label>
                                     <br />
                                     <input

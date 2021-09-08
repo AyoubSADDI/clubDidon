@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
 import moment from "moment";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ActualiteProjet = () => {
   const clockevent = (newDate) => {
@@ -23,9 +24,9 @@ const ActualiteProjet = () => {
       new Date(actualite.Date).valueOf() > new Date().valueOf() ? (
         <div>
           <div id="Web_1366__0">
-            <img id="l12x" src="assets/img/actualite/projet/l12x.png" alt="" />
-            <img id="ID1" src="assets/img/actualite/projet/ID1.png" alt="" />
-            <img
+          <LazyLoadImage id="l12x" src="assets/img/actualite/projet/l12x.png" alt="" />
+          <LazyLoadImage id="ID1" src="assets/img/actualite/projet/ID1.png" alt="" />
+          <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/projet/projetdegi.jpg"
               alt=""
@@ -58,13 +59,13 @@ const ActualiteProjet = () => {
                   <br />
                 </span>
               </div>
-              <img
+              <LazyLoadImage
                 id="__________Facebook_et_1_page_s"
                 src={actualite.imageUrl}
                 alt=""
               />
 
-              <img
+<LazyLoadImage
                 id="p11"
                 src="assets/img/actualite/projet/TAJIR.png"
                 alt=""
@@ -104,7 +105,7 @@ const ActualiteProjet = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

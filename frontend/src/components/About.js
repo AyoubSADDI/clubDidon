@@ -4,6 +4,7 @@ import { fetchPartenaires } from "../componentsDash/redux/partenaire/partenaireA
 import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const About = () => {
   const partenaireData = useSelector((state) => state.partenaire);
@@ -16,7 +17,7 @@ const About = () => {
     .reverse()
     .map((partenaire) => (
       <div className="single-brand" key={partenaire._id}>
-        <img src={partenaire.imageUrl} alt="" />
+       <LazyLoadImage src={partenaire.imageUrl} alt="" />
       </div>
     ));
 
@@ -27,7 +28,7 @@ const About = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
@@ -250,62 +251,68 @@ const About = () => {
           <div className="container">
             <div className="brand-active brand-border pb-40">
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo1.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo2.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo3.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo4.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo5.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo6.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo7.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo8.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo9.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo10.png"
+                  alt=""
+                />
+              </div>
+              <div className="single-brand">
+              <LazyLoadImage
+                  src="assets/img/about/partenaires/Social/logo11.png"
                   alt=""
                 />
               </div>
@@ -327,61 +334,61 @@ const About = () => {
           <div className="container">
             <div className="brand-active brand-border pb-40">
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo1.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo2.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo3.jpg"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+              <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo4.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo5.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo6.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo7.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo8.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo9.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo10.png"
                   alt=""
                 />
@@ -404,31 +411,31 @@ const About = () => {
           <div className="container">
             <div className="brand-active brand-border pb-40">
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo1.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo2.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo3.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo4.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo5.png"
                   alt=""
                 />
@@ -451,37 +458,37 @@ const About = () => {
           <div className="container">
             <div className="brand-active brand-border pb-40">
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo1.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo2.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo3.png"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo4.jpg"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo5.jpg"
                   alt=""
                 />
               </div>
               <div className="single-brand">
-                <img
+               <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo6.png"
                   alt=""
                 />

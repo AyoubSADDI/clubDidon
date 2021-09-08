@@ -5954,6 +5954,9 @@ hero-btn {
   }
 }
 
+.blog{
+  color: white;
+}
 /* line 685, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .blog-info-link li {
   float: left;
@@ -6004,7 +6007,7 @@ hero-btn {
   left: 10px;
   display: block;
   color: #fff;
-  background-color: #14435c;
+  background-color: #3b3a3a;
   padding: 8px 15px;
   border-radius: 5px;
 }
@@ -6064,7 +6067,7 @@ hero-btn {
 
 /* line 782, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .blog_right_sidebar .single_sidebar_widget {
-  background: #fbf9ff;
+  background: #000000;
   padding: 30px;
   margin-bottom: 30px;
 }

@@ -10,6 +10,7 @@ import SideBar from "./SideBar";
 import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 toast.configure()
 
@@ -121,7 +122,7 @@ const Partenaire = () => {
     
       <td>{partenaire.proprieteLogo}</td>
       <td>
-        <img
+      <LazyLoadImage
           src={partenaire.imageUrl}
           width="100"
           height="100"
@@ -168,7 +169,7 @@ const Partenaire = () => {
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="breadcrumb-holder">
-                      <img
+                    <LazyLoadImage
                         src="assets/img/logo/logo4.jpg"
                         width="180"
                         height="50"
@@ -194,7 +195,7 @@ const Partenaire = () => {
                             aria-haspopup="false"
                             aria-expanded="false"
                           >
-                            <img
+                         <LazyLoadImage
                               src="assets/img/logo/woman.png"
                               alt="Profile image"
                               className="avatar-rounded"

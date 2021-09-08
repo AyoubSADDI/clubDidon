@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
 import moment from "moment";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const ActualiteArticle = () => {
  
@@ -24,8 +25,8 @@ const ActualiteArticle = () => {
       actualite.categorie === "article" ? (
         <div>
           <div id="Web_1366__0">
-            <img id="ID1" src="assets/img/actualite/article/ID1.png" alt="" />
-            <img
+          <LazyLoadImage id="ID1" src="assets/img/actualite/article/ID1.png" alt="" />
+          <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/article/didon_birsa.png"
               alt=""
@@ -53,7 +54,7 @@ const ActualiteArticle = () => {
                   <br />
                 </span>
               </div>
-              <img id="p11" src="assets/img/actualite/article/p11.png" alt="" />
+              <LazyLoadImage id="p11" src="assets/img/actualite/article/p11.png" alt="" />
             </section>
           </div>
           <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{" "}
@@ -88,7 +89,7 @@ const ActualiteArticle = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

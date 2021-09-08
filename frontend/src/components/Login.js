@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 class Login extends Component {
   constructor() {
@@ -45,7 +46,7 @@ class Login extends Component {
     return (
       <div className="body">
         <div className="loginbox">
-          <img src="assets/img/logo/logoo.png" className="woman" alt="" />
+        <LazyLoadImage src="assets/img/logo/logoo.png" className="woman" alt="" />
           <b>
             <h1>Connexion</h1>
           </b>

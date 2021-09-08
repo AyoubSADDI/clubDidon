@@ -5,6 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
 import moment from "moment";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Media = () => {
   const mediaData = useSelector((state) => state.media);
@@ -20,9 +21,9 @@ const Media = () => {
   const media_container = mediaData.medias.reverse().map((media) => (
     <div>
       <div id="Web">
-        <img id="ACBIRSA" src="assets/img/media/didonbirsaa.png" alt="" />
+      <LazyLoadImage id="ACBIRSA" src="assets/img/media/didonbirsaa.png" alt="" />
         <div id="GP4">
-          <img id="IMG" src={media.imageUrl} alt="" />
+        <LazyLoadImage id="IMG" src={media.imageUrl} alt="" />
         </div>
         <div id="ARTC">
           <span>{media.contenu}</span>
@@ -63,7 +64,7 @@ const Media = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

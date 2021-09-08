@@ -4,7 +4,7 @@ const cloudinary = require('../middleware/cloudinary');
 // CREATE Partenaire
 exports.createPartenaire = async (req, res, next) => {
   // handling the image 
-  var imageUrl = "http://res.cloudinary.com/dqwg8dwph/image/upload/v1626548988/samples/cloudinary-logo-vector.svg"//a logo default
+  var imageUrl = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
   try {
       const fileStr = req.body.imageUrl
@@ -66,7 +66,7 @@ exports.modifyPartenaire = async (req, res, next) => {
   if(req.body.imageUrl.startsWith("http")){
       imageUrl = req.body.imageUrl
   }else{
-  var imageUrl = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+  var imageUrl = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
   
   try {
       const fileStr = req.body.imageUrl

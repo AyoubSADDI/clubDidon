@@ -1,4 +1,5 @@
 import React from "react";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Footer = () => {
   return (
@@ -17,7 +18,8 @@ const Footer = () => {
                     {/* logo */}
                     <div className="footer-logo">
                       <a href="index.html">
-                        <img
+                      <LazyLoadImage
+
                           src="assets/img/logo/icon1.png"
                           width="150"
                           height="120"
@@ -28,8 +30,7 @@ const Footer = () => {
                     <div className="footer-tittle">
                       <div className="footer-pera">
                         <p className="info1">
-                          Receive updates and latest news direct from Simply
-                          enter.
+                        Montrer ce qui existe, ce qui n'existe plus et ce qui existera.
                         </p>
                       </div>
                     </div>

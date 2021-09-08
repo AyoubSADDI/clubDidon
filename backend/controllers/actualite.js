@@ -4,13 +4,13 @@ const cloudinary = require('../middleware/cloudinary');
 //createActualite
 exports.createActualite = async (req, res, next) => {
   // handling the image 
-  var imageUrl = "https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl1 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl2 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl3 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl4 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl5 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
-  var imageUrl6 ="https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
+  var imageUrl = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl1 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl2 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl3 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl4 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl5 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
+  var imageUrl6 ="https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
   try {
       const fileStr = req.body.imageUrl
@@ -146,7 +146,7 @@ exports.modifyActualite = async (req, res, next) => {
   if(req.body.imageUrl && req.body.imageUrl.startsWith("http")){
       imageUrl = req.body.imageUrl
   }else{
-  var imageUrl = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+  var imageUrl = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
   
   try {
       const fileStr = req.body.imageUrl
@@ -162,7 +162,7 @@ exports.modifyActualite = async (req, res, next) => {
    if(req.body.imageUrl1 && req.body.imageUrl1.startsWith("http")){
     imageUrl1 = req.body.imageUrl1
 }else{
-var imageUrl1 = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+var imageUrl1 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl1
@@ -178,7 +178,7 @@ try {
  if(req.body.imageUrl2 && req.body.imageUrl2.startsWith("http")){
     imageUrl2 = req.body.imageUrl2
 }else{
-var imageUrl2 = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+var imageUrl2 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl2
@@ -194,7 +194,7 @@ try {
  if(req.body.imageUrl3 && req.body.imageUrl3.startsWith("http")){
     imageUrl3 = req.body.imageUrl3
 }else{
-var imageUrl3 = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+var imageUrl3 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl3
@@ -210,7 +210,7 @@ try {
  if(req.body.imageUrl4 && req.body.imageUrl4.startsWith("http")){
     imageUrl4 = req.body.imageUrl4
 }else{
-var imageUrl4 = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+var imageUrl4 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl4
@@ -226,7 +226,7 @@ try {
  if(req.body.imageUrl5 && req.body.imageUrl5.startsWith("http")){
     imageUrl5 = req.body.imageUrl5
 }else{
-var imageUrl5 = "http://res.cloudinary.com/esprit456/image/upload/v1617904764/e-learning/id9xkfigxaozuwuimiox.png"//a logo default
+var imageUrl5 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl5
@@ -242,7 +242,7 @@ try {
  if(req.body.imageUrl6 && req.body.imageUrl6.startsWith("http")){
     imageUrl6 = req.body.imageUrl6
 }else{
-var imageUrl6 = "https://jamaity.org/wp-content/uploads/2018/02/25398654_1572573452837318_4444263299347397178_n.jpg"//a logo default
+var imageUrl6 = "https://res.cloudinary.com/dqwg8dwph/image/upload/v1631058027/d0refmfllwgiwqcb5xl4.png"//a logo default
 
 try {
     const fileStr = req.body.imageUrl6

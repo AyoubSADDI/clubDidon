@@ -5,6 +5,7 @@ import Footer from "./Footer";
 import Typical from "react-typical";
 import { fetchActualites } from "../componentsDash/redux/actualite/actualiteActions";
 import moment from 'moment'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Patrimoine = () => {
  
@@ -30,7 +31,8 @@ const Patrimoine = () => {
               <div className="row align-items-center">
                 <div className="col-xl-6 col-lg-6">
                   <div className="support-location-img">
-                    <img src={actualite.imageUrl} alt="" />
+                  <LazyLoadImage
+                   src={actualite.imageUrl} alt="" />
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6">
@@ -65,7 +67,8 @@ const Patrimoine = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage
+              src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

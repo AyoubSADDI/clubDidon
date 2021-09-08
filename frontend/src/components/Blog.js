@@ -3,8 +3,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Typical from "react-typical";
 import { useState } from "react";
-import DayJs from "react-dayjs";
 import moment from "moment";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Blog = (props) => {
   const [actualitedetail, setActualitedetail] = useState({});
@@ -26,7 +26,7 @@ const Blog = (props) => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const Blog = (props) => {
                 <div className="blog_left_sidebar">
                   <article className="blog_item">
                     <div className="blog_item_img">
-                      <img
+                    <LazyLoadImage
                         className="card-img rounded-0"
                         src={actualitedetail.imageUrl}
                         alt=""
@@ -75,13 +75,12 @@ const Blog = (props) => {
                       </a>
                     </div>
                     <div className="blog_details">
-                      <a className="d-inline-block" href="blog_details.html">
-                        <h2>{actualitedetail.titre}</h2>
-                      </a>
-                      <p>{actualitedetail.description}</p>
+                      <h2>{actualitedetail.titre}</h2>
+                      <p className="blog">{actualitedetail.description}</p>
                       <br></br>
-                      <p>{actualitedetail.descriptionDetail}</p>
-                      <ul className="blog-info-link"></ul>
+                      <p className="blog">{actualitedetail.descriptionDetail}</p>
+                      <a href={actualitedetail.fbUrl} hidden={!actualitedetail.fbUrl}>Page fb
+                      </a>
                     </div>
                   </article>
                 </div>
@@ -93,7 +92,7 @@ const Blog = (props) => {
                     <ul className="instagram_row flex-wrap">
                       <li>
                         <a href="#">
-                          <img
+                        <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl1}
                             alt
@@ -102,7 +101,7 @@ const Blog = (props) => {
                       </li>
                       <li>
                         <a href="#">
-                          <img
+                        <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl2}
                             alt
@@ -111,7 +110,7 @@ const Blog = (props) => {
                       </li>
                       <li>
                         <a href="#">
-                          <img
+                        <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl3}
                             alt
@@ -120,7 +119,7 @@ const Blog = (props) => {
                       </li>
                       <li>
                         <a href="#">
-                          <img
+                        <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl4}
                             alt
@@ -129,7 +128,7 @@ const Blog = (props) => {
                       </li>
                       <li>
                         <a href="#">
-                          <img
+                        <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl5}
                             alt
@@ -138,7 +137,7 @@ const Blog = (props) => {
                       </li>
                       <li>
                       
-                          <img
+                      <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl6}
                             alt
