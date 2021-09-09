@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from 'moment'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import jwt_decode from 'jwt-decode'
 
 toast.configure()
 
@@ -69,7 +70,6 @@ const Media = () => {
       const onFileChange = (event) => {
         // Update the state
         const file = event.target.files[0];
-        console.log(event.target.files[0]);
         previewFile(file);
       };
       const previewFile = (file) => {
@@ -80,26 +80,21 @@ const Media = () => {
         };
       };
       const uploadImage = async (base64EncodedImage) => {
-        console.log(base64EncodedImage);
         media.imageUrl = base64EncodedImage;
       };
       
 
       const onAdd = (e) => {
         e.preventDefault();
-        console.log("submitting : ", e);
         if (!previewSource) return;
         uploadImage(previewSource);
         const loginFromStorage = JSON.parse(localStorage.getItem("login"));
         const userId = loginFromStorage.userId;
-        console.log(userId);
         media.userName = userId;
         dispatch(AddMedia(media));
       };
       const onUpdate = (e) => {
         e.preventDefault();
-        console.log("media : ", media);
-        console.log("submitting : ", e);
         if (previewSource) uploadImage(previewSource);
         dispatch(UpdateMedia(media));
       };
@@ -108,6 +103,19 @@ const Media = () => {
       useEffect(() => {
         dispatch(fetchMedias());
       }, []);
+      useEffect(() => { 
+        const login = JSON.parse(localStorage.getItem("login"));
+        const token = login.token;
+        const jwt_Token_decoded = jwt_decode(token);
+        console.log("token"+jwt_Token_decoded.exp * 1000);
+        console.log("Datee"+Date.now());
+        if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+         localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+         history.push("/login");
+     }
+ 
+   }, []
+   );
       const media_container = mediaData.medias.filter((media) => {
         if (search === ""){
           return media

@@ -12,13 +12,14 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import moment from 'moment'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-
+import jwt_decode from 'jwt-decode'
 
 toast.configure();
 
 const Actualite = () => {
   const loginFromStorage = JSON.parse(localStorage.getItem("login"));
   const userName = loginFromStorage.userId;
+
 
   const history = useHistory();
   const onLogout = (e) => {
@@ -73,7 +74,6 @@ const Actualite = () => {
   };
 
   const [actualite, setActualite] = useState(initialActualiteState);
-  const [categorieState, setCategorieState] = useState(false);
   const [fileInputState, setFileInputState] = useState("");
   const [previewSource, setPreviewSource] = useState("");
   const [search, SetSearch] = useState("");
@@ -94,7 +94,6 @@ const Actualite = () => {
   const [previewSource5, setPreviewSource5] = useState("");
   const [fileInputState6, setFileInputState6] = useState("");
   const [previewSource6, setPreviewSource6] = useState("");
-
 
 // test
   const onFileChange = (event) => {
@@ -230,8 +229,22 @@ const uploadImage6 = async (base64EncodedImage) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
+  }, []
+  );
   
-  }, []);
+  useEffect(() => { 
+       const login = JSON.parse(localStorage.getItem("login"));
+       const token = login.token;
+       const jwt_Token_decoded = jwt_decode(token);
+       console.log("token"+jwt_Token_decoded.exp * 1000);
+       console.log("Datee"+Date.now());
+       if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+        localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+        history.push("/login");
+    }
+
+  }, []
+  );
 
   const onAdd = (e) => {
     e.preventDefault();
@@ -293,7 +306,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 1:
             <LazyLoadImage hidden={!actualite.imageUrl1}
           src={actualite.imageUrl1}
@@ -301,7 +314,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 2:
            <LazyLoadImage hidden={!actualite.imageUrl2}
           src={actualite.imageUrl2}
@@ -309,7 +322,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 3:
            <LazyLoadImage hidden={!actualite.imageUrl3}
           src={actualite.imageUrl3}
@@ -317,7 +330,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 4:
            <LazyLoadImage hidden={!actualite.imageUrl4}
           src={actualite.imageUrl4}
@@ -325,7 +338,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 5:
            <LazyLoadImage hidden={!actualite.imageUrl5}
           src={actualite.imageUrl5}
@@ -333,7 +346,7 @@ if (search === ""){
           height="100"
           name="actualite-Image"
           alt="actualite"
-        />{" "}
+        />{" "}<br></br>
         Image 6:
            <LazyLoadImage hidden={!actualite.imageUrl6}
           src={actualite.imageUrl6}
@@ -1224,8 +1237,11 @@ if (search === ""){
                                       ></textarea>
                                     </div>
                                   </div>
-                                  <div className="form-group">
-                                  <label>Affiche(712*534):</label>
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-4">
+                                  <div className="form-group" hidden={article}>
+                                    <label>Affiche(712*534):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -1242,7 +1258,9 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                   <div className="form-group">
+                                   </div>
+                                   <div className="col-lg-4">
+                                  <div className="form-group" hidden={article || projet}>
                                   <label>Image1(712*534):</label>
                                     <br />
                                     <input
@@ -1260,7 +1278,10 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                      <div className="form-group">
+                                  </div>
+                                   <div className="col-lg-4">
+
+                                    <div className="form-group" hidden={article || projet}>
                                   <label>Image2(712*534):</label>
                                     <br />
                                     <input
@@ -1278,8 +1299,13 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                      <div className="form-group">
-                                  <label>Image3(712*534):</label>
+                                  </div>  </div>  </div>
+                                  
+                                  <div className="modal-body">
+                                  <div className="row">
+                                  <div className="col-lg-4">
+                                  <div className="form-group" hidden={article || projet}>
+                                    <label>Image3(712*534):</label>
                                     <br />
                                     <input
                                       type="file"
@@ -1296,7 +1322,9 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                      <div className="form-group">
+                                   </div>
+                                   <div className="col-lg-4">
+                                  <div className="form-group" hidden={article || projet}>
                                   <label>Image4(712*534):</label>
                                     <br />
                                     <input
@@ -1314,7 +1342,10 @@ if (search === ""){
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                      <div className="form-group">
+                                  </div>
+                                   <div className="col-lg-4">
+
+                                    <div className="form-group" hidden={article || projet}>
                                   <label>Image5(712*534):</label>
                                     <br />
                                     <input
@@ -1325,14 +1356,15 @@ if (search === ""){
                                       onChange={onFileChange5}
                                     />
                                   </div>
-                                  {previewSource5 && (
+                                  {previewSource5&& (
                                     <img
                                       src={previewSource5}
                                       alt="chosen"
                                       style={{ height: "100px" }}
                                     />
                                   )}
-                                      <div className="form-group">
+                                  </div>  </div>  </div>
+                                      <div className="form-group" hidden={article || projet}>
                                   <label>Image6(712*534):</label>
                                     <br />
                                     <input

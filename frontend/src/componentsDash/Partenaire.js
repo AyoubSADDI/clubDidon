@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import jwt_decode from 'jwt-decode'
 
 toast.configure()
 
@@ -66,7 +67,6 @@ const Partenaire = () => {
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
     previewFile(file);
   };
   const previewFile = (file) => {
@@ -77,26 +77,21 @@ const Partenaire = () => {
     };
   };
   const uploadImage = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
     partenaire.imageUrl = base64EncodedImage;
   };
 
   const onAdd = (e) => {
     e.preventDefault();
-    console.log("submitting : ", e);
     if (!previewSource) return;
     uploadImage(previewSource);
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
-    console.log(userId);
     partenaire.userName = userId;
     dispatch(AddPartenaire(partenaire));
   };
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("partenaire : ", partenaire);
-    console.log("submitting : ", e);
     if (previewSource) uploadImage(previewSource);
     dispatch(UpdatePartenaire(partenaire));
   };
@@ -107,6 +102,19 @@ const Partenaire = () => {
   useEffect(() => {
     dispatch(fetchPartenaires());
   }, []);
+  useEffect(() => { 
+    const login = JSON.parse(localStorage.getItem("login"));
+    const token = login.token;
+    const jwt_Token_decoded = jwt_decode(token);
+    console.log("token"+jwt_Token_decoded.exp * 1000);
+    console.log("Datee"+Date.now());
+    if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     history.push("/login");
+ }
+
+}, []
+);
 
   const partenaire_container = partenaireData.partenaires.filter((partenaire) => {
     if (search === ""){

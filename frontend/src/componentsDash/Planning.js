@@ -10,6 +10,7 @@ import {
 } from "./redux/planning/planningActions";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jwt_decode from 'jwt-decode'
 
 toast.configure()
 
@@ -66,7 +67,6 @@ const Planning = () => {
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
     previewFile(file);
   };
   const previewFile = (file) => {
@@ -77,25 +77,20 @@ const Planning = () => {
     };
   };
   const uploadImage = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
     planning.imageUrl = base64EncodedImage;
   };
 
 
   const onAdd = (e) => {
     e.preventDefault();
-    console.log("submitting : ", e);
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
-    console.log(userId);
     planning.userName = userId;
     dispatch(AddPlanning(planning));
   };
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("planning : ", planning);
-    console.log("submitting : ", e);
     dispatch(UpdatePlanning(planning));
   };
 
@@ -105,6 +100,19 @@ const Planning = () => {
   useEffect(() => {
     dispatch(fetchPlannings());
   }, []);
+  useEffect(() => { 
+    const login = JSON.parse(localStorage.getItem("login"));
+    const token = login.token;
+    const jwt_Token_decoded = jwt_decode(token);
+    console.log("token"+jwt_Token_decoded.exp * 1000);
+    console.log("Datee"+Date.now());
+    if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     history.push("/login");
+ }
+
+}, []
+);
 
  const plannings_container = planningData.plannings.reverse().map((planning) => (
   <tr>

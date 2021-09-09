@@ -39,7 +39,6 @@ const Adhesion = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchAdhesions());
-    console.log(adhesionData);
   }, []);
 
   const onAdd = (e) => {

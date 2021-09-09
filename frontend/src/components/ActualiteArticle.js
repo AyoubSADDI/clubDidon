@@ -13,7 +13,6 @@ const ActualiteArticle = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
-    console.log(actualiteData);
   }, []);
 
   const clockevent = (newDate) => {

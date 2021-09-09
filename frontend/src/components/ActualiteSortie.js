@@ -12,7 +12,6 @@ const ActualiteSortie = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
-    console.log(actualiteData);
   }, []);
   const clockevent = (newDate) => {
     return moment(new Date(newDate)).format("DD/MM/YYYY");

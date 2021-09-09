@@ -18,7 +18,6 @@ const Patrimoine = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchActualites());
-    console.log(actualiteData);
   }, []);
   const actualiteP_container = actualiteData.actualites
     .reverse()

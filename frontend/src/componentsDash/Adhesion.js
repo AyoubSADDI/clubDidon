@@ -9,6 +9,7 @@ import SideBar from './SideBar'
 import {useHistory } from 'react-router-dom'
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jwt_decode from 'jwt-decode'
 
 toast.configure()
 
@@ -57,8 +58,6 @@ const Adhesion = () => {
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("event : ", adhesion);
-    console.log("submitting : ", e);
     dispatch(UpdateAdhesion(adhesion));
   };
   
@@ -69,6 +68,19 @@ const Adhesion = () => {
     dispatch(fetchAdhesions());
   }, []);
 
+  useEffect(() => { 
+    const login = JSON.parse(localStorage.getItem("login"));
+    const token = login.token;
+    const jwt_Token_decoded = jwt_decode(token);
+    console.log("token"+jwt_Token_decoded.exp * 1000);
+    console.log("Datee"+Date.now());
+    if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     history.push("/login");
+ }
+
+}, []
+);
   const adhesions_container = adhesionData.adhesions.reverse().map((adhesion) => (
     <tr key={adhesion._id}>
                             <td>

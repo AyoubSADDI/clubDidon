@@ -39,7 +39,6 @@ class Login extends Component {
     });
   }
   render() {
-    console.log("dfhdfhdfhhf", this.state.redirection);
     if (this.state.redirection) {
       return <Redirect to="/" />;
     }

@@ -11,6 +11,7 @@ import { useHistory } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import jwt_decode from 'jwt-decode'
 
 toast.configure()
 
@@ -64,7 +65,6 @@ const Executif = () => {
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
     previewFile(file);
   };
   const previewFile = (file) => {
@@ -75,26 +75,21 @@ const Executif = () => {
     };
   };
   const uploadImage = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
     executif.imageUrl = base64EncodedImage;
   };
 
   const onAdd = (e) => {
     e.preventDefault();
-    console.log("submitting : ", e);
     if (!previewSource) return;
     uploadImage(previewSource);
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
-    console.log(userId);
     executif.userName = userId;
     dispatch(AddExecutif(executif));
   };
 
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("executif : ", executif);
-    console.log("submitting : ", e);
     if (previewSource) uploadImage(previewSource);
     dispatch(UpdateExecutif(executif));
   };
@@ -105,6 +100,19 @@ const Executif = () => {
   useEffect(() => {
     dispatch(fetchExecutifs());
   }, []);
+  useEffect(() => { 
+    const login = JSON.parse(localStorage.getItem("login"));
+    const token = login.token;
+    const jwt_Token_decoded = jwt_decode(token);
+    console.log("token"+jwt_Token_decoded.exp * 1000);
+    console.log("Datee"+Date.now());
+    if (jwt_Token_decoded.exp * 1000 < Date.now()) {
+     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     history.push("/login");
+ }
+
+}, []
+);
 
   const event_container = executifData.executifs.reverse().map((executif) => (
     <tr key={executif._id}>
