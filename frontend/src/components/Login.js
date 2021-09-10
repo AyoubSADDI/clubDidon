@@ -11,8 +11,11 @@ class Login extends Component {
       login: false,
       store: null,
       redirection: false,
+      tokens: null,
+
     };
   }
+  
 
   login(e) {
     e.preventDefault();
@@ -34,12 +37,15 @@ class Login extends Component {
           })
         );
 
-        this.setState({ login: true, redirection: true });
+        this.setState({ login: true, redirection: true, tokens:result.token });
+      
+      
       });
     });
   }
   render() {
-    if (this.state.redirection) {
+   
+    if (this.state.redirection && this.state.tokens) {
       return <Redirect to="/" />;
     }
     return (
@@ -67,6 +73,7 @@ class Login extends Component {
             </span>
             <span className="row">
               <i className="fas fa-lock"></i>
+
               <input
                 type="password"
                 name
