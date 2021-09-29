@@ -241,7 +241,7 @@ const About = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap pt-5">
-                  <h4>Nos Partenaires Socila</h4>
+                  <h4>Nos Partenaires Sociaux</h4>
                 </div>
               </div>
             </div>
@@ -324,7 +324,7 @@ const About = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap pt-5">
-                  <h4>Nos Partenaires Privé</h4>
+                  <h4>Nos Partenaires Privés</h4>
                 </div>
               </div>
             </div>
@@ -401,7 +401,7 @@ const About = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap pt-5">
-                  <h4>Nos Partenaires Media</h4>
+                  <h4>Nos Partenaires Medias</h4>
                 </div>
               </div>
             </div>
@@ -448,7 +448,7 @@ const About = () => {
             <div className="row">
               <div className="offset-xl-1 col-lg-8">
                 <div className="about-details-cap pt-5">
-                  <h4>Nos Partenaires Association</h4>
+                  <h4>Nos Partenaires Associations</h4>
                 </div>
               </div>
             </div>

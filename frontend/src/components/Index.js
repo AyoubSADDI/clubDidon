@@ -21,7 +21,6 @@ const Index = () => {
           <video
             autoPlay
             loop
-            muted
             className="slider-area999"
             style={{
               position: "absolute",
@@ -46,7 +45,7 @@ const Index = () => {
                   <div className="col-xl-8 col-lg-7 col-md-8">
                     <div className="hero__caption">
                       <h1 data-animation="fadeInLeft" data-delay=".5s">
-                        Bienvenue au club Didon de Carthage
+                        Bienvenue au Club Didon de Carthage
                       </h1>
                       <p data-animation="fadeInLeft" data-delay=".9s">
                         Chers Carthaginois vous êtes sur le site du club Didon
@@ -69,7 +68,7 @@ const Index = () => {
                     <div className="hero__caption">
                       {/* <span data-animation="fadeInLeft" data-delay=".1s"></span> */}
                       <h1 data-animation="fadeInLeft" data-delay=".5s">
-                        Evènements culturels
+                        Evènements Culturels
                       </h1>
                       <p data-animation="fadeInLeft" data-delay=".9s">
                         Notre association organise chaque année des événements
@@ -89,7 +88,7 @@ const Index = () => {
                     <div className="hero__caption">
                       {/* <span data-animation="fadeInLeft" data-delay=".1s"></span> */}
                       <h1 data-animation="fadeInLeft" data-delay=".5s">
-                        Colloques, conférences et débats
+                        Colloques, Conférences et Débats
                       </h1>
                       <p data-animation="fadeInLeft" data-delay=".9s">
                         Notre association cherche à faire connaitre l'histoire
@@ -108,7 +107,7 @@ const Index = () => {
                   <div className="col-xl-8 col-lg-7 col-md-8">
                     <div className="hero__caption">
                       <h1 data-animation="fadeInLeft" data-delay=".5s">
-                        Loisirs, visites et sorties culturelles
+                        Loisirs, Visites et Sorties Culturelles
                       </h1>
                       <p data-animation="fadeInLeft" data-delay=".9s">
                         Notre association organise le premier dimanche du mois
@@ -129,7 +128,7 @@ const Index = () => {
                   <div className="col-xl-8 col-lg-7 col-md-8">
                     <div className="hero__caption">
                       <h1 data-animation="fadeInLeft" data-delay=".5s">
-                        Projets culturels numériques
+                        Projets Culturels Numériques
                       </h1>
                       <p data-animation="fadeInLeft" data-delay=".9s">
                         L'association cherche à travers ces projets à développer

@@ -209,7 +209,7 @@ body {
 */
 /* line 58, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_variables.scss */
 .boxed-btn {
-  background: #641b55;
+  background: #6F064F;
   color: #fff !important;
   display: inline-block;
   padding: 18px 44px;
@@ -332,7 +332,7 @@ h4,
 h5,
 h6 {
   font-family: "Book Antiqua";
-  color: #641b55;
+  color: #6F064F;
   margin-top: 0px;
   font-style: normal;
   font-weight: 500;
@@ -3181,7 +3181,7 @@ hero-btn {
 .section-tittle h2 {
   font-size: 50px;
   display: block;
-  color: #641b55;
+  color: #6F064F;
   font-weight: 900;
   font-family: "Book Antiqua";
 }
@@ -3219,7 +3219,7 @@ hero-btn {
 
 /* line 985, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_common.scss */
 .section-tittle2 h2 {
-  color: #641b55;
+  color: #6F064F;
 }
 
 @media (max-width: 575px) {
@@ -3794,7 +3794,7 @@ hero-btn {
   font-weight: 600;
   margin-bottom: 22px;
   text-transform: uppercase;
-  color: #641b55;
+  color: #6F064F;
   display: inline-block;
   position: relative;
   padding-left: 100px;
@@ -3813,7 +3813,7 @@ hero-btn {
   content: "";
   width: 70px;
   height: 2px;
-  background: #641b55;
+  background: #6F064F;
   top: 0;
   left: 0px;
   top: 50%;
@@ -3825,7 +3825,7 @@ hero-btn {
   font-size: 85px;
   font-weight: 600;
   margin-bottom: 14px;
-  color: #641b55;
+  color: #6F064F;
   font-family: "Book Antiqua";
   line-height: 1.2;
   margin-bottom: 33px;
@@ -4399,7 +4399,7 @@ hero-btn {
 
 /* line 8, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_count_down.scss */
 .count-down-area .single-counter.active {
-  background: #641b55;
+  background: #6F064F;
   border: 10px solid #fff;
   box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.05);
   position: relative;
@@ -4675,7 +4675,7 @@ hero-btn {
 
 /* line 36, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_team.scss */
 .team-area .single-team .team-caption h3 a {
-  color: #641b55;
+  color: #6F064F;
   font-weight: 700;
   font-size: 25px;
 }
@@ -4701,7 +4701,7 @@ hero-btn {
   font-family: "Book Antiqua";
   font-weight: 700;
   margin-bottom: 30px;
-  color: #641b55;
+  color: #6F064F;
   display: inline-block;
   position: relative;
   padding-left: 68px;
@@ -4970,7 +4970,7 @@ hero-btn {
 
 /* line 29, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_footer.scss */
 .footer-area .footer-top .single-footer-caption .footer-number h4 {
-  color: #641b55;
+  color: #6F064F;
   font-size: 30px;
   font-weight: 500;
   text-transform: capitalize;
@@ -5310,7 +5310,7 @@ hero-btn {
 
 /* line 59, C:/Users/HP/Desktop/264.Business_HTML/HTML/assets/scss/_blog_page.scss */
 .home-blog-area .home-blog-single .blog-img-cap .blog-cap h3 a {
-  color: #641b55;
+  color: #6F064F;
   font-size: 25px;
   font-weight: 700;
   line-height: 1.4;
