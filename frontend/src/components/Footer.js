@@ -72,7 +72,7 @@ const Footer = () => {
                       <LazyLoadImage
 
                           src="assets/img/logo/icon1.png"
-                          width="170"
+                          width="200"
                           height="150"
                           alt=""
                         />

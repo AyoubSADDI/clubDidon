@@ -21,6 +21,7 @@ const Index = () => {
           <video
             autoPlay
             loop
+            muted
             className="slider-area999"
             style={{
               position: "absolute",
@@ -52,7 +53,7 @@ const Index = () => {
                         de Carthage. Nous sommes une association culturelle
                         officiellement inscrite au Jort Tunisien. Notre
                         principale vocation est l'ouverture de l'accès à la
-                        culture au grand public et la valorisation du patrimoine
+                        culture  et la valorisation du patrimoine
                         de Carthage.
                       </p>
                     </div>
@@ -137,7 +138,7 @@ const Index = () => {
                         soutenir des projets innovants dont l’objet est le
                         développement de supports numériques permettant un
                         rapport augmenté à une création ou à un élément
-                        patrimonial (ex. : applications, web-apps, dispositifs
+                        patrimonial (ex. : applications, web-apps, dispositifs de
                         réalité virtuelle et augmentée)
                       </p>
                     </div>

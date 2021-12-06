@@ -79,14 +79,14 @@ const About = () => {
                   <p id="mission">
                     {" "}
                     En effet, en plus des conférences et des sorties organisées
-                    dans les sites archéologiques, l’association <br></br>«
-                    Didon de Carthage » souhaite élargir ses champs d’action et
+                    dans les sites archéologiques, l’association
+                    Didon de Carthage souhaite élargir ses champs d’action et
                     son rôle d’expertise, d’étude et de recherche en matière de
                     pratiques numériques technologiques avec de nouveaux
                     supports et usages – auprès du grand public et des
                     professionnels.
                   </p>
-                  <br></br>
+             
                   <p id="mission">
                     Dans ce nouveau contexte numérique, notre association
                     projette de réaliser des projets 3D autour de l’art visuel,
