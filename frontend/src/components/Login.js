@@ -27,7 +27,6 @@ class Login extends Component {
       body: JSON.stringify(this.state),
     }).then((response) => {
       response.json().then((result) => {
-        console.warn("result", result);
         localStorage.setItem(
           "login",
           JSON.stringify({
@@ -51,7 +50,7 @@ class Login extends Component {
     return (
       <div className="body">
         <div className="loginbox">
-        <LazyLoadImage src="assets/img/logo/logoo.png" className="woman" alt="" />
+        <LazyLoadImage src="assets/img/logo/logoo.png" className="woman" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
           <b>
             <h1>Connexion</h1>
           </b>

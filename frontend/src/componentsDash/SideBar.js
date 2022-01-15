@@ -96,7 +96,7 @@ const SideBar = () => {
               </li>
               <li className="submenu">
                 <a id="tables" href='/executifDash'>
-                <i class="fas fa-users-cog"></i>
+                <i className="fas fa-users-cog"></i>
                   <span>Executif</span>
                   <span className="menu-arrow" />
                 </a>

@@ -26,7 +26,7 @@ const Header = () => {
                                     src="assets/img/logo/logo4.jpg"
                                     width="180"
                                     height="50"
-                                    alt=""
+                                    alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
                                   />
                                 </a>
                               </div>
@@ -90,7 +90,7 @@ const Header = () => {
                                     src="assets/img/logo/user-solid.svg"
                                     width="120"
                                     height="20"
-                                    alt=""
+                                    alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
                                   />{" "}
                                 </a>
                               )}

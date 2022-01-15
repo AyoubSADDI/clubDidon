@@ -24,11 +24,11 @@ const ActualiteArticle = () => {
       actualite.categorie === "article" ? (
         <div>
           <div id="Web_1366__0">
-          <LazyLoadImage id="ID1" src="assets/img/actualite/article/ID1.png" alt="" />
+          <LazyLoadImage id="ID1" src="assets/img/actualite/article/ID1.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web" />
           <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/article/didon_birsa.png"
-              alt=""
+              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
             />
             <section>
               <div className="DESCRIPTION">
@@ -53,7 +53,7 @@ const ActualiteArticle = () => {
                   <br />
                 </span>
               </div>
-              <LazyLoadImage id="p11" src="assets/img/actualite/article/p11.png" alt="" />
+              <LazyLoadImage id="p11" src="assets/img/actualite/article/p11.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web" />
             </section>
           </div>
           <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{" "}
@@ -88,7 +88,7 @@ const ActualiteArticle = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web" />
             </div>
           </div>
         </div>

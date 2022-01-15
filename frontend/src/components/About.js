@@ -17,7 +17,7 @@ const About = () => {
     .reverse()
     .map((partenaire) => (
       <div className="single-brand" key={partenaire._id}>
-       <LazyLoadImage src={partenaire.imageUrl} alt="" />
+       <LazyLoadImage src={partenaire.imageUrl} alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration, patrimoine digital" />
       </div>
     ));
 
@@ -28,7 +28,7 @@ const About = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine numérique, conférence, sortie, association, application, mobile, web" />
             </div>
           </div>
         </div>
@@ -253,67 +253,67 @@ const About = () => {
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo1.png"
-                  alt=""
+                  alt="patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo2.png"
-                  alt=""
+                  alt="patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo3.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo4.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration , organisation"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo5.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration , organisation"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo6.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration , organisation"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo7.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration , organisation"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo8.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo9.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo10.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Social/logo11.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
             </div>
@@ -336,61 +336,61 @@ const About = () => {
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo1.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo2.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo3.jpg"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
                 />
               </div>
               <div className="single-brand">
               <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo4.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo5.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo6.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo7.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo8.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo9.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Privé/logo10.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
                 />
               </div>
             </div>
@@ -413,31 +413,31 @@ const About = () => {
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo1.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo2.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo3.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo4.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Media/logo5.png"
-                  alt=""
+                  alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                 />
               </div>
             </div>
@@ -460,37 +460,37 @@ const About = () => {
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo1.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo2.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo3.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo4.jpg"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo5.jpg"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
               <div className="single-brand">
                <LazyLoadImage
                   src="assets/img/about/partenaires/Association/logo6.png"
-                  alt=""
+                  alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                 />
               </div>
             </div>

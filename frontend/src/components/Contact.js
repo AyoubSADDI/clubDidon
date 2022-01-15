@@ -37,10 +37,10 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
+        //  console.log(result.text);
         },
         (error) => {
-          console.log(error.text);
+        //  console.log(error.text);
         }
       );
     e.target.reset();
@@ -55,7 +55,7 @@ const Contact = () => {
             <div className="preloader-inner position-relative">
               <div className="preloader-circle" />
               <div className="preloader-img pere-text">
-                <img src="assets/img/logo/11icon.png" alt="looding" />
+                <img src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation" />
               </div>
             </div>
           </div>
@@ -115,8 +115,8 @@ const Contact = () => {
                             name="name"
                             id="name"
                             type="text"
-                            onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Nom et Prénom'"
+                           
+               
                             placeholder="Nom et Prénom"
                             onChange={event => {setName(event.target.value)}}
                           />
@@ -131,8 +131,8 @@ const Contact = () => {
                             name="email"
                             id="email"
                             type="email"
-                            onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Email'"
+                         
+                          
                             placeholder="Email"
                             onChange={event => {setEmail(event.target.value)}}
                           />
@@ -147,8 +147,8 @@ const Contact = () => {
                           name="subject"
                           id="subject"
                           type="text"
-                          onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Objet'"
+                       
+                
                           placeholder="Objet"
                           onChange={event => {setObjet(event.target.value)}}
                         />
@@ -164,8 +164,8 @@ const Contact = () => {
                             id="message"
                             cols={30}
                             rows={9}
-                            onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Message'"
+                         
+                          
                             placeholder=" Message"
                             defaultValue={""}
                             onChange={event => {setMessage(event.target.value)}}
@@ -186,7 +186,7 @@ const Contact = () => {
                 <div className="col-lg-3 offset-lg-1">
                   <div className="media contact-info">
                     <span className="contact-info__icon">
-                      <i class="fas fa-university"></i>
+                      <i className="fas fa-university"></i>
                     </span>
                     <div className="media-body">
                       <h3>Maison des associations de Sidi Bou Said</h3>
@@ -196,7 +196,7 @@ const Contact = () => {
 
                   <div className="media contact-info">
                     <span className="contact-info__icon">
-                      <i class="far fa-paper-plane"></i>
+                      <i className="far fa-paper-plane"></i>
                     </span>
                     <div className="media-body">
                       <h3>clubdidon@gmail.com</h3>

@@ -26,7 +26,7 @@ const Blog = (props) => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ const Blog = (props) => {
                     <LazyLoadImage
                         className="card-img rounded-0"
                         src={actualitedetail.imageUrl}
-                        alt=""
+                        alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
                       />
                       <a href="#" className="blog_item_date">
                         {clockevent(actualitedetail.Date)}
@@ -95,7 +95,7 @@ const Blog = (props) => {
                         <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl1}
-                            alt
+                            alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                           />
                         </a>
                       </li>
@@ -104,7 +104,7 @@ const Blog = (props) => {
                         <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl2}
-                            alt
+                            alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                           />
                         </a>
                       </li>
@@ -113,7 +113,7 @@ const Blog = (props) => {
                         <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl3}
-                            alt
+                            alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                           />
                         </a>
                       </li>
@@ -122,7 +122,7 @@ const Blog = (props) => {
                         <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl4}
-                            alt
+                            alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                           />
                         </a>
                       </li>
@@ -131,7 +131,7 @@ const Blog = (props) => {
                         <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl5}
-                            alt
+                            alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
                           />
                         </a>
                       </li>
@@ -140,7 +140,7 @@ const Blog = (props) => {
                       <LazyLoadImage
                             className="img-fluid"
                             src={actualitedetail.imageUrl6}
-                            alt
+                            alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
                           />
                       
                       </li>

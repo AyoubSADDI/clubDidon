@@ -18,17 +18,17 @@ const ActualiteProjet = () => {
   }, []);
   const actualiteP_container = actualiteData.actualites
     .reverse()
-    .map((actualite) =>
+    .map((actualite , index) =>
       actualite.categorie === "projet" &&
       new Date(actualite.Date).valueOf() > new Date().valueOf() ? (
-        <div>
+        <div key={index}>
           <div id="Web_1366__0">
-          <LazyLoadImage id="l12x" src="assets/img/actualite/projet/l12x.png" alt="" />
-          <LazyLoadImage id="ID1" src="assets/img/actualite/projet/ID1.png" alt="" />
+          <LazyLoadImage id="l12x" src="assets/img/actualite/projet/l12x.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+          <LazyLoadImage id="ID1" src="assets/img/actualite/projet/ID1.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
           <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/projet/projetdegi.jpg"
-              alt=""
+              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
             />
             <section>
               <div className="DESCRIPTION">
@@ -61,13 +61,13 @@ const ActualiteProjet = () => {
               <LazyLoadImage
                 id="__________Facebook_et_1_page_s"
                 src={actualite.imageUrl}
-                alt=""
+                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
               />
 
 <LazyLoadImage
                 id="p11"
                 src="assets/img/actualite/projet/TAJIR.png"
-                alt=""
+                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
               />
             </section>
           </div>
@@ -104,7 +104,7 @@ const ActualiteProjet = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchActualites } from "../componentsDash/redux/actualite/actualiteActions";
 import Header from "./Header";
@@ -20,14 +20,14 @@ const Programme = () => {
   }, []);
   const eventPasse_container = actualiteData.actualites
     .reverse()
-    .map((actualite) =>
+    .map((actualite , index) =>
       actualite.categorie === "evenement" &&
       new Date(actualite.Date).valueOf() < new Date().valueOf() ? (
-        <div className="col-xl-4 col-lg-4 col-md-4">
+        <div className="col-xl-4 col-lg-4 col-md-4" key={index}>
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -38,7 +38,7 @@ const Programme = () => {
                 </h3>
                 <ReadMoreReact
                   text={actualite.description}
-                  min="60"
+                  min="60"   
                   ideal="70"
                   max="80"
                   readMoreText="-Lire la suite"
@@ -58,14 +58,14 @@ const Programme = () => {
     );
   const ConfPasses_container = actualiteData.actualites
     .reverse()
-    .map((actualite) =>
+    .map((actualite , index) =>
       actualite.categorie === "conference" &&
       new Date(actualite.Date).valueOf() < new Date().valueOf() ? (
-        <div className="col-xl-4 col-lg-4 col-md-4">
+        <div className="col-xl-4 col-lg-4 col-md-4" key={index}>
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -97,14 +97,14 @@ const Programme = () => {
 
   const sortiePass_container = actualiteData.actualites
     .reverse()
-    .map((actualite) =>
+    .map((actualite , index) =>
       actualite.categorie === "sortie" &&
       new Date(actualite.Date).valueOf() < new Date().valueOf() ? (
-        <div className="col-xl-4 col-lg-4 col-md-4">
+        <div className="col-xl-4 col-lg-4 col-md-4" key={index}>
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="" />
+              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -140,7 +140,7 @@ const Programme = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
             </div>
           </div>
         </div>

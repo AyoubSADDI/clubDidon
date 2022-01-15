@@ -24,14 +24,14 @@ const ActualiteSortie = () => {
         <div>
           <div id="Web_1366__0">
           <LazyLoadImage
- id="l12x" src="assets/img/actualite/sortie/l12x.png" alt="" />
+ id="l12x" src="assets/img/actualite/sortie/l12x.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
                 <LazyLoadImage
- id="ID1" src="assets/img/actualite/sortie/ID1.png" alt="" />
+ id="ID1" src="assets/img/actualite/sortie/ID1.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
                <LazyLoadImage
 
               id="didon_birsa"
               src="assets/img/actualite/sortie/SORTIE.jpg"
-              alt=""
+              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
             />
             <section>
               <div className="DESCRIPTION">
@@ -68,13 +68,13 @@ const ActualiteSortie = () => {
 
                 id="__________Facebook_et_1_page_s"
                 src={actualite.imageUrl}
-                alt=""
+                alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
               />
                   <LazyLoadImage
 
                 id="p11"
                 src="assets/img/actualite/sortie/Tanittt.png"
-                alt=""
+                alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
               />
             </section>
           </div>
@@ -112,7 +112,7 @@ const ActualiteSortie = () => {
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
             <LazyLoadImage
- src="assets/img/logo/11icon.png" alt="looding" />
+ src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
             </div>
           </div>
         </div>

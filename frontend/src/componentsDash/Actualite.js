@@ -99,7 +99,7 @@ const Actualite = () => {
   const onFileChange = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
+   // console.log(event.target.files[0]);
     previewFile(file);
   };
   const previewFile = (file) => {
@@ -110,14 +110,14 @@ const Actualite = () => {
     };
   };
   const uploadImage = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
+    //console.log(base64EncodedImage);
     actualite.imageUrl = base64EncodedImage;
   };
   // test1
   const onFileChange1 = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
+ //   console.log(event.target.files[0]);
     previewFile1(file);
   };
   const previewFile1 = (file) => {
@@ -128,14 +128,14 @@ const Actualite = () => {
     };
   };
   const uploadImage1 = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
+  //  console.log(base64EncodedImage);
     actualite.imageUrl1 = base64EncodedImage;
   };
   // test2
   const onFileChange2 = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
+  //  console.log(event.target.files[0]);
     previewFile2(file);
   };
   const previewFile2 = (file) => {
@@ -153,7 +153,7 @@ const Actualite = () => {
   const onFileChange3 = (event) => {
     // Update the state
     const file = event.target.files[0];
-    console.log(event.target.files[0]);
+    //console.log(event.target.files[0]);
     previewFile3(file);
   };
   const previewFile3 = (file) => {
@@ -164,7 +164,7 @@ const Actualite = () => {
     };
   };
   const uploadImage3 = async (base64EncodedImage) => {
-    console.log(base64EncodedImage);
+  //  console.log(base64EncodedImage);
     actualite.imageUrl3 = base64EncodedImage;
   };
 
@@ -172,7 +172,7 @@ const Actualite = () => {
 const onFileChange4 = (event) => {
   // Update the state
   const file = event.target.files[0];
-  console.log(event.target.files[0]);
+ // console.log(event.target.files[0]);
   previewFile4(file);
 };
 const previewFile4 = (file) => {
@@ -183,14 +183,14 @@ const previewFile4 = (file) => {
   };
 };
 const uploadImage4 = async (base64EncodedImage) => {
-  console.log(base64EncodedImage);
+ // console.log(base64EncodedImage);
   actualite.imageUrl4 = base64EncodedImage;
 };
 // test5
 const onFileChange5 = (event) => {
   // Update the state
   const file = event.target.files[0];
-  console.log(event.target.files[0]);
+  //console.log(event.target.files[0]);
   previewFile5(file);
 };
 const previewFile5 = (file) => {
@@ -201,7 +201,7 @@ const previewFile5 = (file) => {
   };
 };
 const uploadImage5 = async (base64EncodedImage) => {
-  console.log(base64EncodedImage);
+ // console.log(base64EncodedImage);
   actualite.imageUrl5 = base64EncodedImage;
 };
 
@@ -220,7 +220,7 @@ const previewFile6= (file) => {
   };
 };
 const uploadImage6 = async (base64EncodedImage) => {
-  console.log(base64EncodedImage);
+ // console.log(base64EncodedImage);
   actualite.imageUrl6 = base64EncodedImage;
 };
 
@@ -236,10 +236,9 @@ const uploadImage6 = async (base64EncodedImage) => {
        const login = JSON.parse(localStorage.getItem("login"));
        const token = login.token;
        const jwt_Token_decoded = jwt_decode(token);
-       console.log("token"+jwt_Token_decoded.exp * 1000);
-       console.log("Datee"+Date.now());
+     
        if (jwt_Token_decoded.exp * 1000 < Date.now()) {
-        localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+        localStorage.clear();
         history.push("/login");
     }
 
@@ -248,7 +247,7 @@ const uploadImage6 = async (base64EncodedImage) => {
 
   const onAdd = (e) => {
     e.preventDefault();
-    console.log("submitting : ", e);
+  //  console.log("submitting : ", e);
     const loginFromStorage = JSON.parse(localStorage.getItem("login"));
     const userId = loginFromStorage.userId;
     actualite.userName = userId;
@@ -259,8 +258,8 @@ const uploadImage6 = async (base64EncodedImage) => {
  
   const onUpdate = (e) => {
     e.preventDefault();
-    console.log("actualite : ", actualite);
-    console.log("submitting : ", e);
+ //   console.log("actualite : ", actualite);
+ //   console.log("submitting : ", e);
 
     if (previewSource) 
     uploadImage(previewSource);
@@ -512,7 +511,7 @@ if (search === ""){
                                   </div>
                                 <div className="row ml-2">
                                
-                                <div class="form-check">
+                                <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -535,7 +534,7 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Conférence
                                     </label>
@@ -564,8 +563,8 @@ if (search === ""){
                                       }
                                     />
                                     <label
-                                      class="form-check-label"
-                                      for="flexRadioDefault2"
+                                      className="form-check-label"
+                                      htmlFor="flexRadioDefault2"
                                     >
                                       Evénement
                                     </label>
@@ -590,13 +589,13 @@ if (search === ""){
                                       checked={actualite.categorie === "sortie"}
                                     />
                                     <label
-                                      class="form-check-label"
-                                      for="flexRadioDefault2"
+                                      className="form-check-label"
+                                      htmlFor="flexRadioDefault2"
                                     >
                                       Sortie
                                     </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -619,12 +618,12 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Projet Numérique
                                     </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -648,7 +647,7 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Article
                                     </label>
@@ -693,7 +692,7 @@ if (search === ""){
                                       </div>
                                     </div>
                                     <div className="col-lg-4">
-                                    <div class="form-group" hidden={article}>
+                                    <div className="form-group" hidden={article}>
                                       <label>Lieux:</label>
                                       <input
                                         className="form-control"
@@ -714,7 +713,7 @@ if (search === ""){
                                   <div className="modal-body">
                                   <div className="row">
                                   <div className="col-lg-6">
-                                    <div class="form-group" hidden={article}>
+                                    <div className="form-group" hidden={article}>
                                       <label>Page Facebook Url:</label>
                                       <input
                                         className="form-control"
@@ -732,7 +731,7 @@ if (search === ""){
                                     </div>
                                     </div>
                                     <div className="col-lg-6">
-                                    <div class="form-group" hidden={article || conf || event || sortie} >
+                                    <div className="form-group" hidden={article || conf || event || sortie} >
                                       <label>Lien Site web:</label>
                                       <input
                                         className="form-control"
@@ -753,7 +752,7 @@ if (search === ""){
                                     </div>
                                     </div>
                                  
-                                    <div class="form-group">
+                                    <div className="form-group">
                                       <label>Description:</label>
                                       <input
                                         className="form-control"
@@ -770,9 +769,9 @@ if (search === ""){
                                       />
                                     </div>
                                   <div className="row">
-                                    <div class="col-lg-12"></div>
+                                    <div className="col-lg-12"></div>
                                     <div className="row"></div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                       <label>Contenu:</label>
                                       <textarea
                                         id="story"
@@ -987,7 +986,7 @@ if (search === ""){
                                 <div className="row ml-2">
                                 
                                  
-                                  <div class="form-check">
+                                  <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -1005,7 +1004,7 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Conférence
                                     </label>
@@ -1028,8 +1027,8 @@ if (search === ""){
                                       }
                                     />
                                     <label
-                                      class="form-check-label"
-                                      for="flexRadioDefault2"
+                                      className="form-check-label"
+                                      htmlFor="flexRadioDefault2"
                                     >
                                       Evénement
                                     </label>
@@ -1049,13 +1048,13 @@ if (search === ""){
                                       checked={actualite.categorie === "sortie"}
                                     />
                                     <label
-                                      class="form-check-label"
-                                      for="flexRadioDefault2"
+                                      className="form-check-label"
+                                      htmlFor="flexRadioDefault2"
                                     >
                                       Sortie
                                     </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -1073,12 +1072,12 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Projet Numérique
                                     </label>
                                   </div>
-                                  <div class="form-check">
+                                  <div className="form-check">
                                     <input
                                       className="form-check-input"
                                       type="radio"
@@ -1096,7 +1095,7 @@ if (search === ""){
                                     />
                                     <label
                                       className="form-check-label"
-                                      for="flexRadioDefault1"
+                                      htmlFor="flexRadioDefault1"
                                     >
                                       Article
                                     </label>
@@ -1141,7 +1140,7 @@ if (search === ""){
                                       </div>
                                     </div>
                                     <div className="col-lg-4">
-                                    <div class="form-group" hidden={article}>
+                                    <div className="form-group" hidden={article}>
                                       <label>Lieux:</label>
                                       <input
                                         className="form-control"
@@ -1162,7 +1161,7 @@ if (search === ""){
                                   <div className="modal-body">
                                   <div className="row">
                                   <div className="col-lg-6">
-                                    <div class="form-group" hidden={article}>
+                                    <div className="form-group" hidden={article}>
                                       <label>Page Facebook Url:</label>
                                       <input
                                         className="form-control"
@@ -1180,7 +1179,7 @@ if (search === ""){
                                     </div>
                                     </div>
                                     <div className="col-lg-6">
-                                    <div class="form-group" hidden={article || conf || sortie || event}>
+                                    <div className="form-group" hidden={article || conf || sortie || event}>
                                       <label>Lien Site web:</label>
                                       <input
                                         className="form-control"
@@ -1200,7 +1199,7 @@ if (search === ""){
                                    
                                     </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                       <label>Description:</label>
                                       <input
                                         className="form-control"
@@ -1217,9 +1216,9 @@ if (search === ""){
                                       />
                                     </div>
                                   <div className="row">
-                                    <div class="col-lg-12"></div>
+                                    <div className="col-lg-12"></div>
                                     <div className="row"></div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                       <label>Contenu:</label>
                                       <textarea
                                         id="story"
@@ -1403,7 +1402,7 @@ if (search === ""){
                         </h3>
                         <label>Recherche Par Catégorie:</label>
                         <input className="recherche" type="text" id="name" name="name" required
-                          minlength="4" maxlength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
+                          minLength="4" maxLength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
                       </div>
                       {/* end card-header */}
                       <div className="card-body">

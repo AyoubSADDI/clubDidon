@@ -106,10 +106,8 @@ const Partenaire = () => {
     const login = JSON.parse(localStorage.getItem("login"));
     const token = login.token;
     const jwt_Token_decoded = jwt_decode(token);
-    console.log("token"+jwt_Token_decoded.exp * 1000);
-    console.log("Datee"+Date.now());
     if (jwt_Token_decoded.exp * 1000 < Date.now()) {
-     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     localStorage.clear(); 
      history.push("/login");
  }
 
@@ -436,7 +434,7 @@ const Partenaire = () => {
                         </h3>
                         <label>Recherche Par Nom de Partenaire :</label>
                         <input className="recherche" type="text" id="name" name="name" required
-                          minlength="4" maxlength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
+                          minLength="4" maxLength="20" size="10"  onChange={event => {SetSearch(event.target.value)}}/>
                       </div>
                       {/* end card-header */}
                       <div className="card-body">

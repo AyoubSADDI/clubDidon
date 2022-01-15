@@ -104,10 +104,8 @@ const Planning = () => {
     const login = JSON.parse(localStorage.getItem("login"));
     const token = login.token;
     const jwt_Token_decoded = jwt_decode(token);
-    console.log("token"+jwt_Token_decoded.exp * 1000);
-    console.log("Datee"+Date.now());
     if (jwt_Token_decoded.exp * 1000 < Date.now()) {
-     localStorage.clear(); // this runs only when I refresh the page or reload on route change it dosent work
+     localStorage.clear();
      history.push("/login");
  }
 
@@ -241,7 +239,7 @@ const Planning = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                     <label>Titre</label>
                                         <input
                                           className="form-control"
@@ -326,7 +324,7 @@ const Planning = () => {
                                         />
                                       </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                     <label>Titre</label>
                                         <input
                                           className="form-control"

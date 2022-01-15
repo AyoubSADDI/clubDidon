@@ -74,7 +74,7 @@ const Footer = () => {
                           src="assets/img/logo/icon1.png"
                           width="200"
                           height="150"
-                          alt=""
+                          alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
                         />
                       </a>
                     </div>

@@ -37,13 +37,10 @@ const Adhesion = () => {
 
   const adhesionData = useSelector((state) => state.adhesion);
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchAdhesions());
-  }, []);
+  
 
   const onAdd = (e) => {
     e.preventDefault();
-    console.log("submitting : ", e);
     dispatch(AddAdhesion(adhesion));
   };
 
@@ -55,7 +52,7 @@ const Adhesion = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="looding" />
+              <img src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
             </div>
           </div>
         </div>
