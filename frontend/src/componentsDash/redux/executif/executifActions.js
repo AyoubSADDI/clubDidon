@@ -52,9 +52,9 @@ export const updateExecutif = (ev) => {
 export const fetchExecutifs = () => {
   return function (dispatch) {
     dispatch(fetchExecutifsRequest());
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     /*
         axios
         .put(
@@ -69,9 +69,9 @@ export const fetchExecutifs = () => {
         */
     axios
       .get(`${process.env.REACT_APP_CLIENT_URL}executif`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then((response) => {
         //response.data is the array of executifs

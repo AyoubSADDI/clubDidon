@@ -50,7 +50,7 @@ class Login extends Component {
     return (
       <div className="body">
         <div className="loginbox">
-        <LazyLoadImage src="assets/img/logo/logoo.png" className="woman" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+        <LazyLoadImage src="assets/img/logo/logoo.png" className="woman" alt="" />
           <b>
             <h1>Connexion</h1>
           </b>

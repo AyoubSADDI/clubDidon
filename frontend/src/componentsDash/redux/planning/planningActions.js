@@ -52,9 +52,9 @@ export const updatePlanning = (pl) => {
 export const fetchPlannings = () => {
   return function (dispatch) {
     dispatch(fetchPlanningsRequest());
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     /*
         axios
         .put(
@@ -69,9 +69,9 @@ export const fetchPlannings = () => {
         */
     axios
       .get(`${process.env.REACT_APP_CLIENT_URL}planning`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then((response) => {
         //response.data is the array of plannings

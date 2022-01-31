@@ -52,9 +52,9 @@ export const updateMedia = (ev) => {
 export const fetchMedias = () => {
   return function (dispatch) {
     dispatch(fetchMediasRequest());
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     /*
         axios
         .put(
@@ -69,9 +69,9 @@ export const fetchMedias = () => {
         */
     axios
       .get(`${process.env.REACT_APP_CLIENT_URL}media`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then((response) => {
         //response.data is the array of events

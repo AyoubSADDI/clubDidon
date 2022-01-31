@@ -1,39 +1,26 @@
-import React,{useState} from "react";
+import React from "react";
 import Header from "./Header";
-import MetaTags from 'react-meta-tags';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Index = () => {
-
-  const [srcState, setSrcState] = useState("assets/video/video.mp4");
   return (
     <div>
-      <div class="wrapper">
-          <MetaTags>
-            <title></title>
-            <meta id="meta-description" name="description" content="Some description." />
-          </MetaTags>
-         
-        </div>
-        <div id="preloader-active">
+      <div id="preloader-active">
         <div className="preloader d-flex align-items-center justify-content-center">
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+              <img src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
       </div>
-     
       <Header />
       <main>
         {/* slider Area Start*/}
         <div className="slider-area ">
-          <video id="vid" className='videoTag'
+          <video id="vid" 
+            autoPlay
             loop
-            controls
-            autoplay="true"
             className="slider-area999"
             style={{
               position: "absolute",
@@ -46,7 +33,7 @@ const Index = () => {
               zIndex: "-1",
             }}
           >
-            <source src={srcState} type="video/mp4"></source>
+            <source src="assets/video/video.mp4" type="video/mp4"></source>
         
           </video>
 

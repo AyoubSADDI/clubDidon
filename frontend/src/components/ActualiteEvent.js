@@ -24,12 +24,12 @@ const ActualiteEvent = () => {
       new Date(actualite.Date).valueOf() > new Date().valueOf() ? (
         <div>
           <div id="Web_1366__0">
-          <LazyLoadImage id="l12x" src="assets/img/actualite/event/l12x.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
-          <LazyLoadImage id="ID1" src="assets/img/actualite/event/ID1.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+          <LazyLoadImage id="l12x" src="assets/img/actualite/event/l12x.png" alt="" />
+          <LazyLoadImage id="ID1" src="assets/img/actualite/event/ID1.png" alt="" />
           <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/event/Event.jpg"
-              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
+              alt=""
             />
             <section>
               <div className="DESCRIPTION">
@@ -67,7 +67,7 @@ const ActualiteEvent = () => {
                 src={actualite.imageUrl}
                 alt=""
               />
-              <LazyLoadImage id="p11" src="assets/img/actualite/event/FC.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+              <LazyLoadImage id="p11" src="assets/img/actualite/event/FC.png" alt="" />
             </section>
           </div>
           <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>{" "}
@@ -103,7 +103,7 @@ const ActualiteEvent = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

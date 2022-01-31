@@ -28,17 +28,17 @@ const ActualiteConference = () => {
           <LazyLoadImage
               id="l12x"
               src="assets/img/actualite/conference/l12x.png"
-              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
+              alt=""
             />
             <LazyLoadImage
               id="ID1"
               src="assets/img/actualite/conference/ID1.png"
-              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web"
+              alt=""
             />
             <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/conference/Conference.jpg"
-              alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration, organisation"
+              alt=""
             />
             <section>
               <div className="DESCRIPTION">
@@ -74,12 +74,12 @@ const ActualiteConference = () => {
               <LazyLoadImage
                 id="__________Facebook_et_1_page_s"
                 src={actualite.imageUrl}
-                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+                alt=""
               />
               <LazyLoadImage
                 id="p11"
                 src="assets/img/actualite/conference/Baal.png"
-                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+                alt=""
               />
             </section>
           </div>
@@ -116,7 +116,7 @@ const ActualiteConference = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

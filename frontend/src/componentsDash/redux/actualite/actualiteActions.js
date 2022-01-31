@@ -52,9 +52,9 @@ export const updateActualite = (ac) => {
 export const fetchActualites = () => {
   return function (dispatch) {
     dispatch(fetchActualitesRequest());
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     /*
         axios
         .put(
@@ -69,9 +69,9 @@ export const fetchActualites = () => {
         */
     axios
       .get(`${process.env.REACT_APP_CLIENT_URL}actualite`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then((response) => {
         //response.data is the array of actualites
@@ -87,14 +87,14 @@ export const fetchActualites = () => {
 
 export const DeleteActualite = (id) => {
   return function (dispatch) {
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     axios
       .delete(`${process.env.REACT_APP_CLIENT_URL}actualite/${id}`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then(dispatch(deleteActualite(id)));
   };

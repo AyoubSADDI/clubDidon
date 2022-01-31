@@ -23,12 +23,12 @@ const ActualiteProjet = () => {
       new Date(actualite.Date).valueOf() > new Date().valueOf() ? (
         <div key={index}>
           <div id="Web_1366__0">
-          <LazyLoadImage id="l12x" src="assets/img/actualite/projet/l12x.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
-          <LazyLoadImage id="ID1" src="assets/img/actualite/projet/ID1.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+          <LazyLoadImage id="l12x" src="assets/img/actualite/projet/l12x.png" alt="" />
+          <LazyLoadImage id="ID1" src="assets/img/actualite/projet/ID1.png" alt="" />
           <LazyLoadImage
               id="didon_birsa"
               src="assets/img/actualite/projet/projetdegi.jpg"
-              alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation"
+              alt=""
             />
             <section>
               <div className="DESCRIPTION">
@@ -61,13 +61,13 @@ const ActualiteProjet = () => {
               <LazyLoadImage
                 id="__________Facebook_et_1_page_s"
                 src={actualite.imageUrl}
-                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+                alt=""
               />
 
 <LazyLoadImage
                 id="p11"
                 src="assets/img/actualite/projet/TAJIR.png"
-                alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+                alt=""
               />
             </section>
           </div>
@@ -104,7 +104,7 @@ const ActualiteProjet = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -65,7 +65,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -104,7 +104,7 @@ const Programme = () => {
           <div className="home-blog-single mb-30">
             <div className="blog-img-cap">
               <div className="blog-img">
-              <LazyLoadImage src={actualite.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+              <LazyLoadImage src={actualite.imageUrl} alt="" />
                 <ul>
                   <li>{clockevent(actualite.Date)} </li>
                 </ul>
@@ -140,7 +140,7 @@ const Programme = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web , organisation" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

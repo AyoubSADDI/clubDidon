@@ -38,7 +38,7 @@ const Planning = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+              <img src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
@@ -84,7 +84,7 @@ const Planning = () => {
             <img
               className="ID4_Class"
               src="assets/img/planning/bg.png"
-              alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+              alt=""
             />
             <svg className="Path_1_i" viewBox="0 0 572 562.812"></svg>
             <table className="tab" style={{ width: "55%" }}>
@@ -110,7 +110,7 @@ const Planning = () => {
             <img
               className="ktiba_Class"
               src="assets/img/planning/ktiba.png"
-              alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration"
+              alt=""
             />
           </div>{" "}
         </div>

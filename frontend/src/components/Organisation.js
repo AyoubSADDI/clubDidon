@@ -18,7 +18,7 @@ const Organisation = () => {
         <div className="row align-items-center">
           <div className="col-xl-6 col-lg-6">
             <div className="support-location-img">
-            <LazyLoadImage src={executif.imageUrl} alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+            <LazyLoadImage src={executif.imageUrl} alt="" />
             </div>
           </div>
           <div className="col-xl-6 col-lg-6">
@@ -45,7 +45,7 @@ const Organisation = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ const Organisation = () => {
                     src="assets/img/organisation/fondatrices3.jpg"
                     width="1000px"
                     height="500px"
-                    alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
+                    alt=""
                   />
                 </div>
                 <div className="team-caption">
@@ -140,7 +140,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                <LazyLoadImage src="assets/img/organisation/3.jpg" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                <LazyLoadImage src="assets/img/organisation/3.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -157,7 +157,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                <LazyLoadImage src="assets/img/organisation/1.jpg" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                <LazyLoadImage src="assets/img/organisation/1.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -173,7 +173,7 @@ const Organisation = () => {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-">
               <div className="single-team mb-30">
                 <div className="team-img">
-                <LazyLoadImage src="assets/img/organisation/5.jpg" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                <LazyLoadImage src="assets/img/organisation/5.jpg" alt="" />
                 </div>
                 <div className="team-caption">
                   <h3>
@@ -265,7 +265,7 @@ const Organisation = () => {
                       <div className="founder-img">
                       <LazyLoadImage
                           src="assets/img/organisation/ghandi blanc.png"
-                          alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
+                          alt=""
                         />
                       </div>
                       <div className="founder-text">
@@ -300,7 +300,7 @@ const Organisation = () => {
                     {/* founder */}
                     <div className="testimonial-founder d-flex align-items-center justify-content-center">
                       <div className="founder-img">
-                      <LazyLoadImage src="assets/img/organisation/PR.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                      <LazyLoadImage src="assets/img/organisation/PR.png" alt="" />
                       </div>
                       <div className="founder-text">
                         <span>Jacques-Yves Cousteau</span>
@@ -339,7 +339,7 @@ const Organisation = () => {
                       <div className="founder-img">
                       <LazyLoadImage
                           src="assets/img/organisation/dsssssss.png"
-                          alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation"
+                          alt=""
                         />
                       </div>
                       <div className="founder-text">
@@ -379,7 +379,7 @@ const Organisation = () => {
                     {/* founder */}
                     <div className="testimonial-founder d-flex align-items-center justify-content-center">
                       <div className="founder-img">
-                      <LazyLoadImage src="assets/img/organisation/sa.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                      <LazyLoadImage src="assets/img/organisation/sa.png" alt="" />
                       </div>
                       <div className="founder-text">
                         <span>Al-Bakri </span>
@@ -415,7 +415,7 @@ const Organisation = () => {
                     {/* founder */}
                     <div className="testimonial-founder d-flex align-items-center justify-content-center">
                       <div className="founder-img">
-                      <LazyLoadImage src="assets/img/organisation/pv4.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+                      <LazyLoadImage src="assets/img/organisation/pv4.png" alt="" />
                       </div>
                       <div className="founder-text">
                         <span>Victor Hugo</span>

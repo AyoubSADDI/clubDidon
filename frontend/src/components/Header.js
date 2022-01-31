@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
   const tokenn = JSON.parse(localStorage.getItem("login"));
-  const token = tokenn.token
+  // const token = tokenn.token
 
   return (
     <div>
@@ -26,7 +26,7 @@ const Header = () => {
                                     src="assets/img/logo/logo4.jpg"
                                     width="180"
                                     height="50"
-                                    alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
+                                    alt=""
                                   />
                                 </a>
                               </div>
@@ -81,19 +81,28 @@ const Header = () => {
                             <li>
                               <a href="/contact">Contact</a>
                             </li>
-                            <li>{token && <a href="/indexDash">Dash</a>}</li>
+                            {/* <li>{token && <a href="/indexDash">Dash</a>}</li> */}
 
                             <li>
-                              {!token && (
+
+                              {tokenn ? <a href="/indexDash">Dash</a> : <a href="/login">
+                                  <img
+                                    src="assets/img/logo/user-solid.svg"
+                                    width="120"
+                                    height="20"
+                                    alt=""
+                                  />{" "}
+                                </a> }
+                              {/* {!token && (
                                 <a href="/login">
                                   <img
                                     src="assets/img/logo/user-solid.svg"
                                     width="120"
                                     height="20"
-                                    alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web,organisation"
+                                    alt=""
                                   />{" "}
                                 </a>
-                              )}
+                              )} */}
                             </li>
                             {/* <li>
                             {token && (<a href='/login' onClick={(e) => {onLogout(e)}}>Déconnexion</a>)}

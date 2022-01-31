@@ -52,7 +52,7 @@ const Adhesion = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-              <img src="assets/img/logo/11icon.png" alt="patrimoine digital, patrimoine numérique, conférence, sortie, association, application, mobile, web, organisation" />
+              <img src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

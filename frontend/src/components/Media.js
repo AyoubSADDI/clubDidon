@@ -21,9 +21,9 @@ const Media = () => {
   const media_container = mediaData.medias.reverse().map((media , index) => (
     <div key={index}>
       <div id="Web">
-      <LazyLoadImage id="ACBIRSA" src="assets/img/media/didonbirsaa.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+      <LazyLoadImage id="ACBIRSA" src="assets/img/media/didonbirsaa.png" alt="" />
         <div id="GP4">
-        <LazyLoadImage id="IMG" src={media.imageUrl} alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+        <LazyLoadImage id="IMG" src={media.imageUrl} alt="" />
         </div>
         <div id="ARTC">
           <span>{media.contenu}</span>
@@ -64,7 +64,7 @@ const Media = () => {
           <div className="preloader-inner position-relative">
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
-            <LazyLoadImage src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+            <LazyLoadImage src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>

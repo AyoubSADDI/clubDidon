@@ -51,9 +51,9 @@ export const updatePartenaire = (conf) => {
 export const fetchPartenaires = () => {
   return function (dispatch) {
     dispatch(fetchPartenairesRequest());
-    const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
-    const token = "Bearer " + tokenFromStorage.token;
-    console.log(token);
+    // const tokenFromStorage = JSON.parse(localStorage.getItem("login"));
+    // const token = "Bearer " + tokenFromStorage.token;
+    // console.log(token);
     /*
         axios
         .put(
@@ -68,9 +68,9 @@ export const fetchPartenaires = () => {
         */
     axios
       .get(`${process.env.REACT_APP_CLIENT_URL}partenaire`, {
-        headers: {
-          Authorization: token,
-        },
+        // headers: {
+        //   Authorization: token,
+        // },
       })
       .then((response) => {
         //response.data is the array of partenaires

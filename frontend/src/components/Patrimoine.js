@@ -31,7 +31,7 @@ const Patrimoine = () => {
                 <div className="col-xl-6 col-lg-6">
                   <div className="support-location-img">
                   <LazyLoadImage
-                   src={actualite.imageUrl} alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+                   src={actualite.imageUrl} alt="" />
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6">
@@ -67,7 +67,7 @@ const Patrimoine = () => {
             <div className="preloader-circle" />
             <div className="preloader-img pere-text">
             <LazyLoadImage
-              src="assets/img/logo/11icon.png" alt="club, didon, carthage, histoire, patrimoine, visite, association, sauvegarde, restauration" />
+              src="assets/img/logo/11icon.png" alt="looding" />
             </div>
           </div>
         </div>
